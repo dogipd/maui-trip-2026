@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maui Master Travel Guide & Itinerary</title>
+  <style>
+    :root {
+      --primary: #0d9488;
+      --primary-dark: #0f766e;
+      --primary-light: #f0fdfa;
+      --accent: #f97316;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --warning: #fef3c7;
+      --warning-border: #fcd34d;
+      --warning-text: #92400e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; }
+
+    header {
+      background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+      color: white;
+      padding: 32px 24px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px -5px rgba(15, 118, 110, 0.25);
+    }
+
+    header h1 { font-size: 28px; margin-bottom: 6px; font-weight: 800; letter-spacing: -0.5px; }
+    header p { color: #99f6e4; font-size: 14px; }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    button.action-btn {
+      background-color: white;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    button.action-btn:hover {
+      background-color: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .status-badge { font-size: 13px; color: var(--text-muted); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 8px;
+    }
+
+    .badge {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .callout-box {
+      background-color: var(--warning);
+      border-left: 4px solid var(--warning-border);
+      color: var(--warning-text);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-size: 13.5px;
+    }
+
+    .callout-box strong { color: #78350f; }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .checklist-section h3 {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+
+    .checklist { list-style: none; }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .checklist input[type="checkbox"] {
+      margin-top: 4px;
+      accent-color: var(--primary);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .timeline { list-style: none; padding-left: 4px; }
+
+    .timeline li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 7px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .timeline li strong { color: var(--text); font-weight: 700; }
+
+    .day-meta {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      background: var(--primary-light);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--primary-dark);
+      flex-wrap: wrap;
+    }
+
+    [contenteditable="true"]:hover {
+      outline: 2px dashed #93c5fd;
+      border-radius: 4px;
+      cursor: text;
+    }
+
+    [contenteditable="true"]:focus {
+      outline: 2px solid var(--primary);
+      background-color: #f0fdfa;
+      border-radius: 4px;
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .nav-tabs, .toolbar, button { display: none !important; }
+      .tab-content { display: block !important; }
+      .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+      header { background: #0f766e; -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1 contenteditable="true">🌴 Maui Vacation Master Plan</h1>
+      <p contenteditable="true">October 25 – October 31, 2026 | Basecamp: Menehune Shores #421 (North Kihei)</p>
+    </header>
+
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('itinerary', this)">📅 Daily Itinerary</button>
+      <button class="tab-btn" onclick="switchTab('reminders', this)">⏰ Booking Milestones</button>
+      <button class="tab-btn" onclick="switchTab('packing', this)">🧳 Packing & Gear Lists</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="btn-group">
+        <button class="action-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+        <button class="action-btn" onclick="shareTrip()">🔗 Copy Share Link</button>
+        <button class="action-btn" onclick="resetDefaults()">🔄 Reset Defaults</button>
+      </div>
+      <span class="status-badge" id="saveIndicator">💡 Click any text to edit directly</span>
+    </div>
+
+    <!-- TAB 1: ITINERARY -->
+    <div id="itinerary" class="tab-content active">
+
+      <!-- Day 1 -->
+      <div class="card">
+        <h2>Day 1: Sun, Oct 25 — Arrival & Settling In <span class="badge">Arrival</span></h2>
+        <div class="day-meta">
+          <span>🚗 <strong>Drive:</strong> ~15 mins from OGG</span>
+          <span>🌅 <strong>Sunset:</strong> ~5:52 PM</span>
+        </div>
+        <ul class="timeline" contenteditable="true">
+          <li><strong>Afternoon:</strong> Land at Kahului Airport (OGG), retrieve rental car.</li>
+          <li><strong>Grocery Stop:</strong> Stop at Safeway/Target in Kahului for bottled water, snacks, and breakfast essentials.</li>
+          <li><strong>Check-in:</strong> Drive 15 mins south to Menehune Shores #421 in North Kihei. Settle in.</li>
+          <li><strong>Evening:</strong> Walk out to the Kōʻieʻie Royal Fishpond for sunset; grab relaxed dinner at Monsoon India downstairs.</li>
+        </ul>
+        <div class="callout-box" contenteditable="true">
+          <strong>Things to Remember Today:</strong> Keep bedroom door open with living-room split A/C + ceiling fan running for sleep comfort. Lay out warm layers before going to bed early.
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="card">
+        <h2>Day 2: Mon, Oct 26 — Haleakalā Sunrise & Pineapple Tour <span class="badge">Upcountry</span></h2>
+        <div class="day-meta">
+          <span>🚗 <strong>Drive:</strong> ~1 hr 45 min to summit</span>
+          <span>🌄 <strong>Sunrise:</strong> ~6:24 AM (Leave by 3:30 AM)</span>
+        </div>
+        <ul class="timeline" contenteditable="true">
+          <li><strong>3:30 AM:</strong> Depart condo in darkness (leverage mainland jet lag).</li>
+          <li><strong>5:15 AM – 7:00 AM:</strong> Park at summit, watch sunrise above cloud deck (35°F–40°F cold; bring jackets/beanies).</li>
+          <li><strong>8:00 AM – 9:30 AM:</strong> Drive down to historic Makawao town for warm pastries, fresh coffee, and breakfast.</li>
+          <li><strong>10:30 AM – 12:00 PM:</strong> Maui Pineapple Farm Tour in Haliʻimaile (Xplorie free pass). Receive airport-packaged sweet pineapple.</li>
+          <li><strong>Afternoon:</strong> Return to condo for an afternoon recharge nap and pool relaxation.</li>
+          <li><strong>Evening:</strong> Watch panoramic sunset and grill dinner on the 360° rooftop BBQ deck.</li>
+        </ul>
+        <div class="callout-box" contenteditable="true">
+          <strong>Things to Remember Today:</strong> Have Recreation.gov sunrise QR code and photo ID ready for national park gate entry. Pack full winter jackets and closed-toe shoes.
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="card">
+        <h2>Day 3: Tue, Oct 27 — Road to Hāna & Pīpīwai Trail <span class="badge">Expedition</span></h2>
+        <div class="day-meta">
+          <span>🚗 <strong>Drive:</strong> Full Day (Paved Out-and-Back)</span>
+          <span>⏰ <strong>Departure:</strong> 5:30 AM</span>
+        </div>
+        <ul class="timeline" contenteditable="true">
+          <li><strong>5:30 AM:</strong> Depart condo early to beat tour vans and enjoy empty scenic roads.</li>
+          <li><strong>7:15 AM:</strong> Quick photo stop at Honomanū Bay Overlook (Mile Marker 13–14).</li>
+          <li><strong>7:45 AM – 8:30 AM:</strong> Keʻanae Peninsula: Watch crashing surf and grab warm loaves from Aunt Sandy's Banana Bread.</li>
+          <li><strong>9:00 AM – 11:30 AM:</strong> Waiʻānapanapa State Park: Black sand beach, sea arches, and blowholes.</li>
+          <li><strong>11:45 AM – 12:30 PM:</strong> Hāna Town: Lunch break at local food trucks.</li>
+          <li><strong>1:00 PM – 3:15 PM:</strong> Kīpahulu District: Hike Pīpīwai Trail (Giant Banyan, bamboo forest boardwalk, 400-ft Waimoku Falls).</li>
+          <li><strong>3:30 PM:</strong> Begin return drive along paved Hāna Highway back toward Pāʻia in full daylight.</li>
+          <li><strong>5:30 PM – 6:00 PM:</strong> Arrive back at condo before dark for dinner and rest.</li>
+        </ul>
+        <div class="callout-box" contenteditable="true">
+          <strong>Things to Remember Today:</strong> Download offline Google Maps before leaving. National park pass from Haleakalā is valid at Kīpahulu. Turn around at trail—do NOT drive the unpaved back road.
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="card">
+        <h2>Day 4: Wed, Oct 28 — West Maui & Kaʻanapali Coast <span class="badge">West Maui</span></h2>
+        <div class="day-meta">
+          <span>🚗 <strong>Drive:</strong> ~40 mins north along Route 30</span>
+          <span>🌊 <strong>Focus:</strong> Coastal walks & viewpoints</span>
+        </div>
+        <ul class="timeline" contenteditable="true">
+          <li><strong>9:00 AM:</strong> Scenic drive north along coastal cliffs.</li>
+          <li><strong>10:00 AM – 12:00 PM:</strong> Walk the paved, scenic Kapalua Coastal Trail (ironwood groves, lava tidepools, ocean views).</li>
+          <li><strong>12:30 PM – 2:30 PM:</strong> Kaʻanapali Beachwalk and Whalers Village for lunch and shopping.</li>
+          <li><strong>3:00 PM – 4:30 PM:</strong> Scenic drive to overlooks at Honolua Bay & Nakalele Blowhole.</li>
+          <li><strong>Evening:</strong> Return down coast for dinner in Kihei.</li>
+        </ul>
+        <div class="callout-box" contenteditable="true">
+          <strong>Things to Remember Today:</strong> Wear comfortable walking sandals/shoes and apply reef-safe sunscreen.
+        </div>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="card">
+        <h2>Day 5: Thu, Oct 29 — Molokini Cruise & Turtle Lagoon <span class="badge">Ocean Day</span></h2>
+        <div class="day-meta">
+          <span>🚗 <strong>Drive:</strong> 8 mins to Māʻalaea Harbor</span>
+          <span>🐢 <strong>Focus:</strong> Marine life & turtles</span>
+        </div>
+        <ul class="timeline" contenteditable="true">
+          <li><strong>7:00 AM:</strong> Short drive to Māʻalaea Harbor.</li>
+          <li><strong>7:30 AM – 11:30 AM:</strong> Calypso Catamaran cruise to Molokini Crater (Xplorie pass; glass-bottom viewing room).</li>
+          <li><strong>12:30 PM:</strong> Return to condo for lunch.</li>
+          <li><strong>2:00 PM – 4:30 PM:</strong> Wade in the calm, protected waters of Kōʻieʻie Royal Fishpond to watch green sea turtles.</li>
+          <li><strong>5:30 PM:</strong> Golden hour stroll along Sugar Beach or Keawakapu Beach.</li>
+        </ul>
+        <div class="callout-box" contenteditable="true">
+          <strong>Things to Remember Today:</strong> Take ginger chews/Dramamine 30 minutes before boarding boat if sensitive to motion.
+        </div>
+      </div>
+
+      <!-- Day 6 -->
+      <div class="card">
+        <h2>Day 6: Fri, Oct 30 — ʻĪao Valley & South Maui Leisure <span class="badge">Central & South</span></h2>
+        <div class="day-meta">
+          <span>🚗 <strong>Drive:</strong> 20 mins to ʻĪao Valley</span>
+          <span>⛰️ <strong>Focus:</strong> Lush rainforest & relaxation</span>
+        </div>
+        <ul class="timeline" contenteditable="true">
+          <li><strong>9:30 AM:</strong> Paved, easy walk at ʻĪao Valley State Monument beneath the 1,200-ft emerald needle.</li>
+          <li><strong>12:30 PM:</strong> Casual lunch in historic Wailuku or South Kihei food trucks.</li>
+          <li><strong>2:30 PM – 5:00 PM:</strong> Relaxed afternoon at Wailea/Makena beaches or lounging by the oceanfront condo pool.</li>
+          <li><strong>Evening:</strong> Farewell sunset drinks and BBQ dinner on the 360° rooftop deck.</li>
+        </ul>
+        <div class="callout-box" contenteditable="true">
+          <strong>Things to Remember Today:</strong> Have ʻĪao Valley entry QR voucher downloaded.
+        </div>
+      </div>
+
+      <!-- Day 7 -->
+      <div class="card">
+        <h2>Day 7: Sat, Oct 31 — Pāʻia Town & Departure <span class="badge">Departure</span></h2>
+        <div class="day-meta">
+          <span>🚗 <strong>Drive:</strong> 15 mins to OGG</span>
+          <span>✈️ <strong>Check-out:</strong> 10:00 AM</span>
+        </div>
+        <ul class="timeline" contenteditable="true">
+          <li><strong>10:00 AM:</strong> Pack up, empty fridge, and check out of Menehune Shores #421.</li>
+          <li><strong>11:00 AM – 1:30 PM:</strong> Browse shops, grab lunch in bohemian Pāʻia Town, and watch sea turtles at Hoʻokipa Beach lookout.</li>
+          <li><strong>Afternoon:</strong> Return rental car at OGG and board nonstop flight back to Seattle.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAB 2: PRE-TRIP REMINDERS -->
+    <div id="reminders" class="tab-content">
+      <div class="card">
+        <h2>Critical Reservation Deadlines <span class="badge">Action Items</span></h2>
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="chk_rem1" onchange="saveCheck(this)">
+            <label for="chk_rem1" contenteditable="true"><strong>Aug 27, 2026 (10:00 AM PDT):</strong> Book Haleakalā Sunrise Permit on Recreation.gov ($1 fee; releases 60 days in advance at 7:00 AM HST).</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk_rem2" onchange="saveCheck(this)">
+            <label for="chk_rem2" contenteditable="true"><strong>Sep 26, 2026:</strong> Book Waiʻānapanapa State Park (Road to Hāna black sand beach) morning parking/entry voucher on gowaianapanapa.com.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk_rem3" onchange="saveCheck(this)">
+            <label for="chk_rem3" contenteditable="true"><strong>Sep 30, 2026:</strong> Book ʻĪao Valley State Monument entry/parking slot on gostateparks.hawaii.gov.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk_rem4" onchange="saveCheck(this)">
+            <label for="chk_rem4" contenteditable="true"><strong>Xplorie Activity Booking:</strong> Redeem complimentary tickets for Calypso Molokini Cruise and Maui Pineapple Farm Tour via My Perfect Stays concierge link.</label>
+          </li>
+          <li>
+            <input type="checkbox" id="chk_rem5" onchange="saveCheck(this)">
+            <label for="chk_rem5" contenteditable="true"><strong>Rental Car Confirmation:</strong> Confirm standard SUV/sedan rental pickup at OGG (Enterprise/Sixt/Avis).</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAB 3: PACKING & DAY TRIP LISTS -->
+    <div id="packing" class="tab-content">
+      <div class="card">
+        <h2>Luggage Packing Checklist <span class="badge">Master List</span></h2>
+        <div class="checklist-grid">
+          <div class="checklist-section">
+            <h3>Haleakalā Cold Gear</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="p1" onchange="saveCheck(this)"><label for="p1" contenteditable="true">Puffer jacket / warm windbreaker</label></li>
+              <li><input type="checkbox" id="p2" onchange="saveCheck(this)"><label for="p2" contenteditable="true">Long pants / joggers / leggings</label></li>
+              <li><input type="checkbox" id="p3" onchange="saveCheck(this)"><label for="p3" contenteditable="true">Beanie / knit warm hat</label></li>
+              <li><input type="checkbox" id="p4" onchange="saveCheck(this)"><label for="p4" contenteditable="true">Light gloves / warm socks</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-section">
+            <h3>Footwear & Tropical Wear</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="p5" onchange="saveCheck(this)"><label for="p5" contenteditable="true">Sturdy running/trail shoes (Pīpīwai hike)</label></li>
+              <li><input type="checkbox" id="p6" onchange="saveCheck(this)"><label for="p6" contenteditable="true">Water shoes / strapped sandals</label></li>
+              <li><input type="checkbox" id="p7" onchange="saveCheck(this)"><label for="p7" contenteditable="true">Breathable activewear & shorts</label></li>
+              <li><input type="checkbox" id="p8" onchange="saveCheck(this)"><label for="p8" contenteditable="true">Casual evening / resort wear</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-section">
+            <h3>Sun & Protection</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="p9" onchange="saveCheck(this)"><label for="p9" contenteditable="true">Reef-safe sunscreen (Hawaii compliant)</label></li>
+              <li><input type="checkbox" id="p10" onchange="saveCheck(this)"><label for="p10" contenteditable="true">Polarized sunglasses</label></li>
+              <li><input type="checkbox" id="p11" onchange="saveCheck(this)"><label for="p11" contenteditable="true">Insect repellent wipes/spray (for jungle trails)</label></li>
+              <li><input type="checkbox" id="p12" onchange="saveCheck(this)"><label for="p12" contenteditable="true">Wide-brim sun hat / baseball cap</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-section">
+            <h3>Tech & Documents</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="p13" onchange="saveCheck(this)"><label for="p13" contenteditable="true">Venture X card & Government IDs</label></li>
+              <li><input type="checkbox" id="p14" onchange="saveCheck(this)"><label for="p14" contenteditable="true">Car phone mount (essential for Hāna navigation)</label></li>
+              <li><input type="checkbox" id="p15" onchange="saveCheck(this)"><label for="p15" contenteditable="true">Portable power bank & charging cables</label></li>
+              <li><input type="checkbox" id="p16" onchange="saveCheck(this)"><label for="p16" contenteditable="true">Dramamine / ginger chews (motion sickness)</label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Day-Trip Backpack Essentials <span class="badge">Daily Bags</span></h2>
+        <div class="checklist-grid">
+          <div class="checklist-section">
+            <h3>Road to Hāna Day Pack</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="d1" onchange="saveCheck(this)"><label for="d1" contenteditable="true">Offline Google Maps downloaded on phone</label></li>
+              <li><input type="checkbox" id="d2" onchange="saveCheck(this)"><label for="d2" contenteditable="true">Cash ($20–$40 in small bills for fruit stands)</label></li>
+              <li><input type="checkbox" id="d3" onchange="saveCheck(this)"><label for="d3" contenteditable="true">Waiʻānapanapa State Park reservation QR code</label></li>
+              <li><input type="checkbox" id="d4" onchange="saveCheck(this)"><label for="d4" contenteditable="true">National park pass / receipt for Kīpahulu gate</label></li>
+              <li><input type="checkbox" id="d5" onchange="saveCheck(this)"><label for="d5" contenteditable="true">Rain jacket / compact umbrella & bug spray</label></li>
+              <li><input type="checkbox" id="d6" onchange="saveCheck(this)"><label for="d6" contenteditable="true">2 refillable water bottles & travel snacks</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-section">
+            <h3>Haleakalā Sunrise Bag</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="d7" onchange="saveCheck(this)"><label for="d7" contenteditable="true">Recreation.gov QR code & Driver's License</label></li>
+              <li><input type="checkbox" id="d8" onchange="saveCheck(this)"><label for="d8" contenteditable="true">Condo blanket or oversized beach towels for wind barrier</label></li>
+              <li><input type="checkbox" id="d9" onchange="saveCheck(this)"><label for="d9" contenteditable="true">Hot coffee thermos or warm beverage</label></li>
+              <li><input type="checkbox" id="d10" onchange="saveCheck(this)"><label for="d10" contenteditable="true">Headlamp or phone flashlight</label></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    const contentElements = document.querySelectorAll('[contenteditable="true"]');
+    const saveIndicator = document.getElementById('saveIndicator');
+
+    function loadContent() {
+      contentElements.forEach((el, index) => {
+        const saved = localStorage.getItem('maui_full_content_' + index);
+        if (saved !== null) el.innerHTML = saved;
+        el.addEventListener('input', () => {
+          localStorage.setItem('maui_full_content_' + index, el.innerHTML);
+          saveIndicator.innerText = '✅ Edits saved automatically';
+          setTimeout(() => { saveIndicator.innerText = '💡 Click any text to edit directly'; }, 2000);
+        });
+      });
+
+      document.querySelectorAll('input[type="checkbox"]').forEach(chk => {
+        const checked = localStorage.getItem('maui_chk_' + chk.id);
+        if (checked === 'true') chk.checked = true;
+      });
+    }
+
+    function saveCheck(chk) {
+      localStorage.setItem('maui_chk_' + chk.id, chk.checked);
+    }
+
+    function resetDefaults() {
+      if (confirm("Reset all custom edits and checklist items back to defaults?")) {
+        localStorage.clear();
+        location.reload();
+      }
+    }
+
+    function shareTrip() {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Page link copied to clipboard!");
+    }
+
+    window.onload = loadContent;
+  </script>
+</body>
+</html>
