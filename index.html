@@ -11,9 +11,15 @@
       --primary-light: #f0fdfa;
       --accent: #f97316;
       --accent-light: #fff7ed;
+      --luau-gold: #d97706;
+      --luau-bg: #fef3c7;
+      --luau-border: #f59e0b;
       --xplorie-purple: #6366f1;
       --xplorie-bg: #eef2ff;
       --xplorie-border: #c7d2fe;
+      --veg-green: #16a34a;
+      --veg-bg: #f0fdf4;
+      --veg-border: #86efac;
       --bg: #f8fafc;
       --card: #ffffff;
       --text: #1e293b;
@@ -34,7 +40,7 @@
       padding: 24px 16px;
     }
 
-    .container { max-width: 960px; margin: 0 auto; }
+    .container { max-width: 980px; margin: 0 auto; }
 
     header {
       background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
@@ -147,6 +153,15 @@
       box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
     }
 
+    .badge-veg {
+      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+      color: white;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
     .xplorie-highlight-box {
       background-color: var(--xplorie-bg);
       border-left: 4px solid var(--xplorie-purple);
@@ -158,6 +173,18 @@
     }
 
     .xplorie-highlight-box strong { color: #1e1b4b; }
+
+    .veg-box {
+      background-color: var(--veg-bg);
+      border-left: 4px solid var(--veg-green);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-size: 13.5px;
+      color: #14532d;
+    }
+
+    .veg-box strong { color: #052e16; }
 
     .callout-box {
       background-color: var(--warning);
@@ -244,6 +271,29 @@
       flex-wrap: wrap;
     }
 
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 13.5px;
+    }
+
+    .custom-table th, .custom-table td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .custom-table th {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .custom-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
     [contenteditable="true"]:hover {
       outline: 2px dashed #93c5fd;
       border-radius: 4px;
@@ -273,12 +323,13 @@
   <div class="container">
     <header>
       <h1 contenteditable="true">🌴 Maui Vacation Master Plan</h1>
-      <p contenteditable="true">October 25 – October 31, 2026 | Basecamp: Menehune Shores #421 (North Kihei)</p>
+      <p contenteditable="true">October 25 – October 31, 2026 | Basecamp: Māʻalaea Banyans (Māʻalaea Harbor)</p>
     </header>
 
     <div class="nav-tabs">
       <button class="tab-btn active" onclick="switchTab('itinerary', this)">📅 Daily Itinerary</button>
-      <button class="tab-btn" onclick="switchTab('xplorie', this)">🎟️ Xplorie Pass Hub</button>
+      <button class="tab-btn" onclick="switchTab('food', this)">🥗 Ovo-Lacto Dining & Meal Prep</button>
+      <button class="tab-btn" onclick="switchTab('xplorie', this)">🎟️ Xplorie Pass Hub ($650+ Value)</button>
       <button class="tab-btn" onclick="switchTab('reminders', this)">⏰ Booking Milestones</button>
       <button class="tab-btn" onclick="switchTab('packing', this)">🧳 Packing & Gear Lists</button>
     </div>
@@ -297,49 +348,61 @@
 
       <!-- Day 1 -->
       <div class="card">
-        <h2>Day 1: Sun, Oct 25 — Arrival & Settling In <span class="badge">Arrival</span></h2>
+        <h2>Day 1: Sun, Oct 25 — Arrival, Costco/Safeway & Sunset <span class="badge">Arrival Day</span></h2>
         <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> ~15 mins from OGG</span>
+          <span>✈️ <strong>Landing:</strong> 1:00 PM at OGG</span>
+          <span>🚗 <strong>Route:</strong> OGG &rarr; Costco/Safeway &rarr; Māʻalaea Banyans</span>
           <span>🌅 <strong>Sunset:</strong> ~5:52 PM</span>
         </div>
         <ul class="timeline" contenteditable="true">
-          <li><strong>Afternoon:</strong> Land at Kahului Airport (OGG), retrieve rental car.</li>
-          <li><strong>Grocery Stop:</strong> Stop at Safeway/Target in Kahului for bottled water, snacks, and breakfast essentials.</li>
-          <li><strong>Check-in:</strong> Drive 15 mins south to Menehune Shores #421 in North Kihei. Settle in.</li>
-          <li><strong>Evening:</strong> Walk out to the Kōʻieʻie Royal Fishpond for sunset; grab relaxed dinner downstairs at Monsoon India.</li>
+          <li><strong>1:00 PM – 1:45 PM:</strong> Land at OGG, collect baggage, and retrieve rental car at Enterprise counter.</li>
+          <li><strong>2:00 PM – 3:15 PM:</strong> <strong>Costco & Safeway Kahului Stock-up:</strong>
+            <br>&bull; <strong>Costco Wholesale (540 Haleakala Hwy):</strong> Bottled water cases, cartons of organic eggs, Maui Gold pineapples, cheeses, Hawaiian chips, and cheap fuel.
+            <br>&bull; <strong>Safeway (1090 Ho'okele St):</strong> Fresh dairy/milk, bread, yogurt, sandwich spreads, and vegetarian produce.</li>
+          <li><strong>3:30 PM – 4:15 PM:</strong> Coffee & pastry stop at Mill House Roastery (Waikapū) or drive straight to condo.</li>
+          <li><strong>4:30 PM:</strong> Check into <strong>Māʻalaea Banyans</strong>. Unpack groceries into full kitchen and take in oceanfront views.</li>
+          <li><strong>5:15 PM – 6:30 PM:</strong> Sunset walk along the shoreline / Haycraft Beach Park to watch sea turtles and evening colors.</li>
+          <li><strong>7:00 PM:</strong> <strong>Welcome Dinner:</strong> Waterfront Indian dinner at Monsoon India (paneer tikka masala, dal makhani, garlic naan) or Tradewinds Deli.</li>
         </ul>
+        <div class="veg-box" contenteditable="true">
+          <strong>🥗 Day 1 Food Plan:</strong> Mill House Roastery (Hawaiian cold brew & pastries) | Dinner at Monsoon India for vegetarian Indian curries & fresh naans.
+        </div>
         <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Keep bedroom door open with living-room split A/C + ceiling fan running for sleep comfort. Lay out warm layers before going to bed early.
+          <strong>Things to Remember Today:</strong> Top off rental gas at Costco Kahului. Lay out warm winter jackets and shoes before sleeping early for the 3:30 AM sunrise ascent.
         </div>
       </div>
 
       <!-- Day 2 -->
       <div class="card">
-        <h2>Day 2: Mon, Oct 26 — Haleakalā Sunrise & Pineapple Tour <span class="badge-xplorie">✨ Xplorie Pass Day</span></h2>
+        <h2>Day 2: Mon, Oct 26 — Haleakalā Sunrise & Maui Pineapple Tour <span class="badge-xplorie">✨ Xplorie Free Pass #1</span></h2>
         <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> ~1 hr 45 min to summit</span>
+          <span>🚗 <strong>Drive:</strong> ~1 hr 40 min to summit</span>
           <span>🌄 <strong>Sunrise:</strong> ~6:24 AM (Leave by 3:30 AM)</span>
         </div>
         <div class="xplorie-highlight-box">
-          <strong>🎟️ Xplorie Included Activity: Maui Pineapple Farm Tour ($75+ Value)</strong><br>
-          Guided walking & vehicle tour of working pineapple fields in Haliʻimaile. Includes tastings of extra-sweet Maui Gold pineapples and a complimentary airport-packaged pineapple to take home!
+          <strong>🎟️ Xplorie 100% Free Activity: Maui Pineapple Farm Tour ($75+ Value)</strong><br>
+          Guided walking & vehicle tour of working plantation fields in Haliʻimaile. Includes tastings of extra-sweet Maui Gold pineapples and a complimentary airport-packaged pineapple souvenir to take home!
         </div>
         <ul class="timeline" contenteditable="true">
           <li><strong>3:30 AM:</strong> Depart condo in darkness (leverage mainland jet lag).</li>
-          <li><strong>5:15 AM – 7:00 AM:</strong> Park at summit, watch sunrise above cloud deck (35°F–40°F cold; bring jackets/beanies).</li>
-          <li><strong>8:00 AM – 9:30 AM:</strong> Drive down to historic Makawao town for warm pastries, fresh coffee, and breakfast.</li>
-          <li class="xplorie-stop"><strong>10:30 AM – 12:00 PM:</strong> <strong>Maui Pineapple Farm Tour</strong> in Haliʻimaile (Xplorie free pass). Receive airport-packaged sweet pineapple.</li>
-          <li><strong>Afternoon:</strong> Return to condo for an afternoon recharge nap and pool relaxation.</li>
-          <li><strong>Evening:</strong> Watch panoramic sunset and grill dinner on the 360° rooftop BBQ deck.</li>
+          <li><strong>5:15 AM – 7:00 AM:</strong> Park at summit, watch sunrise above cloud deck (35°F–40°F cold; wear jackets/beanies).</li>
+          <li><strong>8:00 AM – 9:30 AM:</strong> <strong>Makawao Town:</strong> Grab warm stick donuts at Komoda Bakery & egg-and-cheese croissants at La Provence / Makawao Garden Cafe.</li>
+          <li class="xplorie-stop"><strong>10:30 AM – 12:00 PM:</strong> <strong>Maui Pineapple Farm Tour</strong> in Haliʻimaile (Xplorie 100% Free Admission). Receive airport-packaged sweet pineapple.</li>
+          <li><strong>12:15 PM – 1:15 PM:</strong> <strong>Lunch at Haliʻimaile General Store:</strong> Coconut vegetable curry, burrata caprese salad, and vegetarian pasta.</li>
+          <li><strong>1:45 PM – 4:30 PM:</strong> Return to condo for an afternoon recharge nap and oceanfront pool relaxation.</li>
+          <li><strong>5:30 PM:</strong> <strong>Sunset Oceanfront BBQ:</strong> Grill veggie/cheese burgers, halloumi, corn on the cob, and bell peppers on the condo grills.</li>
         </ul>
+        <div class="veg-box" contenteditable="true">
+          <strong>🥗 Day 2 Food Plan:</strong> Komoda Bakery (stick donuts/guava pastries) | La Provence (egg & cheese quiches) | Haliʻimaile General Store (coconut veg curry & burrata salad) | Condo Oceanfront Veg BBQ.
+        </div>
         <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Have Recreation.gov sunrise QR code and photo ID ready for national park gate entry. Pack full winter jackets and closed-toe shoes.
+          <strong>Things to Remember Today:</strong> Have Recreation.gov sunrise QR code and photo ID ready. Pack winter coats, beanies, and gloves.
         </div>
       </div>
 
       <!-- Day 3 -->
       <div class="card">
-        <h2>Day 3: Tue, Oct 27 — Road to Hāna & Pīpīwai Trail <span class="badge">Expedition</span></h2>
+        <h2>Day 3: Tue, Oct 27 — Road to Hāna & Pīpīwai Trail <span class="badge">Expedition Day</span></h2>
         <div class="day-meta">
           <span>🚗 <strong>Drive:</strong> Full Day (Paved Out-and-Back)</span>
           <span>⏰ <strong>Departure:</strong> 5:30 AM</span>
@@ -349,132 +412,327 @@
           <li><strong>7:15 AM:</strong> Quick photo stop at Honomanū Bay Overlook (Mile Marker 13–14).</li>
           <li><strong>7:45 AM – 8:30 AM:</strong> Keʻanae Peninsula: Watch crashing surf and grab warm loaves from Aunt Sandy's Banana Bread.</li>
           <li><strong>9:00 AM – 11:30 AM:</strong> Waiʻānapanapa State Park: Black sand beach, sea arches, and blowholes.</li>
-          <li><strong>11:45 AM – 12:30 PM:</strong> Hāna Town: Lunch break at local food trucks.</li>
+          <li><strong>11:45 AM – 12:30 PM:</strong> Hāna Town: Lunch break with prepped cooler sandwiches and organic vegan coconut ice cream at Coconut Glen's.</li>
           <li><strong>1:00 PM – 3:15 PM:</strong> Kīpahulu District: Hike Pīpīwai Trail (Giant Banyan, bamboo forest boardwalk, 400-ft Waimoku Falls).</li>
           <li><strong>3:30 PM:</strong> Begin return drive along paved Hāna Highway back toward Pāʻia in full daylight.</li>
-          <li><strong>5:30 PM – 6:00 PM:</strong> Arrive back at condo before dark for dinner and rest.</li>
+          <li><strong>5:30 PM – 6:30 PM:</strong> <strong>Dinner at Flatbread Company (Pāʻia):</strong> Organic wood-fired pizzas with Maui goat cheese, fire-roasted vegetables, and local herb salads.</li>
         </ul>
+        <div class="veg-box" contenteditable="true">
+          <strong>🥗 Day 3 Food Plan:</strong> Aunt Sandy's Banana Bread | Prepped egg salad cooler lunch | Coconut Glen's (100% vegan coconut ice cream) | Flatbread Company Pāʻia (wood-fired Maui goat cheese veggie pizzas).
+        </div>
         <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Download offline Google Maps before leaving. National park pass from Haleakalā is valid at Kīpahulu. Turn around at trail—do NOT drive the unpaved back road.
+          <strong>Things to Remember Today:</strong> Pack cooler with egg salad sandwiches, snacks, and water. Download offline Google Maps. Turn around at trail—do NOT drive unpaved back road.
         </div>
       </div>
 
       <!-- Day 4 -->
       <div class="card">
-        <h2>Day 4: Wed, Oct 28 — West Maui & Kaʻanapali Coast <span class="badge">West Maui</span></h2>
+        <h2>Day 4: Wed, Oct 28 — Dragon Fruit Farm Alpaca Tour & West Maui Coast <span class="badge-xplorie">✨ Xplorie Free Pass #2</span></h2>
         <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> ~40 mins north along Route 30</span>
-          <span>🌊 <strong>Focus:</strong> Coastal walks & viewpoints</span>
+          <span>🚗 <strong>Drive:</strong> ~20 mins to Lahaina / ~35 mins to Kapalua</span>
+          <span>🌺 <strong>Focus:</strong> Alpacas, dragon fruit & coastal trail</span>
+        </div>
+        <div class="xplorie-highlight-box">
+          <strong>🎟️ Xplorie 100% Free Activity: Maui Dragon Fruit Farm Alpaca Tour ($55+ Value)</strong><br>
+          Guided walking tour through a 27-acre USDA-certified organic dragon fruit & tropical fruit farm in the West Maui mountains. Meet, pet, and feed friendly alpacas, sheep, and bunnies with fresh organic fruit tastings and panoramic ocean views!
         </div>
         <ul class="timeline" contenteditable="true">
-          <li><strong>9:00 AM:</strong> Scenic drive north along coastal cliffs.</li>
-          <li><strong>10:00 AM – 12:00 PM:</strong> Walk the paved, scenic Kapalua Coastal Trail (ironwood groves, lava tidepools, ocean views).</li>
-          <li><strong>12:30 PM – 2:30 PM:</strong> Kaʻanapali Beachwalk and Whalers Village for lunch and shopping.</li>
-          <li><strong>3:00 PM – 4:30 PM:</strong> Scenic drive to coastal overlooks at Honolua Bay & Nakalele Blowhole.</li>
-          <li><strong>Evening:</strong> Return down coast for dinner in Kihei.</li>
+          <li><strong>9:00 AM – 10:15 AM:</strong> Quick breakfast at Choice Health Bar (acai bowls & egg avocado toast), then drive up Punakea Loop.</li>
+          <li class="xplorie-stop"><strong>10:30 AM – 12:00 PM:</strong> <strong>Maui Dragon Fruit Farm Alpaca Tour</strong> (Xplorie 100% Free Admission): Feed alpacas, sample ripe dragon fruit, and enjoy sweeping views of Lanai & Molokai.</li>
+          <li><strong>12:30 PM – 2:00 PM:</strong> <strong>Lunch at Monkeypod Kitchen (Whalers Village):</strong> Hamakua mushroom & truffle oil pizza, hand-made gnocchi with macadamia pesto, and mai tais.</li>
+          <li><strong>2:30 PM – 4:30 PM:</strong> Scenic coastal drive north: Walk the scenic paved Kapalua Coastal Trail and view Honolua Bay overlook.</li>
+          <li><strong>6:00 PM:</strong> <strong>Dinner at Star Noodle (Lahaina):</strong> Sweet miso glazed eggplant, garlic noodles, vegetarian pad thai with egg & tofu, and hot malasadas.</li>
         </ul>
+        <div class="veg-box" contenteditable="true">
+          <strong>🥗 Day 4 Food Plan:</strong> Choice Health Bar (acai bowls & avo toast) | Monkeypod Kitchen (Hamakua mushroom pizza & truffle fries) | Star Noodle (garlic noodles, miso eggplant & veg pad thai).
+        </div>
         <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Wear comfortable walking sandals/shoes and apply reef-safe sunscreen.
+          <strong>Things to Remember Today:</strong> Wear closed-toe shoes for farm and alpaca pastures. Bring sun hat, sunglasses, and camera for alpaca selfies!
         </div>
       </div>
 
       <!-- Day 5 -->
       <div class="card">
-        <h2>Day 5: Thu, Oct 29 — Molokini Cruise & Turtle Lagoon <span class="badge-xplorie">✨ Xplorie Pass Day</span></h2>
+        <h2>Day 5: Thu, Oct 29 — Molokini Snorkel Cruise & Coastal Bike Ride <span class="badge-xplorie">✨ Xplorie Free Pass #3</span></h2>
         <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> 8 mins to Māʻalaea Harbor</span>
-          <span>🐢 <strong>Focus:</strong> Marine life & Molokini reef</span>
+          <span>🚗 <strong>Drive:</strong> 2 mins to Harbor / 15 mins to Kihei</span>
+          <span>🐢 <strong>Focus:</strong> Molokini Crater, Turtle Town & coastal cycling</span>
         </div>
         <div class="xplorie-highlight-box">
-          <strong>🎟️ Xplorie Included Activity: Calypso Catamaran Molokini Cruise ($160+ Value)</strong><br>
-          Morning excursion to Molokini Crater & Turtle Town. Features hot breakfast, lunch, complimentary snorkel gear, dual water slides, and an underwater glass-bottom viewing room!
+          <strong>🎟️ Xplorie 100% Free Activity: Calypso Molokini & Turtle Town Snorkel Adventure ($160+ Value)</strong><br>
+          Fast, stable triple-decker catamaran excursion to Molokini Crater & Turtle Town. Features hot scrambled eggs, tropical fruit platters, vegetarian garden burgers, snorkel gear, slides, and glass-bottom viewing room!
         </div>
         <ul class="timeline" contenteditable="true">
-          <li><strong>7:00 AM:</strong> Short 8-minute drive to Māʻalaea Harbor.</li>
-          <li class="xplorie-stop"><strong>7:30 AM – 11:30 AM:</strong> <strong>Calypso Catamaran Molokini Cruise</strong> (Xplorie free pass; snorkeling + glass-bottom viewing room).</li>
-          <li><strong>12:30 PM:</strong> Return to condo for fresh lunch and quick rinse.</li>
-          <li><strong>2:00 PM – 4:30 PM:</strong> Wade in the calm, protected waters of Kōʻieʻie Royal Fishpond to watch green sea turtles.</li>
-          <li><strong>5:30 PM:</strong> Golden hour stroll along Sugar Beach or Keawakapu Beach.</li>
+          <li><strong>7:00 AM:</strong> Walk or 2-minute drive to Māʻalaea Harbor (Slip #76).</li>
+          <li class="xplorie-stop"><strong>7:30 AM – 11:30 AM:</strong> <strong>Calypso Molokini & Turtle Town Snorkel Adventure</strong> (Xplorie 100% Free Admission; vegetarian lunch & snorkel gear included).</li>
+          <li><strong>12:30 PM:</strong> Return to condo for fresh rinse and relaxation.</li>
+          <li><strong>2:00 PM – 3:30 PM:</strong> <strong>Coastal Cruiser / E-Bike Ride:</strong> Scenic ride along South Kihei beachfront and Kalama Park lookouts. Grab fresh malasadas at Sugar Beach Bake Shop.</li>
+          <li><strong>3:45 PM – 5:00 PM:</strong> Shoreline walk & turtle spotting along Sugar Beach / Haycraft Park.</li>
+          <li><strong>6:00 PM:</strong> <strong>Dinner at South Maui Gardens (Kihei):</strong> Thai Food by Pranee (tofu pad thai, yellow curry) or Blue Door Pizza (sourdough Neapolitan cheese pizzas).</li>
         </ul>
+        <div class="veg-box" contenteditable="true">
+          <strong>🥗 Day 5 Food Plan:</strong> Calypso Onboard Breakfast & Veg Burgers | Sugar Beach Bake Shop (lilikoi malasadas) | South Maui Gardens (tofu pad thai & sourdough pizza).
+        </div>
         <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Take ginger chews/Dramamine 30 minutes before boarding boat if sensitive to motion. Bring beach towels and reef-safe sunscreen.
+          <strong>Things to Remember Today:</strong> Take Dramamine/ginger 30 mins before boarding if needed. Bring beach towels and reef-safe sunscreen.
         </div>
       </div>
 
       <!-- Day 6 -->
       <div class="card">
-        <h2>Day 6: Fri, Oct 30 — ʻĪao Valley & Ulua Beach Snorkeling <span class="badge">Rainforest & Snorkel</span></h2>
+        <h2>Day 6: Fri, Oct 30 — ʻĪao Valley, Ulua Snorkel & Drums of the Pacific Luʻau <span class="badge-xplorie">✨ Xplorie Free Pass #4</span></h2>
         <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> 20 mins to ʻĪao / 15 mins to Wailea</span>
-          <span>🤿 <strong>Focus:</strong> Walk-in Coral Reef & Rainforest</span>
+          <span>🚗 <strong>Drive:</strong> 15 mins to ʻĪao / 20 mins to Wailea / West Maui</span>
+          <span>🔥 <strong>Evening:</strong> Drums of the Pacific or Gilligan's Island Luʻau</span>
+        </div>
+        <div class="xplorie-highlight-box">
+          <strong>🎟️ Xplorie 100% Free Activity: Authentic Polynesian Luʻau ($180+ Value)</strong><br>
+          Choose between <strong>Drums of the Pacific Luʻau</strong> (oceanfront in Kaʻanapali) or <strong>Gilligan's Island Luʻau</strong> (Maui Nui Golf Club in Kihei). Includes traditional lei greeting, vegetarian-friendly Polynesian buffet feast, open bar cocktails, hula, and fire-knife dancing!
         </div>
         <ul class="timeline" contenteditable="true">
-          <li><strong>9:00 AM – 11:30 AM:</strong> Paved, scenic walk at ʻĪao Valley State Monument beneath the 1,200-ft emerald needle.</li>
-          <li><strong>12:00 PM – 1:30 PM:</strong> Casual lunch in historic Wailuku or South Kihei food trucks.</li>
-          <li><strong>2:00 PM – 4:30 PM:</strong> <strong>Walk-In Snorkeling at Ulua Beach (Wailea):</strong> Easy, sandy entry leading to a vibrant coral reef ridge separating Ulua and Mokapu bays. Home to green sea turtles, butterflyfish, humuhumunukunukuāpuaʻa, and clear calm waters.</li>
-          <li><strong>5:00 PM – 6:00 PM:</strong> Rinse off and relax along the paved Wailea Beach Path.</li>
-          <li><strong>Evening:</strong> Farewell sunset drinks and BBQ dinner on the 360° rooftop deck.</li>
+          <li><strong>9:00 AM – 11:30 AM:</strong> Paved walk at ʻĪao Valley State Monument beneath the 1,200-ft emerald needle.</li>
+          <li><strong>12:00 PM – 1:15 PM:</strong> <strong>Lunch at A Saigon Cafe (Wailuku):</strong> Lemongrass curry tofu, vegetarian egg noodles, Buddha rolls, and clay-pot mushroom tofu.</li>
+          <li><strong>1:45 PM – 3:45 PM:</strong> <strong>Walk-In Snorkeling at Ulua Beach (Wailea):</strong> Easy sandy entry to vibrant reef ridge with green sea turtles and tropical fish.</li>
+          <li><strong>4:00 PM – 4:45 PM:</strong> Return to condo to shower and change into aloha evening wear.</li>
+          <li class="xplorie-stop"><strong>5:00 PM – 8:30 PM:</strong> <strong>Drums of the Pacific Luʻau / Gilligan's Luʻau</strong> (Xplorie 100% Free Admission): Sunset cocktails, all-you-can-eat island banquet (vegetable stir-fries, chow mein, fresh fruits, poi, haupia), and fire-knife dancing!</li>
         </ul>
+        <div class="veg-box" contenteditable="true">
+          <strong>🥗 Day 6 Food Plan:</strong> A Saigon Cafe Wailuku (lemongrass tofu & veg noodles) | Luʻau Island Banquet (tropical fruit, chow mein, tofu stir-fries, Hawaiian sweet rolls & coconut pudding).
+        </div>
         <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Have ʻĪao Valley entry QR voucher downloaded. Ulua Beach has free paved parking, outdoor showers, and restrooms, but lots can fill by early afternoon—arrive by 1:45–2:00 PM.
+          <strong>Things to Remember Today:</strong> Have ʻĪao Valley QR code downloaded. Wear aloha shirts / sundresses (flat sandals recommended for luau lawn).
         </div>
       </div>
 
       <!-- Day 7 -->
       <div class="card">
-        <h2>Day 7: Sat, Oct 31 — Pāʻia Town & Departure <span class="badge">Departure</span></h2>
+        <h2>Day 7: Sat, Oct 31 — Pāʻia, Twin Falls Rainforest & Grand Sunset Departure <span class="badge">Full Day & Departure</span></h2>
         <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> 15 mins to OGG</span>
-          <span>✈️ <strong>Check-out:</strong> 10:00 AM</span>
+          <span>🚗 <strong>Drive:</strong> North Shore & Central Valley loop</span>
+          <span>✈️ <strong>Flight Departure:</strong> 9:29 PM from OGG</span>
         </div>
         <ul class="timeline" contenteditable="true">
-          <li><strong>10:00 AM:</strong> Pack up, empty fridge, and check out of Menehune Shores #421.</li>
-          <li><strong>11:00 AM – 1:30 PM:</strong> Browse shops, grab lunch in bohemian Pāʻia Town, and watch sea turtles at Hoʻokipa Beach lookout.</li>
-          <li><strong>Afternoon:</strong> Return rental car at OGG and board nonstop flight back to Seattle.</li>
+          <li><strong>10:00 AM:</strong> Pack luggage into rental car, empty fridge, and check out of Māʻalaea Banyans.</li>
+          <li><strong>10:30 AM – 1:00 PM:</strong> <strong>Historic Pāʻia Town:</strong> Stroll bohemian boutiques, art galleries, and surf shops. Lunch at Choice Health Bar or Pāʻia Bay Coffee & Bar (warm veggie panini, grain bowls, egg scrambles).</li>
+          <li><strong>1:15 PM – 2:30 PM:</strong> <strong>Hoʻokipa Beach Park & Sea Turtle Lookout:</strong> Watch world-class windsurfers and giant green sea turtles (<em>honu</em>) basking along the protected shoreline.</li>
+          <li><strong>2:45 PM – 4:30 PM:</strong> <strong>Twin Falls Rainforest Walk (Mile Marker 2):</strong> Easy walk to waterfalls. Enjoy fresh cracked coconuts and sugar cane juice at the farm stand.</li>
+          <li><strong>5:15 PM – 6:45 PM:</strong> <strong>Farewell Sunset Dinner at Cafe O'Lei at the Dunes (Kahului):</strong> Fire-roasted vegetable risotto, fettuccine alfredo, macadamia nut-crusted goat cheese salad, and sunset views.</li>
+          <li><strong>7:15 PM:</strong> Top off gas tank at Costco Kahului and return rental car at Enterprise OGG terminal.</li>
+          <li><strong>7:45 PM – 9:29 PM:</strong> Clear TSA security with ease, relax at the gate, and board your 9:29 PM flight home.</li>
         </ul>
+        <div class="veg-box" contenteditable="true">
+          <strong>🥗 Day 7 Food Plan:</strong> Choice Health Bar / Pāʻia Bay Coffee (veggie panini & grain bowls) | Twin Falls Stand (fresh coconut water & smoothies) | Cafe O'Lei at the Dunes (veg risotto & mac-nut goat cheese salad).
+        </div>
       </div>
     </div>
 
-    <!-- TAB 2: XPLORIE HUB -->
+    <!-- TAB 2: OVO-LACTO VEG & MEAL PREP HUB -->
+    <div id="food" class="tab-content">
+
+      <!-- Condo Meal Prep Strategy Card -->
+      <div class="card">
+        <h2>🍳 Condo Meal Prep & Cooking Strategy <span class="badge-veg">Smart Cooking Plan</span></h2>
+        <p style="font-size: 14px; margin-bottom: 14px; color: var(--text);">
+          Use your full condo kitchen strategically for quick breakfasts, cooler day packs, and relaxed sunset grilling so you never waste vacation time doing heavy dishes after long excursions.
+        </p>
+
+        <div class="checklist-grid">
+          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #14532d;">📦 Day 1 Arrival Prep (15 Mins)</h3>
+            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
+              <li><strong>Hard-Boil Eggs:</strong> Boil 6–8 organic eggs on Day 1 for instant grab-and-go morning protein.</li>
+              <li><strong>Cut Fresh Fruit:</strong> Slice Maui Gold pineapple and papaya into containers for quick snacks.</li>
+              <li><strong>Pack Snacks:</strong> Portion nuts, trail mix, and granola bars into hiking packs.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #14532d;">🥪 Pre-Hāna Night Prep (Day 2 PM)</h3>
+            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
+              <li><strong>Cooler Sandwiches:</strong> Assemble hearty egg salad wraps or cheese/avocado sandwiches.</li>
+              <li><strong>Chill Hydration:</strong> Freeze 2 water bottles overnight to act as ice packs in the insulated cooler bag.</li>
+              <li><strong>Beat Lines:</strong> Avoid waiting 45+ mins in Hāna food truck lines by having lunch ready to eat at the beach.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #14532d;">🔥 Oceanfront BBQ (Day 2 PM)</h3>
+            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
+              <li><strong>Grill at Condo:</strong> After the 3:30 AM sunrise ascent, avoid driving out for dinner.</li>
+              <li><strong>Menu:</strong> Grill veggie burgers, paneer/halloumi skewers, seasoned corn on the cob, and bell peppers.</li>
+              <li><strong>Sunset View:</strong> Enjoy dinner on the oceanfront lawn/lanai while watching turtles in the surf.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #14532d;">🌅 15-Min Lanai Breakfasts</h3>
+            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
+              <li><strong>Days 2, 4, 6 & 7:</strong> Quick stovetop scrambled eggs, avocado toast, and Hawaiian coffee on the lanai.</li>
+              <li><strong>Greek Yogurt Bowls:</strong> Greek yogurt topped with local honey, chia seeds, and fresh Maui pineapple.</li>
+            </ul>
+          </div>
+        </div>
+
+        <table class="custom-table" style="margin-top: 18px;">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Breakfast</th>
+              <th>Lunch</th>
+              <th>Dinner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Day 1 (Sun)</strong></td>
+              <td>Mainland / Flight</td>
+              <td>Mill House Roastery Snack</td>
+              <td><strong>Dine Out:</strong> Monsoon India</td>
+            </tr>
+            <tr>
+              <td><strong>Day 2 (Mon)</strong></td>
+              <td><strong>Grab & Go:</strong> Hard-boiled eggs & fruit</td>
+              <td><strong>Dine Out:</strong> Haliʻimaile General Store</td>
+              <td><strong>Cook at Condo:</strong> Oceanfront BBQ Grills</td>
+            </tr>
+            <tr>
+              <td><strong>Day 3 (Tue)</strong></td>
+              <td><strong>Cook at Condo:</strong> Quick toast & coffee</td>
+              <td><strong>Prepped Cooler:</strong> Egg salad wraps</td>
+              <td><strong>Dine Out:</strong> Flatbread Co. (Pāʻia)</td>
+            </tr>
+            <tr>
+              <td><strong>Day 4 (Wed)</strong></td>
+              <td><strong>Cook at Condo:</strong> Scrambled eggs & papaya</td>
+              <td><strong>Dine Out:</strong> Monkeypod Kitchen</td>
+              <td><strong>Dine Out:</strong> Star Noodle (Lahaina)</td>
+            </tr>
+            <tr>
+              <td><strong>Day 5 (Thu)</strong></td>
+              <td><em>Included on Calypso Cruise</em></td>
+              <td><em>Included on Calypso Cruise</em></td>
+              <td><strong>Dine Out:</strong> South Maui Gardens</td>
+            </tr>
+            <tr>
+              <td><strong>Day 6 (Fri)</strong></td>
+              <td><strong>Cook at Condo:</strong> Yogurt & toast</td>
+              <td><strong>Dine Out:</strong> A Saigon Cafe (Wailuku)</td>
+              <td><strong>Dine Out:</strong> Polynesian Luʻau Feast</td>
+            </tr>
+            <tr>
+              <td><strong>Day 7 (Sat)</strong></td>
+              <td><strong>Cook at Condo:</strong> Finish fridge items</td>
+              <td><strong>Dine Out:</strong> Choice Health Bar (Pāʻia)</td>
+              <td><strong>Dine Out:</strong> Cafe O'Lei at the Dunes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Restaurant & Grocery Guide Card -->
+      <div class="card">
+        <h2>🥗 100% Ovo-Lacto Vegetarian Restaurant & Grocery Guide <span class="badge-veg">Island Dining</span></h2>
+        <div class="checklist-grid">
+          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #14532d;">🛒 Groceries & Essentials</h3>
+            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
+              <li><strong>Costco Kahului:</strong> Bulk water, cartons of organic eggs, local pineapple/papaya boxes, cheeses, Hawaiian kettle chips, macadamia nuts, and cheap gas.</li>
+              <li><strong>Safeway Kahului:</strong> Fresh milk/dairy, yogurt, sandwich bread, condiments, produce, and trail snacks.</li>
+              <li><strong>Mana Foods (Pāʻia):</strong> Renowned organic natural grocery with fresh bakery goods, local fruits, and artisanal cheeses.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #14532d;">☕ Breakfast & Bakeries</h3>
+            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
+              <li><strong>Komoda Store & Bakery (Makawao):</strong> Historic stick donuts, cream puffs, and guava malasadas.</li>
+              <li><strong>La Provence (Kula):</strong> Egg-and-cheese quiches, butter croissants, and hillside views.</li>
+              <li><strong>Choice Health Bar (Lahaina/Pāʻia):</strong> Acai bowls, avocado toasts with egg, and cold-pressed juices.</li>
+              <li><strong>Sugar Beach Bake Shop (Kihei):</strong> Fresh-fried malasadas with lilikoi and coconut cream.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #14532d;">🍽️ Lunch & Casual Bites</h3>
+            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
+              <li><strong>Haliʻimaile General Store (Upcountry):</strong> Coconut vegetable curry, caprese burrata salad, and brie appetizers.</li>
+              <li><strong>Monkeypod Kitchen (Kaʻanapali):</strong> Hamakua wild mushroom & truffle pizza, hand-made gnocchi, and garlic truffle fries.</li>
+              <li><strong>A Saigon Cafe (Wailuku):</strong> Lemongrass curry tofu, vegetarian egg noodles, and Buddha rolls.</li>
+              <li><strong>Coconut Glen's (Hāna Hwy):</strong> 100% organic vegan coconut ice cream.</li>
+            </ul>
+          </div>
+
+          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #14532d;">🌅 Dinners & Sunset Feasts</h3>
+            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
+              <li><strong>Monsoon India (North Kihei):</strong> Waterfront Indian curries (paneer tikka masala, dal makhani, veg korma, garlic naan).</li>
+              <li><strong>Flatbread Company (Pāʻia):</strong> Organic wood-fired pizzas with Maui goat cheese and fire-roasted veggies.</li>
+              <li><strong>Star Noodle (Lahaina):</strong> Garlic noodles, sweet miso eggplant, and vegetarian pad thai.</li>
+              <li><strong>Cafe O'Lei at the Dunes (Kahului):</strong> Fire-roasted vegetable risotto and macadamia nut goat cheese salad.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 3: XPLORIE HUB -->
     <div id="xplorie" class="tab-content">
       <div class="card">
-        <h2>Xplorie Pass Program Overview <span class="badge-xplorie">Program Guide</span></h2>
+        <h2>Xplorie Free Passes Summary <span class="badge-xplorie">$650+ Total Free Value</span></h2>
         <p style="font-size: 14px; margin-bottom: 14px; color: var(--text);">
-          Through your stay at Menehune Shores #421 (via My Perfect Stays), you receive <strong>one complimentary adult admission per paid night</strong> to premier island activities. These passes provide over <strong>$235+ in total savings</strong>.
+          Through your stay at your condo basecamp (via My Perfect Stays), you receive <strong>one 100% complimentary adult admission per paid night</strong>. Below are your scheduled free experiences:
         </p>
 
         <div class="checklist-grid">
           <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #4338ca;">🍍 Day 2: Maui Pineapple Tour</h3>
-            <p style="font-size: 13.5px; margin-bottom: 8px;"><strong>Location:</strong> Haliʻimaile (Upcountry)</p>
-            <p style="font-size: 13.5px; margin-bottom: 8px;"><strong>Regular Value:</strong> $75+ per person</p>
-            <p style="font-size: 13.5px; margin-bottom: 8px;"><strong>Highlights:</strong> Explore historic plantation fields, taste pineapples straight from the plant, and receive an airport-ready boxed pineapple to bring home.</p>
+            <h3 style="color: #4338ca;">🍍 Day 2: Maui Pineapple Farm Tour</h3>
+            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> Haliʻimaile (Upcountry)</p>
+            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $75+ Free</p>
+            <p style="font-size: 13.5px;">Guided plantation tour, fruit tastings, and a free boxed airport pineapple souvenir.</p>
           </div>
 
           <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #4338ca;">⛵ Day 5: Calypso Molokini Cruise</h3>
-            <p style="font-size: 13.5px; margin-bottom: 8px;"><strong>Location:</strong> Māʻalaea Harbor (Slip #76)</p>
-            <p style="font-size: 13.5px; margin-bottom: 8px;"><strong>Regular Value:</strong> $160+ per person</p>
-            <p style="font-size: 13.5px; margin-bottom: 8px;"><strong>Highlights:</strong> Deluxe 4-hour morning catamaran sail to Molokini Crater & Turtle Town with snorkeling equipment, hot lunch, dual slides, and underwater glass viewing room.</p>
+            <h3 style="color: #4338ca;">🦙 Day 4: Dragon Fruit Farm Alpaca Tour</h3>
+            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> Lahaina (West Maui)</p>
+            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $55+ Free</p>
+            <p style="font-size: 13.5px;">Pet & feed alpacas, explore organic fruit orchards, and enjoy mountain/ocean views.</p>
+          </div>
+
+          <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #4338ca;">⛵ Day 5: Calypso Molokini Snorkel</h3>
+            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> Māʻalaea Harbor</p>
+            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $160+ Free</p>
+            <p style="font-size: 13.5px;">4-hr catamaran sail, breakfast, BBQ lunch, snorkel gear, slides & glass-bottom viewing room.</p>
+          </div>
+
+          <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
+            <h3 style="color: #4338ca;">🔥 Day 6: Drums of the Pacific Luʻau</h3>
+            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> Kaʻanapali or Kihei</p>
+            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $180+ Free</p>
+            <p style="font-size: 13.5px;">Traditional lei greeting, open bar cocktails, buffet feast, hula, and Samoan fire knife dancing.</p>
           </div>
         </div>
 
         <div class="callout-box" style="margin-top: 18px;">
-          <strong>Important Xplorie Rules:</strong>
+          <strong>How to Redeem:</strong>
           <ul style="margin-left: 20px; margin-top: 6px; font-size: 13.5px;">
-            <li>Passes are <strong>non-cumulative</strong> (unused daily admissions do not roll over to subsequent days).</li>
-            <li>Covers 1 free adult ticket; additional guest tickets can be purchased at checkout on the same booking.</li>
-            <li>Book in advance via the concierge link sent in your pre-arrival rental confirmation email.</li>
+            <li>Passes are <strong>non-cumulative</strong> (1 free adult admission per night). Additional guests pay standard rate on the same reservation.</li>
+            <li>Book all 4 activities ahead of time through the My Perfect Stays concierge link sent to your email.</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- TAB 3: PRE-TRIP REMINDERS -->
+    <!-- TAB 4: PRE-TRIP REMINDERS -->
     <div id="reminders" class="tab-content">
       <div class="card">
         <h2>Critical Reservation Deadlines <span class="badge">Action Items</span></h2>
         <ul class="checklist">
+          <li>
+            <input type="checkbox" id="chk_rem_xplorie_all" onchange="saveCheck(this)">
+            <label for="chk_rem_xplorie_all" contenteditable="true"><strong>Redeem All 4 Xplorie Free Passes:</strong> Book Drums of the Pacific Luʻau (Fri), Calypso Molokini Cruise (Thu), Dragon Fruit Farm Alpaca Tour (Wed), and Pineapple Tour (Mon) via your My Perfect Stays portal.</label>
+          </li>
           <li>
             <input type="checkbox" id="chk_rem1" onchange="saveCheck(this)">
             <label for="chk_rem1" contenteditable="true"><strong>Aug 27, 2026 (10:00 AM PDT):</strong> Book Haleakalā Sunrise Permit on Recreation.gov ($1 fee; releases 60 days in advance at 7:00 AM HST).</label>
@@ -488,22 +746,38 @@
             <label for="chk_rem3" contenteditable="true"><strong>Sep 30, 2026:</strong> Book ʻĪao Valley State Monument entry/parking slot on gostateparks.hawaii.gov.</label>
           </li>
           <li>
-            <input type="checkbox" id="chk_rem4" onchange="saveCheck(this)">
-            <label for="chk_rem4" contenteditable="true"><strong>Xplorie Activity Booking:</strong> Redeem complimentary tickets for Calypso Molokini Cruise and Maui Pineapple Farm Tour via My Perfect Stays concierge link.</label>
-          </li>
-          <li>
             <input type="checkbox" id="chk_rem5" onchange="saveCheck(this)">
-            <label for="chk_rem5" contenteditable="true"><strong>Rental Car Confirmation:</strong> Confirm standard SUV/sedan rental pickup at OGG (Enterprise/Sixt/Avis).</label>
+            <label for="chk_rem5" contenteditable="true"><strong>Rental Car Confirmed:</strong> Enterprise Rent-A-Car (Confirmation #2131571287) pickup Sun, Oct 25 at 1:00 PM / drop-off Sat, Oct 31 at 7:15 PM OGG.</label>
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- TAB 4: PACKING & DAY TRIP LISTS -->
+    <!-- TAB 5: PACKING & GEAR LISTS -->
     <div id="packing" class="tab-content">
       <div class="card">
         <h2>Luggage Packing Checklist <span class="badge">Master List</span></h2>
         <div class="checklist-grid">
+          <div class="checklist-section">
+            <h3>Farm & Active Footwear</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="p_f1" onchange="saveCheck(this)"><label for="p_f1" contenteditable="true">Closed-toe walking shoes (for Dragon Fruit Farm & alpaca pastures)</label></li>
+              <li><input type="checkbox" id="p5" onchange="saveCheck(this)"><label for="p5" contenteditable="true">Sturdy trail/running shoes (Pīpīwai & Twin Falls hikes)</label></li>
+              <li><input type="checkbox" id="p6" onchange="saveCheck(this)"><label for="p6" contenteditable="true">Water shoes / strapped sandals</label></li>
+              <li><input type="checkbox" id="p7" onchange="saveCheck(this)"><label for="p7" contenteditable="true">Comfortable cycling / active shorts</label></li>
+            </ul>
+          </div>
+
+          <div class="checklist-section">
+            <h3>Luau & Resort Wear</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="p_l1" onchange="saveCheck(this)"><label for="p_l1" contenteditable="true">Aloha shirt / linen button-down</label></li>
+              <li><input type="checkbox" id="p_l2" onchange="saveCheck(this)"><label for="p_l2" contenteditable="true">Tropical maxi dress / sundress</label></li>
+              <li><input type="checkbox" id="p_l3" onchange="saveCheck(this)"><label for="p_l3" contenteditable="true">Dress sandals / flat loafers (for lawn/sand)</label></li>
+              <li><input type="checkbox" id="p_l4" onchange="saveCheck(this)"><label for="p_l4" contenteditable="true">Light evening wrap / cardigan (breezy sunsets)</label></li>
+            </ul>
+          </div>
+
           <div class="checklist-section">
             <h3>Haleakalā Cold Gear</h3>
             <ul class="checklist">
@@ -515,33 +789,15 @@
           </div>
 
           <div class="checklist-section">
-            <h3>Footwear & Tropical Wear</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="p5" onchange="saveCheck(this)"><label for="p5" contenteditable="true">Sturdy running/trail shoes (Pīpīwai hike)</label></li>
-              <li><input type="checkbox" id="p6" onchange="saveCheck(this)"><label for="p6" contenteditable="true">Water shoes / strapped sandals</label></li>
-              <li><input type="checkbox" id="p7" onchange="saveCheck(this)"><label for="p7" contenteditable="true">Breathable activewear & shorts</label></li>
-              <li><input type="checkbox" id="p8" onchange="saveCheck(this)"><label for="p8" contenteditable="true">Casual evening / resort wear</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>Snorkel & Sun Protection</h3>
+            <h3>Snorkel, Sun & Tech</h3>
             <ul class="checklist">
               <li><input type="checkbox" id="p9" onchange="saveCheck(this)"><label for="p9" contenteditable="true">Snorkel mask & fin set (or rent locally)</label></li>
               <li><input type="checkbox" id="p10" onchange="saveCheck(this)"><label for="p10" contenteditable="true">Reef-safe sunscreen (Hawaii compliant)</label></li>
               <li><input type="checkbox" id="p11" onchange="saveCheck(this)"><label for="p11" contenteditable="true">Polarized sunglasses & UV rashguard</label></li>
-              <li><input type="checkbox" id="p12" onchange="saveCheck(this)"><label for="p12" contenteditable="true">Insect repellent wipes/spray (for trails)</label></li>
-              <li><input type="checkbox" id="p13" onchange="saveCheck(this)"><label for="p13" contenteditable="true">Wide-brim sun hat / baseball cap</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>Tech & Documents</h3>
-            <ul class="checklist">
+              <li><input type="checkbox" id="p12" onchange="saveCheck(this)"><label for="p12" contenteditable="true">Insect repellent wipes/spray</label></li>
               <li><input type="checkbox" id="p14" onchange="saveCheck(this)"><label for="p14" contenteditable="true">Venture X card & Government IDs</label></li>
               <li><input type="checkbox" id="p15" onchange="saveCheck(this)"><label for="p15" contenteditable="true">Car phone mount (essential for Hāna navigation)</label></li>
               <li><input type="checkbox" id="p16" onchange="saveCheck(this)"><label for="p16" contenteditable="true">Portable power bank & charging cables</label></li>
-              <li><input type="checkbox" id="p17" onchange="saveCheck(this)"><label for="p17" contenteditable="true">Dramamine / ginger chews (motion sickness)</label></li>
             </ul>
           </div>
         </div>
@@ -550,6 +806,16 @@
       <div class="card">
         <h2>Day-Trip Backpack Essentials <span class="badge">Daily Bags</span></h2>
         <div class="checklist-grid">
+          <div class="checklist-section">
+            <h3>Farm Tour & Coast Bag</h3>
+            <ul class="checklist">
+              <li><input type="checkbox" id="df1" onchange="saveCheck(this)"><label for="df1" contenteditable="true">Maui Dragon Fruit Farm reservation voucher</label></li>
+              <li><input type="checkbox" id="df2" onchange="saveCheck(this)"><label for="df2" contenteditable="true">Wide-brim hat & sunglasses for sunny fields</label></li>
+              <li><input type="checkbox" id="df3" onchange="saveCheck(this)"><label for="df3" contenteditable="true">Wet wipes / hand sanitizer (after petting animals)</label></li>
+              <li><input type="checkbox" id="df4" onchange="saveCheck(this)"><label for="df4" contenteditable="true">Refillable water bottle</label></li>
+            </ul>
+          </div>
+
           <div class="checklist-section">
             <h3>Road to Hāna Day Pack</h3>
             <ul class="checklist">
@@ -600,23 +866,23 @@
 
     function loadContent() {
       contentElements.forEach((el, index) => {
-        const saved = localStorage.getItem('maui_full_content_v2_' + index);
+        const saved = localStorage.getItem('maui_full_content_v9_' + index);
         if (saved !== null) el.innerHTML = saved;
         el.addEventListener('input', () => {
-          localStorage.setItem('maui_full_content_v2_' + index, el.innerHTML);
+          localStorage.setItem('maui_full_content_v9_' + index, el.innerHTML);
           saveIndicator.innerText = '✅ Edits saved automatically';
           setTimeout(() => { saveIndicator.innerText = '💡 Click any text to edit directly'; }, 2000);
         });
       });
 
       document.querySelectorAll('input[type="checkbox"]').forEach(chk => {
-        const checked = localStorage.getItem('maui_chk_v2_' + chk.id);
+        const checked = localStorage.getItem('maui_chk_v9_' + chk.id);
         if (checked === 'true') chk.checked = true;
       });
     }
 
     function saveCheck(chk) {
-      localStorage.setItem('maui_chk_v2_' + chk.id, chk.checked);
+      localStorage.setItem('maui_chk_v9_' + chk.id, chk.checked);
     }
 
     function resetDefaults() {
