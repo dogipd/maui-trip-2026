@@ -1,1483 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maui Vacation Master Guide & Itinerary</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maui 7-Night Itinerary | 4-1-2 Split & Birthday Celebration</title>
   <style>
     :root {
-      --primary: #0d9488;
-      --primary-dark: #0f766e;
-      --primary-light: #f0fdfa;
-      --accent: #f97316;
-      --accent-light: #fff7ed;
-      --luau-gold: #d97706;
-      --luau-bg: #fef3c7;
-      --luau-border: #f59e0b;
-      --xplorie-purple: #6366f1;
-      --xplorie-bg: #eef2ff;
-      --xplorie-border: #c7d2fe;
-      --veg-green: #16a34a;
-      --veg-bg: #f0fdf4;
-      --veg-border: #86efac;
+      --primary: #0e6476;
+      --primary-dark: #083d49;
+      --accent: #d97736;
+      --accent-light: #fef3eb;
       --bg: #f8fafc;
-      --card: #ffffff;
+      --card-bg: #ffffff;
       --text: #1e293b;
       --text-muted: #64748b;
       --border: #e2e8f0;
-      --warning: #fef3c7;
-      --warning-border: #fcd34d;
-      --warning-text: #92400e;
+      --success: #16a34a;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
       line-height: 1.6;
-      padding: 24px 16px;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 24px;
     }
 
-    .container { max-width: 980px; margin: 0 auto; }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
 
     header {
-      background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
-      padding: 32px 24px;
+      padding: 36px 32px;
       border-radius: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 25px -5px rgba(15, 118, 110, 0.25);
+      margin-bottom: 28px;
+      box-shadow: 0 10px 25px -5px rgba(14, 100, 118, 0.2);
     }
 
-    header h1 { font-size: 28px; margin-bottom: 6px; font-weight: 800; letter-spacing: -0.5px; }
-    header p { color: #99f6e4; font-size: 14px; }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
 
-    .nav-tabs {
+    header p {
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    .badge-bar {
       display: flex;
-      gap: 8px;
-      margin-bottom: 20px;
       flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 9px 15px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 13.5px;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .tab-btn:hover {
-      border-color: var(--primary);
-      color: var(--primary-dark);
-    }
-
-    .tab-btn.active {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-
-    .toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
-
-    button.action-btn {
-      background-color: white;
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-
-    button.action-btn:hover {
-      background-color: var(--primary-light);
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    .status-badge { font-size: 13px; color: var(--text-muted); }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
-    }
-
-    .card h2 {
-      font-size: 18px;
-      color: var(--primary-dark);
-      margin-bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid var(--primary-light);
-      padding-bottom: 8px;
-      flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .badge {
-      background: var(--primary-light);
-      color: var(--primary);
-      font-size: 12px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      font-weight: 700;
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
     }
 
-    .badge-xplorie {
-      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-      color: white;
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-weight: 700;
-      box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+    .badge.highlight {
+      background: var(--accent);
     }
 
-    .badge-veg {
-      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
-      color: white;
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-
-    .xplorie-highlight-box {
-      background-color: var(--xplorie-bg);
-      border-left: 4px solid var(--xplorie-purple);
-      border-radius: 8px;
-      padding: 14px 18px;
-      margin: 14px 0;
-      color: #312e81;
-      font-size: 13.5px;
-    }
-
-    .xplorie-highlight-box strong { color: #1e1b4b; }
-
-    .veg-box {
-      background-color: var(--veg-bg);
-      border-left: 4px solid var(--veg-green);
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin: 12px 0;
-      font-size: 13.5px;
-      color: #14532d;
-    }
-
-    .veg-box strong { color: #052e16; }
-
-    .callout-box {
-      background-color: var(--warning);
-      border-left: 4px solid var(--warning-border);
-      color: var(--warning-text);
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin: 12px 0;
-      font-size: 13.5px;
-    }
-
-    .callout-box strong { color: #78350f; }
-
-    .checklist-grid {
+    .grid-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
     }
 
-    .checklist-section h3 {
-      font-size: 14px;
-      color: var(--text);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 700;
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      body {
+        padding: 12px;
+      }
     }
 
-    .checklist { list-style: none; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-bottom: 24px;
+    }
 
-    .checklist li {
+    .card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 16px;
       display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 8px;
-      font-size: 14px;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
     }
 
-    .checklist input[type="checkbox"] {
-      margin-top: 4px;
-      accent-color: var(--primary);
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-    }
-
-    .timeline { list-style: none; padding-left: 4px; }
-
-    .timeline li {
-      position: relative;
-      padding-left: 22px;
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
-
-    .timeline li::before {
-      content: "";
-      position: absolute;
-      left: 2px;
-      top: 7px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--primary);
-    }
-
-    .timeline li.xplorie-stop::before {
-      background: var(--xplorie-purple);
-      box-shadow: 0 0 0 3px #c7d2fe;
-    }
-
-    .timeline li strong { color: var(--text); font-weight: 700; }
-
-    .day-meta {
-      display: flex;
-      gap: 14px;
-      margin-bottom: 12px;
-      padding: 8px 12px;
-      background: var(--primary-light);
-      border-radius: 8px;
-      font-size: 13px;
-      color: var(--primary-dark);
-      flex-wrap: wrap;
-    }
-
-    .custom-table {
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin: 14px 0;
-      font-size: 13.5px;
+      margin: 12px 0;
+      font-size: 0.92rem;
     }
 
-    .custom-table th, .custom-table td {
-      border: 1px solid var(--border);
+    th, td {
       padding: 10px 12px;
       text-align: left;
+      border-bottom: 1px solid var(--border);
     }
 
-    .custom-table th {
-      background-color: var(--primary-light);
-      color: var(--primary-dark);
-      font-weight: 700;
-    }
-
-    .custom-table tr:nth-child(even) {
-      background-color: #f8fafc;
-    }
-
-    .map-embed-container {
-      position: relative;
-      width: 100%;
-      height: 260px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin: 12px 0 16px 0;
-      border: 1px solid var(--border);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .map-embed-container iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .map-route-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #eff6ff;
-      color: #1d4ed8;
-      border: 1px solid #bfdbfe;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      margin: 8px 0 14px 0;
-      transition: all 0.2s;
-    }
-
-    .map-route-btn:hover {
-      background: #dbeafe;
-      color: #1e40af;
-      border-color: #93c5fd;
-    }
-
-    .map-link {
-      color: var(--primary-dark);
-      text-decoration: underline;
-      text-underline-offset: 2px;
+    th {
+      background-color: #f1f5f9;
       font-weight: 600;
+      color: var(--text-muted);
     }
 
-    .map-link:hover {
-      color: var(--accent);
-    }
-
-    /* Outfits Grid & Image Styling */
-    .outfit-card-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin-top: 14px;
-    }
-
-    .outfit-day-box {
-      background: #ffffff;
+    .day-card {
+      background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
-    .outfit-day-header {
+    .day-card.special {
+      border-left-color: var(--accent);
+      background: #fffdfa;
+    }
+
+    .day-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1.5px solid var(--primary-light);
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
-    .outfit-day-header h3 {
-      font-size: 16px;
-      color: var(--primary-dark);
-    }
-
-    .outfit-visual-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-
-    .outfit-photo-container {
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: #f1f5f9;
-      position: relative;
-    }
-
-    .outfit-photo-container img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s;
-    }
-
-    .outfit-photo-container img:hover {
-      transform: scale(1.02);
-    }
-
-    .outfit-caption {
-      padding: 8px 10px;
-      font-size: 12px;
+    .day-title {
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--text);
-      background: #ffffff;
-      border-top: 1px solid var(--border);
-      text-align: center;
     }
 
-    .outfit-details-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 12px;
-      background: #f8fafc;
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-size: 13.5px;
-      border: 1px solid var(--border);
+    .day-tag {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 600;
     }
 
-    .outfit-column h4 {
+    .day-tag.birthday {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .day-tag.xplorie {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .timeline li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .timeline li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .time-stamp {
+      font-weight: 700;
       color: var(--primary-dark);
-      margin-bottom: 6px;
-      font-size: 13.5px;
+      margin-right: 6px;
     }
 
-    [contenteditable="true"]:hover {
-      outline: 2px dashed #93c5fd;
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      padding: 8px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px dashed var(--border);
+      font-size: 0.92rem;
+    }
+
+    .check-box {
+      min-width: 18px;
+      height: 18px;
+      border: 2px solid var(--primary);
       border-radius: 4px;
-      cursor: text;
+      margin-top: 2px;
     }
 
-    [contenteditable="true"]:focus {
-      outline: 2px solid var(--primary);
-      background-color: #f0fdfa;
-      border-radius: 4px;
-    }
-
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-
-    @media print {
-      body { background: white; padding: 0; }
-      .nav-tabs, .toolbar, button { display: none !important; }
-      .tab-content { display: block !important; }
-      .card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
-      header { background: #0f766e; -webkit-print-color-adjust: exact; }
+    .footer-note {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
+    <!-- Header -->
     <header>
-      <h1 contenteditable="true">🌴 Maui Vacation Master Plan</h1>
-      <p contenteditable="true">October 25 – November 1, 2026 (8 Days / 7 Nights) | Basecamp: <a href="https://www.google.com/maps/search/?api=1&query=Maalaea+Banyans+Maui" target="_blank" class="map-link">Māʻalaea Banyans #314</a></p>
+      <h1>Maui 7-Night Birthday Celebration Itinerary</h1>
+      <p>October 25 – November 1, 2026 | 4-1-2 Regional Split Arc</p>
+      <div class="badge-bar">
+        <span class="badge">4 Nights Māʻalaea Basecamp</span>
+        <span class="badge">1 Night Hāna Rainforest</span>
+        <span class="badge highlight">2 Nights Andaz Wailea Luxury Finale</span>
+        <span class="badge">105,000 Hyatt Pts Redeemed</span>
+      </div>
     </header>
 
-    <div class="nav-tabs">
-      <button class="tab-btn active" onclick="switchTab('itinerary', this)">📅 Daily Itinerary</button>
-      <button class="tab-btn" onclick="switchTab('food', this)">🥗 Food & Dining Hub</button>
-      <button class="tab-btn" onclick="switchTab('xplorie', this)">🎟️ Xplorie Passes (5 Free)</button>
-      <button class="tab-btn" onclick="switchTab('outfits', this)">👔 Daily Outfits & Attire</button>
-      <button class="tab-btn" onclick="switchTab('shopping', this)">🛍️ Pre-Trip Shopping</button>
-      <button class="tab-btn" onclick="switchTab('packing', this)">🧳 Packing & Day Bags</button>
-      <button class="tab-btn" onclick="switchTab('reminders', this)">⏰ Deadlines</button>
-      <button class="tab-btn" onclick="switchTab('logistics', this)">📇 Logistics & Portal</button>
-    </div>
-
-    <div class="toolbar">
-      <div class="btn-group">
-        <button class="action-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
-        <button class="action-btn" onclick="shareTrip()">🔗 Copy Share Link</button>
-        <button class="action-btn" onclick="resetDefaults()">🔄 Reset Defaults</button>
-      </div>
-      <span class="status-badge" id="saveIndicator">💡 Click any text to edit directly</span>
-    </div>
-
-    <!-- TAB 1: ITINERARY -->
-    <div id="itinerary" class="tab-content active">
-
-      <!-- Day 1 -->
+    <!-- Overview Grid -->
+    <div class="grid-2">
+      <!-- Lodging & Points -->
       <div class="card">
-        <h2>Day 1: Sun, Oct 25 — Alaska Flight In, Costco/Safeway & Sunset Check-in <span class="badge">Arrival Day</span></h2>
-        <div class="day-meta">
-          <span>✈️ <strong>Flight:</strong> Alaska Airlines Nonstop (10:00 AM &rarr; 1:19 PM OGG)</span>
-          <span>🚗 <strong>Route:</strong> OGG &rarr; Costco/Safeway &rarr; Māʻalaea Banyans</span>
-          <span>🌅 <strong>Sunset:</strong> ~5:52 PM</span>
-        </div>
-        <a href="https://www.google.com/maps/dir/?api=1&origin=Kahului+Airport+OGG&destination=Monsoon+India+Kihei&waypoints=Costco+Wholesale+Kahului|Safeway+Kahului|Maalaea+Banyans" target="_blank" class="map-route-btn">🗺️ Open Day 1 Full Route in Google Maps</a>
-        <div class="map-embed-container">
-          <iframe title="Day 1 Route Map" loading="lazy" src="https://maps.google.com/maps?saddr=Kahului+Airport+OGG&daddr=Costco+Wholesale+Kahului+to:Safeway+Kahului+to:Maalaea+Banyans+Maui+to:Monsoon+India+Kihei&output=embed"></iframe>
-        </div>
-        <ul class="timeline" contenteditable="true">
-          <li><strong>1:19 PM:</strong> Land at <a href="https://www.google.com/maps/search/?api=1&query=Kahului+Airport+OGG" target="_blank" class="map-link">Kahului Airport (OGG)</a>, collect luggage, and ride tram to the CONRAC facility to pick up your vehicle at the Sixt counter.</li>
-          <li><strong>2:15 PM – 3:30 PM:</strong> <strong>Costco & Safeway Kahului Stock-up:</strong>
-            <br>&bull; <strong><a href="https://www.google.com/maps/search/?api=1&query=Costco+Wholesale+Kahului+Maui" target="_blank" class="map-link">Costco Wholesale (540 Haleakala Hwy)</a>:</strong> Bottled water cases, cartons of organic eggs, local fruit, cheeses, Maui Cook Kwees cookies, Hawaiian kettle chips, and cheap fuel.
-            <br>&bull; <strong><a href="https://www.google.com/maps/search/?api=1&query=Safeway+Kahului+Maui" target="_blank" class="map-link">Safeway (1090 Ho'okele St)</a>:</strong> Fresh dairy/milk, bread, yogurt, sandwich spreads, and fresh produce.</li>
-          <li><strong>3:45 PM – 4:15 PM:</strong> Drive 15 minutes south along the coast to check into <strong><a href="https://www.google.com/maps/search/?api=1&query=Maalaea+Banyans+Maui" target="_blank" class="map-link">Māʻalaea Banyans #314</a></strong>.</li>
-          <li><strong>4:30 PM – 5:15 PM:</strong> <strong>15-Minute Base Prep:</strong> Unpack groceries into full kitchen, boil 6–8 eggs for morning protein, pre-slice fruit, and chill water bottles.</li>
-          <li><strong>5:30 PM – 6:30 PM:</strong> Sunset walk along the shoreline / <a href="https://www.google.com/maps/search/?api=1&query=Haycraft+Beach+Park+Maui" target="_blank" class="map-link">Haycraft Beach Park</a> to watch sea turtles (*honu*) in the surf.</li>
-          <li><strong>7:00 PM:</strong> <strong>Welcome Dinner:</strong> Waterfront Indian dinner at <a href="https://www.google.com/maps/search/?api=1&query=Monsoon+India+Kihei+Maui" target="_blank" class="map-link">Monsoon India (North Kihei)</a> for paneer tikka masala, dal makhani, and garlic naan.</li>
-        </ul>
-        <div class="veg-box" contenteditable="true">
-          <strong>🥗 Day 1 Food Plan:</strong> In-flight snacks | Dinner at Monsoon India for waterfront vegetarian Indian curries & fresh naans.
-        </div>
-        <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Top off rental gas at Costco Kahului. Lay out warm winter jackets and shoes before sleeping early for the 3:30 AM sunrise ascent.
-        </div>
-      </div>
-
-      <!-- Day 2 -->
-      <div class="card">
-        <h2>Day 2: Mon, Oct 26 — Haleakalā Sunrise & Makawao Upcountry Stroll <span class="badge">Sunrise Day</span></h2>
-        <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> ~1 hr 40 min to summit</span>
-          <span>🌄 <strong>Sunrise:</strong> ~6:24 AM (Leave by 3:30 AM)</span>
-        </div>
-        <a href="https://www.google.com/maps/dir/?api=1&origin=Maalaea+Banyans&destination=Maalaea+Banyans&waypoints=Haleakala+Visitor+Center|T+Komoda+Store+Bakery|Alii+Kula+Lavender|Cafe+des+Amis+Paia" target="_blank" class="map-route-btn">🗺️ Open Day 2 Full Route in Google Maps</a>
-        <div class="map-embed-container">
-          <iframe title="Day 2 Route Map" loading="lazy" src="https://maps.google.com/maps?saddr=Maalaea+Banyans+Maui&daddr=Haleakala+Visitor+Center+to:T+Komoda+Store+Bakery+Makawao+to:Alii+Kula+Lavender+Farm+to:Cafe+des+Amis+Paia+to:Maalaea+Banyans+Maui&output=embed"></iframe>
-        </div>
-        <ul class="timeline" contenteditable="true">
-          <li><strong>3:30 AM:</strong> Depart condo in darkness (leverage mainland jet lag for easy early wake-up).</li>
-          <li><strong>5:15 AM – 7:00 AM:</strong> Park at summit, watch sunrise above cloud deck (35°F–40°F cold; wear jackets/beanies).</li>
-          <li><strong>8:00 AM – 10:00 AM:</strong> <strong>Historic Makawao Town:</strong> Grab warm stick donuts and cream puffs at <a href="https://www.google.com/maps/search/?api=1&query=T+Komoda+Store+Bakery+Makawao+Maui" target="_blank" class="map-link">T. Komoda Bakery</a> & egg-and-cheese croissants at <a href="https://www.google.com/maps/search/?api=1&query=La+Provence+Kula+Maui" target="_blank" class="map-link">La Provence</a> / Makawao Garden Cafe. Stroll charming Upcountry art shops. <em>(Tip: Pop into <a href="https://www.google.com/maps/search/?api=1&query=The+Maui+Cookie+Lady+Makawao" target="_blank" class="map-link">The Maui Cookie Lady</a> on Baldwin Ave for thick gourmet souvenir cookies if craving sweet gifts).</em></li>
-          <li><strong>10:30 AM – 12:00 PM:</strong> Explore scenic Kula countryside (<a href="https://www.google.com/maps/search/?api=1&query=Alii+Kula+Lavender+Farm+Maui" target="_blank" class="map-link">Aliʻi Kula Lavender Farm</a> or scenic Upcountry lookouts).</li>
-          <li><strong>12:30 PM – 1:30 PM:</strong> <strong>Lunch at <a href="https://www.google.com/maps/search/?api=1&query=Cafe+des+Amis+Paia+Maui" target="_blank" class="map-link">Cafe des Amis (Pāʻia)</a> or Kula Bistro:</strong> Savory lentil & vegetable curries, vegetarian Mediterranean crêpes, or fresh salads.</li>
-          <li><strong>2:00 PM – 4:30 PM:</strong> Return to condo for an essential afternoon recharge nap and oceanfront pool/hot tub relaxation.</li>
-          <li><strong>5:00 PM:</strong> <strong>Pre-Hāna Night Prep:</strong> Assemble egg salad wraps and chill water bottles in cooler for tomorrow's Road to Hāna drive.</li>
-          <li><strong>5:30 PM:</strong> <strong>Sunset Oceanfront BBQ:</strong> Grill veggie/cheese burgers, halloumi, corn on the cob, and bell peppers on the condo oceanfront grills.</li>
-        </ul>
-        <div class="veg-box" contenteditable="true">
-          <strong>🥗 Day 2 Food Plan:</strong> Komoda Bakery (stick donuts/guava pastries) | <a href="https://www.google.com/maps/search/?api=1&query=La+Provence+Kula+Maui" target="_blank" class="map-link">La Provence</a> / Cafe des Amis (veg crêpes & curries) | Condo Oceanfront Veg BBQ.
-        </div>
-        <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Have Recreation.gov sunrise QR code and photo ID ready. Pack winter coats, beanies, and gloves. (Pineapple tour is strategically saved for Day 7 so your boxed fruit is freshly picked right before flying home!).
-        </div>
-      </div>
-
-      <!-- Day 3 -->
-      <div class="card">
-        <h2>Day 3: Tue, Oct 27 — Road to Hāna & <a href="https://www.google.com/maps/search/?api=1&query=Pipiwai+Trail+Maui" target="_blank" class="map-link">Pīpīwai Trail</a> <span class="badge">Expedition Day</span></h2>
-        <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> Full Day (Paved Out-and-Back)</span>
-          <span>⏰ <strong>Departure:</strong> 5:30 AM</span>
-        </div>
-        <a href="https://www.google.com/maps/dir/?api=1&origin=Maalaea+Banyans&destination=Maalaea+Banyans&waypoints=Keanae+Peninsula|Waianapanapa+State+Park|Kipahulu+Visitor+Center|Flatbread+Company+Paia" target="_blank" class="map-route-btn">🗺️ Open Day 3 Full Route in Google Maps</a>
-        <div class="map-embed-container">
-          <iframe title="Day 3 Route Map" loading="lazy" src="https://maps.google.com/maps?saddr=Maalaea+Banyans+Maui&daddr=Honomanu+Bay+Overlook+to:Keanae+Peninsula+to:Waianapanapa+State+Park+to:Pipiwai+Trail+to:Flatbread+Company+Paia+to:Maalaea+Banyans+Maui&output=embed"></iframe>
-        </div>
-        <ul class="timeline" contenteditable="true">
-          <li><strong>5:30 AM:</strong> Depart condo early to beat tour vans and enjoy empty scenic roads.</li>
-          <li><strong>7:15 AM:</strong> Quick photo stop at <a href="https://www.google.com/maps/search/?api=1&query=Honomanu+Bay+Overlook+Maui" target="_blank" class="map-link">Honomanū Bay Overlook</a> (Mile Marker 13–14).</li>
-          <li><strong>7:45 AM – 8:30 AM:</strong> Keʻanae Peninsula: Watch crashing surf and grab warm loaves from <a href="https://www.google.com/maps/search/?api=1&query=Aunt+Sandys+Banana+Bread+Maui" target="_blank" class="map-link">Aunt Sandy's Banana Bread</a>.</li>
-          <li><strong>9:00 AM – 11:30 AM:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Waianapanapa+State+Park+Maui" target="_blank" class="map-link">Waiʻānapanapa State Park</a>: Black sand beach, sea arches, and blowholes.</li>
-          <li><strong>11:45 AM – 12:30 PM:</strong> Hāna Town: Lunch break with prepped cooler sandwiches and organic vegan coconut ice cream at <a href="https://www.google.com/maps/search/?api=1&query=Coconut+Glens+Hana+Highway" target="_blank" class="map-link">Coconut Glen's</a>.</li>
-          <li><strong>1:00 PM – 3:15 PM:</strong> Kīpahulu District: Hike <a href="https://www.google.com/maps/search/?api=1&query=Pipiwai+Trail+Maui" target="_blank" class="map-link">Pīpīwai Trail</a> (Giant Banyan, bamboo forest boardwalk, 400-ft Waimoku Falls).</li>
-          <li><strong>3:30 PM:</strong> Begin return drive along paved Hāna Highway back toward Pāʻia in full daylight.</li>
-          <li><strong>5:30 PM – 6:30 PM:</strong> <strong>Dinner at <a href="https://www.google.com/maps/search/?api=1&query=Flatbread+Company+Paia+Maui" target="_blank" class="map-link">Flatbread Company (Pāʻia)</a>:</strong> Organic wood-fired pizzas with Maui goat cheese, fire-roasted vegetables, and local herb salads.</li>
-        </ul>
-        <div class="veg-box" contenteditable="true">
-          <strong>🥗 Day 3 Food Plan:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Aunt+Sandys+Banana+Bread+Maui" target="_blank" class="map-link">Aunt Sandy's Banana Bread</a> | Prepped egg salad cooler lunch | <a href="https://www.google.com/maps/search/?api=1&query=Coconut+Glens+Hana+Highway" target="_blank" class="map-link">Coconut Glen's</a> (100% vegan coconut ice cream) | Flatbread Company Pāʻia (wood-fired Maui goat cheese veggie pizzas).
-        </div>
-        <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Pack cooler with egg salad sandwiches, snacks, and water. Download offline Google Maps. Turn around at trail—do NOT drive unpaved back road.
-        </div>
-      </div>
-
-      <!-- Day 4 -->
-      <div class="card">
-        <h2>Day 4: Wed, Oct 28 — Dragon Fruit Farm Alpaca Tour & West Maui Coast <span class="badge-xplorie">✨ Xplorie Free Pass #1</span></h2>
-        <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> ~20 mins to Lahaina / ~35 mins to Kapalua</span>
-          <span>🌺 <strong>Focus:</strong> Alpacas, dragon fruit & coastal trail</span>
-        </div>
-        <a href="https://www.google.com/maps/dir/?api=1&origin=Maalaea+Banyans&destination=Maalaea+Banyans&waypoints=Choice+Health+Bar+Lahaina|Maui+Dragon+Fruit+Farm|Whalers+Village|Kapalua+Coastal+Trail|Honolua+Bay" target="_blank" class="map-route-btn">🗺️ Open Day 4 Full Route in Google Maps</a>
-        <div class="map-embed-container">
-          <iframe title="Day 4 Route Map" loading="lazy" src="https://maps.google.com/maps?saddr=Maalaea+Banyans+Maui&daddr=Maui+Dragon+Fruit+Farm+Lahaina+to:Whalers+Village+Kaanapali+to:Kapalua+Coastal+Trail+to:Honolua+Bay+Overlook+to:Star+Noodle+Lahaina+to:Maalaea+Banyans+Maui&output=embed"></iframe>
-        </div>
-        <div class="xplorie-highlight-box">
-          <strong>🎟️ Xplorie 100% Free Activity: <a href="https://www.google.com/maps/search/?api=1&query=Maui+Dragon+Fruit+Farm+Lahaina" target="_blank" class="map-link">Maui Dragon Fruit Farm</a> Alpaca Tour ($55+ Value)</strong><br>
-          Guided walking tour through a 27-acre USDA-certified organic dragon fruit & tropical fruit farm in the West Maui mountains. Meet, pet, and feed friendly alpacas, sheep, and bunnies with fresh organic fruit tastings and panoramic ocean views!
-        </div>
-        <ul class="timeline" contenteditable="true">
-          <li><strong>9:00 AM – 10:15 AM:</strong> Quick breakfast at <a href="https://www.google.com/maps/search/?api=1&query=Choice+Health+Bar+Maui" target="_blank" class="map-link">Choice Health Bar</a> (acai bowls & egg avocado toast), then drive up Punakea Loop.</li>
-          <li class="xplorie-stop"><strong>10:30 AM – 12:00 PM:</strong> <strong><a href="https://www.google.com/maps/search/?api=1&query=Maui+Dragon+Fruit+Farm+Lahaina" target="_blank" class="map-link">Maui Dragon Fruit Farm</a> Alpaca Tour</strong> (Xplorie 100% Free Admission): Feed alpacas, sample ripe dragon fruit, and enjoy sweeping views of Lanai & Molokai.</li>
-          <li><strong>12:30 PM – 2:00 PM:</strong> <strong>Lunch at <a href="https://www.google.com/maps/search/?api=1&query=Monkeypod+Kitchen+Whalers+Village+Kaanapali" target="_blank" class="map-link">Monkeypod Kitchen (Whalers Village)</a>:</strong> Hamakua mushroom & truffle oil pizza, hand-made gnocchi with macadamia pesto, and mai tais. <em>(Tip: <a href="https://www.google.com/maps/search/?api=1&query=Honolulu+Cookie+Company+Whalers+Village" target="_blank" class="map-link">Honolulu Cookie Co</a> is right in Whalers Village for gift tins, and <a href="https://www.google.com/maps/search/?api=1&query=Maui+Kuia+Estate+Chocolate+Lahaina" target="_blank" class="map-link">Maui Kuʻia Estate Chocolate</a> is a quick optional stop in Lahaina foothills for local bean-to-bar chocolate).</em></li>
-          <li><strong>2:30 PM – 4:30 PM:</strong> Scenic coastal drive north: Walk the scenic paved <a href="https://www.google.com/maps/search/?api=1&query=Kapalua+Coastal+Trail+Maui" target="_blank" class="map-link">Kapalua Coastal Trail</a> and view <a href="https://www.google.com/maps/search/?api=1&query=Honolua+Bay+Overlook+Maui" target="_blank" class="map-link">Honolua Bay overlook</a>.</li>
-          <li><strong>6:00 PM:</strong> <strong>Dinner at <a href="https://www.google.com/maps/search/?api=1&query=Star+Noodle+Lahaina+Maui" target="_blank" class="map-link">Star Noodle / Kaʻanapali</a>:</strong> Sweet miso glazed eggplant, garlic noodles, vegetarian pad thai with egg & tofu, and hot malasadas.</li>
-        </ul>
-        <div class="veg-box" contenteditable="true">
-          <strong>🥗 Day 4 Food Plan:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Choice+Health+Bar+Maui" target="_blank" class="map-link">Choice Health Bar</a> (acai bowls & avo toast) | Monkeypod Kitchen (Hamakua mushroom pizza & truffle fries) | Star Noodle (garlic noodles, miso eggplant & veg pad thai).
-        </div>
-        <div class="callout-box" contenteditable="true">
-          <strong>⚠️ Verify Lahaina venues before relying on them:</strong> Star Noodle and <a href="https://www.google.com/maps/search/?api=1&query=Choice+Health+Bar+Maui" target="_blank" class="map-link">Choice Health Bar</a>'s Front St locations are in the wildfire recovery zone — confirm before visiting. <strong>Safe backups:</strong> Monkeypod Kitchen (Whalers Village, Kaʻanapali) or dining in Kāʻanapali/Kapalua.
-        </div>
-      </div>
-
-      <!-- Day 5 -->
-      <div class="card">
-        <h2>Day 5: Thu, Oct 29 — Molokini Snorkel Cruise & Kihei Relaxation <span class="badge-xplorie">✨ Xplorie Free Pass #2</span></h2>
-        <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> 2 mins to Harbor / 15 mins to Kihei</span>
-          <span>🐢 <strong>Focus:</strong> Molokini Crater & Turtle Town</span>
-        </div>
-        <a href="https://www.google.com/maps/dir/?api=1&origin=Maalaea+Banyans&destination=Maalaea+Banyans&waypoints=Maalaea+Harbor|Sugar+Beach+Bake+Shop|South+Maui+Gardens" target="_blank" class="map-route-btn">🗺️ Open Day 5 Full Route in Google Maps</a>
-        <div class="map-embed-container">
-          <iframe title="Day 5 Route Map" loading="lazy" src="https://maps.google.com/maps?saddr=Maalaea+Banyans+Maui&daddr=Maalaea+Harbor+Maui+to:Sugar+Beach+Bake+Shop+Kihei+to:South+Maui+Gardens+Kihei+to:Maalaea+Banyans+Maui&output=embed"></iframe>
-        </div>
-        <div class="xplorie-highlight-box">
-          <strong>🎟️ Xplorie 100% Free Activity: Calypso Molokini & Turtle Town Snorkel Adventure ($160+ Value)</strong><br>
-          Fast, stable triple-decker catamaran excursion to Molokini Crater & Turtle Town. Features hot scrambled eggs, tropical fruit platters, vegetarian garden burgers, snorkel gear, slides, and glass-bottom viewing room!
-        </div>
-        <ul class="timeline" contenteditable="true">
-          <li><strong>7:00 AM:</strong> Walk or 2-minute drive to <a href="https://www.google.com/maps/search/?api=1&query=Maalaea+Harbor+Maui" target="_blank" class="map-link">Māʻalaea Harbor (Slip #76)</a>.</li>
-          <li class="xplorie-stop"><strong>7:30 AM – 11:30 AM:</strong> <strong>Calypso Molokini & Turtle Town Snorkel Adventure</strong> (Xplorie 100% Free Admission; vegetarian lunch & snorkel gear included).</li>
-          <li><strong>12:30 PM:</strong> Return to condo for fresh rinse and relaxation.</li>
-          <li><strong>2:00 PM – 4:00 PM:</strong> Lazy afternoon pool time, hot tub, or oceanfront reading on the lanai.</li>
-          <li><strong>4:30 PM:</strong> Grab fresh malasadas at <a href="https://www.google.com/maps/search/?api=1&query=Sugar+Beach+Bake+Shop+Kihei" target="_blank" class="map-link">Sugar Beach Bake Shop</a> and take a sunset stroll along Sugar Beach.</li>
-          <li><strong>6:00 PM:</strong> <strong>Dinner at <a href="https://www.google.com/maps/search/?api=1&query=South+Maui+Gardens+Kihei" target="_blank" class="map-link">South Maui Gardens (Kihei)</a>:</strong> Thai Food by Pranee (tofu pad thai, yellow curry) or Blue Door Pizza (sourdough Neapolitan cheese pizzas).</li>
-        </ul>
-        <div class="veg-box" contenteditable="true">
-          <strong>🥗 Day 5 Food Plan:</strong> Calypso Onboard Breakfast & Veg Burgers | <a href="https://www.google.com/maps/search/?api=1&query=Sugar+Beach+Bake+Shop+Kihei" target="_blank" class="map-link">Sugar Beach Bake Shop</a> (lilikoi malasadas) | South Maui Gardens (tofu pad thai & sourdough pizza).
-        </div>
-        <div class="callout-box" contenteditable="true">
-          <strong>Weather backup:</strong> Late-October trade winds/swell can force Calypso to skip Molokini Crater and reroute to Coral Gardens or Turtle Town — still great snorkeling, just a different site.
-        </div>
-      </div>
-
-      <!-- Day 6 -->
-      <div class="card">
-        <h2>Day 6: Fri, Oct 30 — ʻĪao Valley, Ulua Snorkel & <a href="https://www.google.com/maps/search/?api=1&query=Drums+of+the+Pacific+Luau+Hyatt+Regency+Maui" target="_blank" class="map-link">Drums of the Pacific Luʻau</a> <span class="badge-xplorie">✨ Xplorie Free Pass #3</span></h2>
-        <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> 15 mins to ʻĪao / 20 mins to Wailea / West Maui</span>
-          <span>🔥 <strong>Evening:</strong> Drums of the Pacific or Gilligan's Island Luʻau</span>
-        </div>
-        <a href="https://www.google.com/maps/dir/?api=1&origin=Maalaea+Banyans&destination=Maalaea+Banyans&waypoints=Iao+Valley+State+Monument|A+Saigon+Cafe+Wailuku|Ulua+Beach+Park|Drums+of+the+Pacific+Luau" target="_blank" class="map-route-btn">🗺️ Open Day 6 Full Route in Google Maps</a>
-        <div class="map-embed-container">
-          <iframe title="Day 6 Route Map" loading="lazy" src="https://maps.google.com/maps?saddr=Maalaea+Banyans+Maui&daddr=Iao+Valley+State+Monument+to:A+Saigon+Cafe+Wailuku+to:Ulua+Beach+Wailea+to:Hyatt+Regency+Maui+Resort+to:Maalaea+Banyans+Maui&output=embed"></iframe>
-        </div>
-        <div class="xplorie-highlight-box">
-          <strong>🎟️ Xplorie 100% Free Activity: Authentic Polynesian Luʻau ($180+ Value)</strong><br>
-          Choose between <strong><a href="https://www.google.com/maps/search/?api=1&query=Drums+of+the+Pacific+Luau+Hyatt+Regency+Maui" target="_blank" class="map-link">Drums of the Pacific Luʻau</a></strong> (oceanfront in Kaʻanapali) or <strong>Gilligan's Island Luʻau</strong> (Maui Nui Golf Club in Kihei). Includes traditional lei greeting, vegetarian-friendly Polynesian buffet feast, open bar cocktails, hula, and fire-knife dancing!
-        </div>
-        <ul class="timeline" contenteditable="true">
-          <li><strong>9:00 AM – 11:30 AM:</strong> Paved walk at <a href="https://www.google.com/maps/search/?api=1&query=Iao+Valley+State+Monument+Maui" target="_blank" class="map-link">ʻĪao Valley State Monument</a> beneath the 1,200-ft emerald needle.</li>
-          <li><strong>12:00 PM – 1:15 PM:</strong> <strong>Lunch at <a href="https://www.google.com/maps/search/?api=1&query=A+Saigon+Cafe+Wailuku+Maui" target="_blank" class="map-link">A Saigon Cafe (Wailuku)</a>:</strong> Lemongrass curry tofu, vegetarian egg noodles, Buddha rolls, and clay-pot mushroom tofu.</li>
-          <li><strong>1:45 PM – 3:45 PM:</strong> <strong>Walk-In Snorkeling at <a href="https://www.google.com/maps/search/?api=1&query=Ulua+Beach+Wailea+Maui" target="_blank" class="map-link">Ulua Beach (Wailea)</a>:</strong> Easy sandy entry to vibrant reef ridge with green sea turtles and tropical fish.</li>
-          <li><strong>4:00 PM – 4:45 PM:</strong> Return to condo to shower and change into aloha evening wear.</li>
-          <li class="xplorie-stop"><strong>5:00 PM – 8:30 PM:</strong> <strong><a href="https://www.google.com/maps/search/?api=1&query=Drums+of+the+Pacific+Luau+Hyatt+Regency+Maui" target="_blank" class="map-link">Drums of the Pacific Luʻau</a> / Gilligan's Luʻau</strong> (Xplorie 100% Free Admission): Sunset cocktails, all-you-can-eat island banquet (vegetable stir-fries, chow mein, fresh fruits, poi, haupia), and fire-knife dancing!</li>
-        </ul>
-        <div class="veg-box" contenteditable="true">
-          <strong>🥗 Day 6 Food Plan:</strong> A Saigon Cafe Wailuku (lemongrass tofu & veg noodles) | Luʻau Island Banquet (tropical fruit, chow mein, tofu stir-fries, Hawaiian sweet rolls & coconut pudding).
-        </div>
-        <div class="callout-box" contenteditable="true">
-          <strong>Things to Remember Today:</strong> Have ʻĪao Valley QR code downloaded. Wear aloha shirts / sundresses (flat sandals recommended for luau lawn).
-        </div>
-      </div>
-
-      <!-- Day 7 -->
-      <div class="card">
-        <h2>Day 7: Sat, Oct 31 — Maui Pineapple Tour, Pāʻia, Twin Falls & Sunset Dinner <span class="badge-xplorie">✨ Xplorie Free Pass #4</span></h2>
-        <div class="day-meta">
-          <span>🚗 <strong>Drive:</strong> Upcountry & North Shore Loop</span>
-          <span>🍍 <strong>Focus:</strong> Fresh pineapple harvest, Pāʻia boutiques, sea turtles & rainforest</span>
-        </div>
-        <a href="https://www.google.com/maps/dir/?api=1&origin=Maalaea+Banyans&destination=Maalaea+Banyans&waypoints=Maui+Pineapple+Tour|Haliimaile+General+Store|Hookipa+Beach+Park|Twin+Falls+Maui|Cafe+O+Lei+at+the+Dunes" target="_blank" class="map-route-btn">🗺️ Open Day 7 Full Route in Google Maps</a>
-        <div class="map-embed-container">
-          <iframe title="Day 7 Route Map" loading="lazy" src="https://maps.google.com/maps?saddr=Maalaea+Banyans+Maui&daddr=Maui+Pineapple+Tour+Haliimaile+to:Haliimaile+General+Store+to:Hookipa+Beach+Park+to:Twin+Falls+Maui+to:Cafe+O+Lei+at+the+Dunes+to:Maalaea+Banyans+Maui&output=embed"></iframe>
-        </div>
-        <div class="xplorie-highlight-box">
-          <strong>🎟️ Xplorie 100% Free Activity: Maui Pineapple Farm Tour ($75+ Value)</strong><br>
-          Guided walking & vehicle tour of working plantation fields in Haliʻimaile. Includes tastings of extra-sweet Maui Gold pineapples and a complimentary airport-packaged pineapple souvenir to take home fresh on tomorrow's flight!
-        </div>
-        <ul class="timeline" contenteditable="true">
-          <li class="xplorie-stop"><strong>9:30 AM – 11:30 AM:</strong> <strong>Maui Pineapple Farm Tour</strong> in Haliʻimaile (Xplorie 100% Free Admission). Receive your boxed airport-packaged sweet Maui Gold pineapple.</li>
-          <li><strong>11:45 AM – 1:00 PM:</strong> <strong>Lunch at <a href="https://www.google.com/maps/search/?api=1&query=Haliimaile+General+Store+Maui" target="_blank" class="map-link">Haliʻimaile General Store</a>:</strong> Coconut vegetable curry, burrata caprese salad, and vegetarian pasta right across from the pineapple fields.</li>
-          <li><strong>1:15 PM – 2:45 PM:</strong> <strong>Historic Pāʻia Town:</strong> Stroll bohemian boutiques, surf shops, and organic cafes. Grab an iced matcha / coffee at Pāʻia Bay Coffee & Bar.</li>
-          <li><strong>3:00 PM – 3:45 PM:</strong> <strong><a href="https://www.google.com/maps/search/?api=1&query=Hookipa+Beach+Park+Maui" target="_blank" class="map-link">Hoʻokipa Beach Park</a>:</strong> Watch world-class windsurfers and giant green sea turtles (*honu*) basking on the sand.</li>
-          <li><strong>4:00 PM – 5:15 PM:</strong> <strong><a href="https://www.google.com/maps/search/?api=1&query=Twin+Falls+Maui" target="_blank" class="map-link">Twin Falls Rainforest Walk (Mile Marker 2)</a>:</strong> Easy walk to waterfalls. Enjoy fresh cracked coconuts and sugar cane juice at the farm stand.</li>
-          <li><strong>6:00 PM – 7:30 PM:</strong> <strong>Farewell Sunset Dinner at <a href="https://www.google.com/maps/search/?api=1&query=Cafe+O+Lei+at+the+Dunes+Kahului" target="_blank" class="map-link">Cafe O'Lei at the Dunes (Kahului)</a>:</strong> Fire-roasted vegetable risotto, fettuccine alfredo, macadamia nut-crusted goat cheese salad, and sunset views.</li>
-          <li><strong>8:00 PM:</strong> Return to condo to pack at your own leisure and enjoy your final oceanfront night.</li>
-        </ul>
-        <div class="veg-box" contenteditable="true">
-          <strong>🥗 Day 7 Food Plan:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Haliimaile+General+Store+Maui" target="_blank" class="map-link">Haliʻimaile General Store</a> (coconut veg curry & burrata salad) | Twin Falls Stand (fresh coconut water & smoothies) | Cafe O'Lei at the Dunes (veg risotto & mac-nut goat cheese salad).
-        </div>
-      </div>
-
-      <!-- Day 8 -->
-      <div class="card">
-        <h2>Day 8: Sun, Nov 1 — Tropical Plantation, Gas Top-off & Nonstop Flight Home <span class="badge">Departure Day</span></h2>
-        <div class="day-meta">
-          <span>🚗 <strong>Checkout:</strong> 10:00 AM strict</span>
-          <span>✈️ <strong>Flight:</strong> Alaska Airlines Nonstop (4:12 PM &rarr; 11:59 PM SEA)</span>
-        </div>
-        <a href="https://www.google.com/maps/dir/?api=1&origin=Maalaea+Banyans&destination=Kahului+Airport+OGG&waypoints=Maui+Tropical+Plantation|Costco+Gasoline+Kahului|Sixt+Rent+A+Car+Kahului" target="_blank" class="map-route-btn">🗺️ Open Day 8 Full Route in Google Maps</a>
-        <div class="map-embed-container">
-          <iframe title="Day 8 Route Map" loading="lazy" src="https://maps.google.com/maps?saddr=Maalaea+Banyans+Maui&daddr=Maui+Tropical+Plantation+Waikapu+to:Costco+Gasoline+Kahului+to:Sixt+Rent+A+Car+Kahului+Airport&output=embed"></iframe>
-        </div>
-        <ul class="timeline" contenteditable="true">
-          <li><strong>8:30 AM – 10:00 AM:</strong> Leisurely morning coffee on the lanai, cook up remaining eggs and fruit from fridge, pack suitcases (along with your freshly boxed Maui Gold pineapple!), and check out of Māʻalaea Banyans by 10:00 AM.</li>
-          <li><strong>10:30 AM – 12:30 PM:</strong> <strong><a href="https://www.google.com/maps/search/?api=1&query=Maui+Tropical+Plantation+Waikapu" target="_blank" class="map-link">Maui Tropical Plantation (Waikapū)</a>:</strong> Stroll lush botanical gardens and lagoon grounds (free walking access). Enjoy a relaxed sit-down lunch at <strong><a href="https://www.google.com/maps/search/?api=1&query=The+Mill+House+Maui+Tropical+Plantation" target="_blank" class="map-link">Café O'Lei at the Mill House</a></strong> (farm salads, flatbreads, pasta).</li>
-          <li><strong>1:00 PM – 1:30 PM:</strong> Top off rental gas at Costco Kahului (Haleakala Hwy).</li>
-          <li><strong>1:45 PM – 2:15 PM:</strong> Return car at Sixt OGG facility and ride tram to the terminal.</li>
-          <li><strong>2:15 PM – 4:12 PM:</strong> Clear TSA security with ease, relax at the gate, and board your nonstop Alaska flight back to Seattle.</li>
-        </ul>
-        <div class="veg-box" contenteditable="true">
-          <strong>🥗 Day 8 Food Plan:</strong> Condo fridge clear-out breakfast | <a href="https://www.google.com/maps/search/?api=1&query=The+Mill+House+Maui+Tropical+Plantation" target="_blank" class="map-link">Café O'Lei at the Mill House</a> lunch (organic farm salad, artisan cheese flatbreads, Hawaiian coffees).
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 2: OVO-LACTO VEG & MEAL PREP HUB -->
-    <div id="food" class="tab-content">
-      <div class="card">
-        <h2>🍳 Condo Meal Prep & Cooking Strategy <span class="badge-veg">Smart Cooking Plan</span></h2>
-        <p style="font-size: 14px; margin-bottom: 14px; color: var(--text);">
-          Use your full condo kitchen strategically for quick breakfasts, cooler day packs, and relaxed sunset grilling so you never waste vacation time doing heavy dishes after long excursions.
-        </p>
-
-        <div class="checklist-grid">
-          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #14532d;">📦 Day 1 Arrival Prep (15 Mins)</h3>
-            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
-              <li><strong>Hard-Boil Eggs:</strong> Boil 6–8 organic eggs on Day 1 for instant grab-and-go morning protein.</li>
-              <li><strong>Cut Fresh Fruit:</strong> Slice papaya and melons into containers for quick snacks.</li>
-              <li><strong>Pack Snacks:</strong> Portion nuts, trail mix, and granola bars into hiking packs.</li>
-            </ul>
-          </div>
-
-          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #14532d;">🥪 Pre-Hāna Night Prep (Day 2 PM)</h3>
-            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
-              <li><strong>Cooler Sandwiches:</strong> Assemble hearty egg salad wraps or cheese/avocado sandwiches.</li>
-              <li><strong>Chill Hydration:</strong> Freeze 2 water bottles overnight to act as ice packs in the insulated cooler bag.</li>
-              <li><strong>Beat Lines:</strong> Avoid waiting 45+ mins in Hāna food truck lines by having lunch ready to eat at the beach.</li>
-            </ul>
-          </div>
-
-          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #14532d;">🔥 Oceanfront BBQ (Day 2 PM)</h3>
-            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
-              <li><strong>Grill at Condo:</strong> After the 3:30 AM sunrise ascent, avoid driving out for dinner.</li>
-              <li><strong>Menu:</strong> Grill veggie burgers, paneer/halloumi skewers, seasoned corn on the cob, and bell peppers.</li>
-              <li><strong>Sunset View:</strong> Enjoy dinner on the oceanfront lawn/lanai while watching turtles in the surf.</li>
-            </ul>
-          </div>
-
-          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #14532d;">🌅 15-Min Lanai Breakfasts</h3>
-            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
-              <li><strong>Days 2, 4, 6, 7 & 8:</strong> Quick stovetop scrambled eggs, avocado toast, and Hawaiian coffee on the lanai.</li>
-              <li><strong>Greek Yogurt Bowls:</strong> Greek yogurt topped with local honey, chia seeds, and fresh fruit.</li>
-            </ul>
-          </div>
-        </div>
-
-        <table class="custom-table" style="margin-top: 18px;">
+        <h2>🏨 Lodging & Hyatt Point Architecture</h2>
+        <table>
           <thead>
             <tr>
-              <th>Day</th>
-              <th>Breakfast</th>
-              <th>Lunch</th>
-              <th>Dinner</th>
+              <th>Segment</th>
+              <th>Property</th>
+              <th>Cost / Method</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Day 1 (Sun)</strong></td>
-              <td>In-flight / SEA</td>
-              <td>Airport / Grocery Snack</td>
-              <td><strong>Dine Out:</strong> Monsoon India</td>
+              <td><strong>Nights 1–4</strong><br>(Oct 25–29)</td>
+              <td><strong>Māʻalaea Banyans</strong><br>Oceanfront Basecamp</td>
+              <td>Condo Booking<br><em>$0 parking / Full kitchen</em></td>
             </tr>
             <tr>
-              <td><strong>Day 2 (Mon)</strong></td>
-              <td><strong>Grab & Go:</strong> Hard-boiled eggs & fruit</td>
-              <td><strong>Dine Out:</strong> Cafe des Amis / Kula Bistro</td>
-              <td><strong>Cook at Condo:</strong> Oceanfront BBQ Grills</td>
+              <td><strong>Night 5</strong><br>(Oct 29–30)</td>
+              <td><strong>Hāna-Maui Resort</strong><br>King Partial Ocean View</td>
+              <td><strong>25,000 Hyatt Pts</strong><br><em>$0 resort fee</em></td>
             </tr>
             <tr>
-              <td><strong>Day 3 (Tue)</strong></td>
-              <td><strong>Cook at Condo:</strong> Quick toast & coffee</td>
-              <td><strong>Prepped Cooler:</strong> Egg salad wraps</td>
-              <td><strong>Dine Out:</strong> Flatbread Co. (Pāʻia)</td>
-            </tr>
-            <tr>
-              <td><strong>Day 4 (Wed)</strong></td>
-              <td><strong>Cook at Condo:</strong> Scrambled eggs & fruit</td>
-              <td><strong>Dine Out:</strong> Monkeypod Kitchen</td>
-              <td><strong>Dine Out:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Star+Noodle+Lahaina+Maui" target="_blank" class="map-link">Star Noodle / Kaʻanapali</a></td>
-            </tr>
-            <tr>
-              <td><strong>Day 5 (Thu)</strong></td>
-              <td><em>Included on Calypso Cruise</em></td>
-              <td><em>Included on Calypso Cruise</em></td>
-              <td><strong>Dine Out:</strong> South Maui Gardens</td>
-            </tr>
-            <tr>
-              <td><strong>Day 6 (Fri)</strong></td>
-              <td><strong>Cook at Condo:</strong> Yogurt & toast</td>
-              <td><strong>Dine Out:</strong> <a href="https://www.google.com/maps/search/?api=1&query=A+Saigon+Cafe+Wailuku+Maui" target="_blank" class="map-link">A Saigon Cafe (Wailuku)</a></td>
-              <td><strong>Dine Out:</strong> Polynesian Luʻau Feast</td>
-            </tr>
-            <tr>
-              <td><strong>Day 7 (Sat)</strong></td>
-              <td><strong>Cook at Condo:</strong> Scrambled eggs & toast</td>
-              <td><strong>Dine Out:</strong> <a href="https://www.google.com/maps/search/?api=1&query=Haliimaile+General+Store+Maui" target="_blank" class="map-link">Haliʻimaile General Store</a></td>
-              <td><strong>Dine Out:</strong> Cafe O'Lei at the Dunes</td>
-            </tr>
-            <tr>
-              <td><strong>Day 8 (Sun)</strong></td>
-              <td><strong>Cook at Condo:</strong> Clear fridge leftovers</td>
-              <td><strong>Dine Out:</strong> <a href="https://www.google.com/maps/search/?api=1&query=The+Mill+House+Maui+Tropical+Plantation" target="_blank" class="map-link">Café O'Lei at the Mill House</a></td>
-              <td>In-flight / Seattle</td>
+              <td><strong>Nights 6–7</strong><br>(Oct 30–Nov 1)</td>
+              <td><strong>Andaz Maui at Wailea</strong><br>1 King Standard Room</td>
+              <td><strong>80,000 Hyatt Pts</strong><br><em>$0 resort fee (~$123 valet)</em></td>
             </tr>
           </tbody>
         </table>
-      </div>
-
-      <div class="card">
-        <h2>🥗 100% Ovo-Lacto Vegetarian Restaurant & Grocery Guide <span class="badge-veg">Island Dining</span></h2>
-        <div class="checklist-grid">
-          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #14532d;">🛒 Groceries & Essentials</h3>
-            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
-              <li><strong>Costco Kahului:</strong> Bulk water, cartons of organic eggs, local fruit boxes, cheeses, Hawaiian kettle chips, macadamia nuts, and cheap gas.</li>
-              <li><strong>Safeway Kahului:</strong> Fresh milk/dairy, yogurt, sandwich bread, condiments, produce, and trail snacks.</li>
-              <li><strong>Mana Foods (Pāʻia):</strong> Renowned organic natural grocery with fresh bakery goods, local fruits, and artisanal cheeses.</li>
-            </ul>
-          </div>
-
-          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #14532d;">☕ Breakfast & Bakeries</h3>
-            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
-              <li><strong>Komoda Store & Bakery (Makawao):</strong> Historic stick donuts, cream puffs, and guava malasadas.</li>
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=La+Provence+Kula+Maui" target="_blank" class="map-link">La Provence</a> (Kula):</strong> Egg-and-cheese quiches, butter croissants, and hillside views.</li>
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Choice+Health+Bar+Maui" target="_blank" class="map-link">Choice Health Bar</a> (Lahaina/Pāʻia):</strong> Acai bowls, avocado toasts with egg, and cold-pressed juices.</li>
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Sugar+Beach+Bake+Shop+Kihei" target="_blank" class="map-link">Sugar Beach Bake Shop</a> (Kihei):</strong> Fresh-fried malasadas with lilikoi and coconut cream.</li>
-            </ul>
-          </div>
-
-          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #14532d;">🍪 Cookies, Chocolates & Sweet Gifts</h3>
-            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=The+Maui+Cookie+Lady+Makawao" target="_blank" class="map-link">The Maui Cookie Lady</a> (Makawao):</strong> Famous 6-oz thick stuffed gourmet cookies (Da Half Baked, Lilikoi, Kona Coffee). Perfect Upcountry stop on Day 2.</li>
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Maui+Kuia+Estate+Chocolate+Lahaina" target="_blank" class="map-link">Maui Kuʻia Estate Chocolate</a> (Lahaina):</strong> 100% solar-powered bean-to-bar chocolate factory in West Maui foothills. Great chocolate gift squares on Day 4.</li>
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Honolulu+Cookie+Company+Whalers+Village" target="_blank" class="map-link">Honolulu Cookie Co</a> (Whalers Village):</strong> Iconic pineapple-shaped chocolate-dipped shortbread cookies in gift tins (Day 4).</li>
-              <li><strong>Maui Cook Kwees (Costco/Safeway):</strong> Crispy traditional macadamia nut shortbread cookies packaged in multi-packs for easy sharing.</li>
-            </ul>
-          </div>
-
-          <div class="checklist-section" style="background: var(--veg-bg); border: 1px solid var(--veg-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #14532d;">🍽️ Lunch & Casual Bites</h3>
-            <ul style="margin-left: 18px; font-size: 13.5px; line-height: 1.7;">
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Haliimaile+General+Store+Maui" target="_blank" class="map-link">Haliʻimaile General Store</a> (Upcountry):</strong> Coconut vegetable curry, caprese burrata salad, and brie appetizers (Day 7).</li>
-              <li><strong>Monkeypod Kitchen (Kaʻanapali):</strong> Hamakua wild mushroom & truffle pizza, hand-made gnocchi, and garlic truffle fries (Day 4).</li>
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=A+Saigon+Cafe+Wailuku+Maui" target="_blank" class="map-link">A Saigon Cafe (Wailuku)</a>:</strong> Lemongrass curry tofu, vegetarian egg noodles, and Buddha rolls (Day 6).</li>
-              <li><strong><a href="https://www.google.com/maps/search/?api=1&query=Coconut+Glens+Hana+Highway" target="_blank" class="map-link">Coconut Glen's</a> (Hāna Hwy):</strong> 100% organic vegan coconut ice cream (Day 3).</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 3: XPLORIE HUB -->
-    <div id="xplorie" class="tab-content">
-      <div class="card">
-        <h2>Xplorie Free Passes Summary <span class="badge-xplorie">5 Free Passes ($750+ Total Free Value)</span></h2>
-        <p style="font-size: 14px; margin-bottom: 14px; color: var(--text);">
-          Through your 7 paid nights at Māʻalaea Banyans (via My Perfect Stays), you receive <strong>one 100% complimentary adult admission per paid night</strong>. Below are your scheduled free experiences:
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
+          <strong>Points Summary:</strong> 105,000 pts redeemed from Chase &rarr; <strong>15,000 pts retained</strong> in Hyatt balance.
         </p>
-
-        <div class="checklist-grid">
-          <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #4338ca;">🦙 Pass #1: Dragon Fruit Alpaca Tour (Wed, Oct 28)</h3>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> Lahaina (West Maui)</p>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $55+ Free</p>
-            <p style="font-size: 13.5px;">Pet & feed alpacas, explore organic fruit orchards, and enjoy mountain/ocean views.</p>
-          </div>
-
-          <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #4338ca;">⛵ Pass #2: Calypso Molokini Snorkel (Thu, Oct 29)</h3>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> Māʻalaea Harbor (2 min from condo)</p>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $160+ Free</p>
-            <p style="font-size: 13.5px;">4-hr catamaran sail, breakfast, BBQ lunch, snorkel gear, slides & glass-bottom viewing room.</p>
-          </div>
-
-          <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #4338ca;">🔥 Pass #3: <a href="https://www.google.com/maps/search/?api=1&query=Drums+of+the+Pacific+Luau+Hyatt+Regency+Maui" target="_blank" class="map-link">Drums of the Pacific Luʻau</a> (Fri, Oct 30)</h3>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> Kaʻanapali or Kihei</p>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $180+ Free</p>
-            <p style="font-size: 13.5px;">Traditional lei greeting, open bar cocktails, buffet feast, hula, and Samoan fire knife dancing.</p>
-          </div>
-
-          <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #4338ca;">🍍 Pass #4: Maui Pineapple Tour (Sat, Oct 31)</h3>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> Haliʻimaile (Upcountry)</p>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $75+ Free</p>
-            <p style="font-size: 13.5px;">Guided plantation tour, tastings, and a freshly boxed airport pineapple right before flight home.</p>
-          </div>
-
-          <div class="checklist-section" style="background: var(--xplorie-bg); border: 1px solid var(--xplorie-border); padding: 16px; border-radius: 12px;">
-            <h3 style="color: #4338ca;">🚲 Pass #5: Coastal E-Bike / Extra Activity</h3>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Location:</strong> South Maui Coast</p>
-            <p style="font-size: 13.5px; margin-bottom: 6px;"><strong>Pass Value:</strong> $65+ Free</p>
-            <p style="font-size: 13.5px;">Electric bike rental or snorkel gear package along the South Maui coastline.</p>
-          </div>
-        </div>
-
-        <div class="callout-box" style="margin-top: 18px;">
-          <strong>How to Redeem & Contact Xplorie:</strong>
-          <ul style="margin-left: 20px; margin-top: 6px; font-size: 13.5px; line-height: 1.7;">
-            <li><strong>Online Portal:</strong> <a href="https://bookactivities.com/mylink" target="_blank" style="color: #78350f; font-weight: 700;">bookactivities.com/mylink</a></li>
-            <li><strong>Xplorie Phone:</strong> (850) 517-9291 · <strong>Email:</strong> MyLink@xplorie.com</li>
-            <li>Passes are <strong>non-cumulative</strong> (1 free adult admission per night). Additional guests pay standard rate on the same reservation.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 4: DAILY OUTFITS & ATTIRE -->
-    <div id="outfits" class="tab-content">
-      <div class="card">
-        <h2>👔 Daily Couple's Outfit & Style Guide <span class="badge">Visual References</span></h2>
-        <p style="font-size: 13.5px; margin-bottom: 14px; color: var(--text);">
-          Curated visual lookbook and detailed apparel recommendations for each day's distinct climate and activities for both you and your wife:
-        </p>
-
-        <div class="outfit-card-grid">
-
-          <!-- Day 1 Outfit -->
-          <div class="outfit-day-box">
-            <div class="outfit-day-header">
-              <h3>Day 1 (Sun, Oct 25) — Flight Travel & Sunset Arrival</h3>
-              <span class="badge">Travel & Smart Resort</span>
-            </div>
-            <div class="outfit-visual-row">
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Her Travel & Resort Outfit">
-                <div class="outfit-caption">Her: Breezy Linen Travel Set / Sundress</div>
-              </div>
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="His Travel & Casual Resort Outfit">
-                <div class="outfit-caption">Him: Chinos / Linen Shorts & Polo</div>
-              </div>
-            </div>
-            <div class="outfit-details-grid">
-              <div class="outfit-column">
-                <h4>For You:</h4>
-                <p>Flight stretch joggers or lightweight chinos with a soft tee and zip hoodie (cabin AC). Change at condo into linen shorts, polo/casual tee, and OluKai flip-flops for Monsoon India waterfront dinner.</p>
-              </div>
-              <div class="outfit-column">
-                <h4>For Your Wife:</h4>
-                <p>Comfy layered travel lounge set or stretch jumpsuit with light scarf. Change into a flowy tropical midi dress or linen culottes and supportive flat sandals for sunset.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 2 Outfit -->
-          <div class="outfit-day-box">
-            <div class="outfit-day-header">
-              <h3>Day 2 (Mon, Oct 26) — Haleakalā 3:30 AM Sunrise & Upcountry</h3>
-              <span class="badge" style="background:#fee2e2; color:#991b1b;">Cold Summit (35°F) &rarr; Mild Upcountry</span>
-            </div>
-            <div class="outfit-visual-row">
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" alt="Her Warm Puffer and Beanie Outfit">
-                <div class="outfit-caption">Her: Layered Puffer Jacket, Beanie & Leggings</div>
-              </div>
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=600&q=80" alt="His Warm Windbreaker and Beanie Outfit">
-                <div class="outfit-caption">Him: Thermal Layers, Warm Jacket & Runners</div>
-              </div>
-            </div>
-            <div class="outfit-details-grid">
-              <div class="outfit-column">
-                <h4>For You:</h4>
-                <p><strong>Summit:</strong> Thermal base or joggers, fleece hoodie, warm puffer jacket/windbreaker, knit beanie, light gloves, socks & sneakers. <strong>Upcountry:</strong> Remove puffer in car; explore Makawao in long pants & shirt. <strong>Evening:</strong> BBQ shorts & tee.</p>
-              </div>
-              <div class="outfit-column">
-                <h4>For Your Wife:</h4>
-                <p><strong>Summit:</strong> Fleece-lined leggings, thermal top, insulated down jacket, warm knit hat, scarf/gloves, walking sneakers. <strong>Upcountry:</strong> Cute sweater/cardigan with denim or leggings for bakery stroll.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 3 Outfit -->
-          <div class="outfit-day-box">
-            <div class="outfit-day-header">
-              <h3>Day 3 (Tue, Oct 27) — Road to Hāna & Pīpīwai Bamboo Trail</h3>
-              <span class="badge" style="background:#dcfce7; color:#15803d;">Active Rainforest & Waterfalls</span>
-            </div>
-            <div class="outfit-visual-row">
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Her Trail Activewear and Hiking Gear">
-                <div class="outfit-caption">Her: Quick-Dry Activewear & Trail Shoes</div>
-              </div>
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80" alt="His Hiking Trail Shorts and UV Gear">
-                <div class="outfit-caption">Him: Moisture-Wicking Trail Gear & Grippy Runners</div>
-              </div>
-            </div>
-            <div class="outfit-details-grid">
-              <div class="outfit-column">
-                <h4>For You:</h4>
-                <p>Moisture-wicking UPF tee, quick-dry athletic shorts with swimsuit underneath for Waiʻānapanapa black sand beach. Broken-in trail running shoes (mud-ready) for Pīpīwai 4-mile hike. Pack dry change of clothes for Pāʻia dinner.</p>
-              </div>
-              <div class="outfit-column">
-                <h4>For Your Wife:</h4>
-                <p>Quick-dry athletic shorts/leggings, moisture-wicking tank/rashguard, sports swimsuit underneath, sturdy broken-in hiking/running shoes, compact rain shell, and dry change of casual clothes for dinner.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 4 Outfit -->
-          <div class="outfit-day-box">
-            <div class="outfit-day-header">
-              <h3>Day 4 (Wed, Oct 28) — Alpaca Farm, Coastal Trail & Star Noodle</h3>
-              <span class="badge">Pasture Walk & Resort Chic</span>
-            </div>
-            <div class="outfit-visual-row">
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80" alt="Her Sundress and Sunhat">
-                <div class="outfit-caption">Her: Sun Hat, Chic Shorts & Sunset Dress</div>
-              </div>
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80" alt="His Linen Shirt and Chino Shorts">
-                <div class="outfit-caption">Him: Breathable Linen Shirt & Tailored Shorts</div>
-              </div>
-            </div>
-            <div class="outfit-details-grid">
-              <div class="outfit-column">
-                <h4>For You:</h4>
-                <p><strong>Farm & Coast:</strong> Closed-toe athletic shoes (required for alpaca dirt paths), casual shorts, sun shirt, wide-brim UPF hat. <strong>Dinner:</strong> Crisp linen button-down with tailored shorts/chinos and loafers.</p>
-              </div>
-              <div class="outfit-column">
-                <h4>For Your Wife:</h4>
-                <p><strong>Farm & Coast:</strong> Closed-toe sneakers, comfy walking shorts/romper, sun hat & shades. <strong>Dinner:</strong> Elegant resort sundress or floral maxi with flat strappy sandals.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 5 Outfit -->
-          <div class="outfit-day-box">
-            <div class="outfit-day-header">
-              <h3>Day 5 (Thu, Oct 29) — Molokini Catamaran Snorkel & Kihei</h3>
-              <span class="badge" style="background:#e0f2fe; color:#0369a1;">Ocean Snorkel & Casual Beach</span>
-            </div>
-            <div class="outfit-visual-row">
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Her Swimwear and UV Rashguard">
-                <div class="outfit-caption">Her: One-Piece Swimsuit, UV Rashguard & Kimono</div>
-              </div>
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1506152983158-b4a74a01c721?auto=format&fit=crop&w=600&q=80" alt="His Boardshorts and UV Swim Shirt">
-                <div class="outfit-caption">Him: Boardshorts, UV 50+ Rashguard & Polarized Shades</div>
-              </div>
-            </div>
-            <div class="outfit-details-grid">
-              <div class="outfit-column">
-                <h4>For You:</h4>
-                <p>Swim trunks with long-sleeve UPF 50+ rashguard, water-resistant boat shoes/flip-flops, polarized sunglasses, light windbreaker for morning sea breeze. Casual tee & shorts for food truck dinner.</p>
-              </div>
-              <div class="outfit-column">
-                <h4>For Your Wife:</h4>
-                <p>Supportive swimwear with UPF 50+ rashguard shirt, breezy beach cover-up / sarong, water-resistant sandals, sunglasses, and dry casual sundress or shorts for the afternoon.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 6 Outfit -->
-          <div class="outfit-day-box">
-            <div class="outfit-day-header">
-              <h3>Day 6 (Fri, Oct 30) — ʻĪao Valley, Ulua Snorkel & Drums of the Pacific Luʻau</h3>
-              <span class="badge" style="background:var(--luau-bg); color:var(--luau-gold);">Tropical Aloha Evening Wear</span>
-            </div>
-            <div class="outfit-visual-row">
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=600&q=80" alt="Her Tropical Luau Maxi Dress">
-                <div class="outfit-caption">Her: Vibrant Tropical Maxi Dress & Flat Sandals</div>
-              </div>
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="His Authentic Hawaiian Aloha Shirt">
-                <div class="outfit-caption">Him: Hawaiian Aloha Shirt & Tailored Chinos/Shorts</div>
-              </div>
-            </div>
-            <div class="outfit-details-grid">
-              <div class="outfit-column">
-                <h4>For You:</h4>
-                <p><strong>Daytime:</strong> Athletic shorts, running shoes for ʻĪao Valley; swimsuit + rashguard for Ulua snorkel. <strong>Luʻau:</strong> Vibrant Hawaiian Aloha button-down with lightweight chinos or tailored shorts and leather sandals/loafers.</p>
-              </div>
-              <div class="outfit-column">
-                <h4>For Your Wife:</h4>
-                <p><strong>Daytime:</strong> Activewear for morning walk; swimsuit & cover-up for reef snorkel. <strong>Luʻau:</strong> Colorful tropical maxi dress or wrap dress with flat dressy sandals (avoid thin heels for grassy lawn).</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 7 Outfit -->
-          <div class="outfit-day-box">
-            <div class="outfit-day-header">
-              <h3>Day 7 (Sat, Oct 31) — Pineapple Tour, Pāʻia, Twin Falls & Farewell Dinner</h3>
-              <span class="badge">Field Tour & Smart Farewell</span>
-            </div>
-            <div class="outfit-visual-row">
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Her Upcountry and Waterfall Outfit">
-                <div class="outfit-caption">Her: Linen Shirt, Casual Shorts & Farewell Dress</div>
-              </div>
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1484515991647-c5760fcecfc7?auto=format&fit=crop&w=600&q=80" alt="His Smart Casual Farewell Attire">
-                <div class="outfit-caption">Him: Breathable Button-Down & Chino Shorts</div>
-              </div>
-            </div>
-            <div class="outfit-details-grid">
-              <div class="outfit-column">
-                <h4>For You:</h4>
-                <p><strong>Daytime:</strong> Closed-toe walking shoes (required for pineapple plantation fields), comfortable breathable shorts, sun tee & shades. <strong>Farewell Dinner:</strong> Smart collared linen shirt with tailored chinos/shorts at Cafe O'Lei Dunes.</p>
-              </div>
-              <div class="outfit-column">
-                <h4>For Your Wife:</h4>
-                <p><strong>Daytime:</strong> Closed-toe sneakers for pineapple fields, breathable blouse & shorts, sun hat, strapped sandals for Twin Falls. <strong>Farewell Dinner:</strong> Elegant sunset blouse & trousers or midi dress.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Day 8 Outfit -->
-          <div class="outfit-day-box">
-            <div class="outfit-day-header">
-              <h3>Day 8 (Sun, Nov 1) — Plantation Gardens, Mill House Lunch & Flight Home</h3>
-              <span class="badge">Smart Travel & Cozy Flight</span>
-            </div>
-            <div class="outfit-visual-row">
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80" alt="Her Airport Return Travel Outfit">
-                <div class="outfit-caption">Her: Cozy Travel Pants, Layered Knit & Slip-Ons</div>
-              </div>
-              <div class="outfit-photo-container">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="His Airport Return Travel Outfit">
-                <div class="outfit-caption">Him: Comfortable Travel Joggers & Hoodie</div>
-              </div>
-            </div>
-            <div class="outfit-details-grid">
-              <div class="outfit-column">
-                <h4>For You:</h4>
-                <p>Comfortable long travel joggers/pants, soft breathable shirt, cozy hoodie for the evening return flight (landing 11:59 PM SEA), slip-on shoes for airport security.</p>
-              </div>
-              <div class="outfit-column">
-                <h4>For Your Wife:</h4>
-                <p>Comfortable travel pants/joggers, layered top with cozy cardigan/jacket for the late flight home, comfortable walking sneakers/flats.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 5: PRE-TRIP SHOPPING -->
-    <div id="shopping" class="tab-content">
-      <div class="card">
-        <h2>🛍️ Pre-Trip Personal Shopping List <span class="badge">Buy Before Travel</span></h2>
-        <p style="font-size: 13.5px; margin-bottom: 14px; color: var(--text);">
-          Key essentials to buy and prepare before heading to Maui. Check off items as you purchase them:
-        </p>
-        <div class="checklist-grid">
-          <div class="checklist-section">
-            <h3>☀️ Sun & Reef Protection</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="shop_1" onchange="saveCheck(this)"><label for="shop_1" contenteditable="true">Hawaii-compliant Coral Reef-Safe Sunscreen (Non-nano Zinc Oxide / Titanium Dioxide only)</label></li>
-              <li><input type="checkbox" id="shop_2" onchange="saveCheck(this)"><label for="shop_2" contenteditable="true">UV-blocking Rashguard / Swim shirt (UPF 50+)</label></li>
-              <li><input type="checkbox" id="shop_3" onchange="saveCheck(this)"><label for="shop_3" contenteditable="true">Polarized Sunglasses (cuts water glare for turtle spotting & coastal drives)</label></li>
-              <li><input type="checkbox" id="shop_4" onchange="saveCheck(this)"><label for="shop_4" contenteditable="true">Wide-brim sun hat / UPF travel cap</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>🌺 Resort Wear & Aloha Outfits</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="shop_5" onchange="saveCheck(this)"><label for="shop_5" contenteditable="true">Hawaiian / Aloha Shirts (breathable linen or lightweight cotton for luʻau & dinners)</label></li>
-              <li><input type="checkbox" id="shop_6" onchange="saveCheck(this)"><label for="shop_6" contenteditable="true">Casual & Resort Shorts (quick-dry hybrid shorts & linen walk shorts)</label></li>
-              <li><input type="checkbox" id="shop_7" onchange="saveCheck(this)"><label for="shop_7" contenteditable="true">Tropical sundresses / maxi dresses & light evening cardigans</label></li>
-              <li><input type="checkbox" id="shop_8" onchange="saveCheck(this)"><label for="shop_8" contenteditable="true">Active cycling & hiking shorts</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>🩴 Footwear & Sandal Essentials</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="shop_9" onchange="saveCheck(this)"><label for="shop_9" contenteditable="true">Comfortable Beach & Everyday Sandals (Olukai / supportive contoured flip-flops)</label></li>
-              <li><input type="checkbox" id="shop_10" onchange="saveCheck(this)"><label for="shop_10" contenteditable="true">Dress Sandals / Flat Loafers (for luʻau lawn & oceanfront dining)</label></li>
-              <li><input type="checkbox" id="shop_11" onchange="saveCheck(this)"><label for="shop_11" contenteditable="true">Water shoes / strapped sandals with traction (Teva/Chaco for wet rocky shores)</label></li>
-              <li><input type="checkbox" id="shop_12" onchange="saveCheck(this)"><label for="shop_12" contenteditable="true">Closed-toe walking / trail athletic shoes (for farm pastures & town walks)</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>📱 Travel Tech & Extras</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="shop_13" onchange="saveCheck(this)"><label for="shop_13" contenteditable="true">Magnetic / vent car phone mount (critical for hands-free Road to Hāna navigation)</label></li>
-              <li><input type="checkbox" id="shop_14" onchange="saveCheck(this)"><label for="shop_14" contenteditable="true">Waterproof phone pouch with neck lanyard (for snorkel & waterfall photos)</label></li>
-              <li><input type="checkbox" id="shop_15" onchange="saveCheck(this)"><label for="shop_15" contenteditable="true">High-capacity portable power bank & long USB cables</label></li>
-              <li><input type="checkbox" id="shop_16" onchange="saveCheck(this)"><label for="shop_16" contenteditable="true">Foldable travel tote / duffel (for boxed Maui Gold pineapple & chocolates)</label></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 6: PACKING & DAY BAGS -->
-    <div id="packing" class="tab-content">
-      <div class="card">
-        <h2>Luggage Packing Checklist <span class="badge">Master List</span></h2>
-        <div class="checklist-grid">
-          <div class="checklist-section">
-            <h3>Farm & Active Footwear</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="p_f1" onchange="saveCheck(this)"><label for="p_f1" contenteditable="true">Closed-toe walking shoes (for Dragon Fruit Farm & Pineapple fields)</label></li>
-              <li><input type="checkbox" id="p5" onchange="saveCheck(this)"><label for="p5" contenteditable="true">Sturdy trail/running shoes (Pīpīwai & Twin Falls hikes)</label></li>
-              <li><input type="checkbox" id="p6" onchange="saveCheck(this)"><label for="p6" contenteditable="true">Water shoes / strapped sandals</label></li>
-              <li><input type="checkbox" id="p7" onchange="saveCheck(this)"><label for="p7" contenteditable="true">Comfortable cycling / active shorts</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>Luau & Resort Wear</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="p_l1" onchange="saveCheck(this)"><label for="p_l1" contenteditable="true">Aloha shirt / linen button-down</label></li>
-              <li><input type="checkbox" id="p_l2" onchange="saveCheck(this)"><label for="p_l2" contenteditable="true">Tropical maxi dress / sundress</label></li>
-              <li><input type="checkbox" id="p_l3" onchange="saveCheck(this)"><label for="p_l3" contenteditable="true">Dress sandals / flat loafers (for lawn/sand)</label></li>
-              <li><input type="checkbox" id="p_l4" onchange="saveCheck(this)"><label for="p_l4" contenteditable="true">Light evening wrap / cardigan (breezy sunsets)</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>Haleakalā Cold Gear</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="p1" onchange="saveCheck(this)"><label for="p1" contenteditable="true">Puffer jacket / warm windbreaker</label></li>
-              <li><input type="checkbox" id="p2" onchange="saveCheck(this)"><label for="p2" contenteditable="true">Long pants / joggers / leggings</label></li>
-              <li><input type="checkbox" id="p3" onchange="saveCheck(this)"><label for="p3" contenteditable="true">Beanie / knit warm hat</label></li>
-              <li><input type="checkbox" id="p4" onchange="saveCheck(this)"><label for="p4" contenteditable="true">Light gloves / warm socks</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>Snorkel, Sun, Tech & Sweet Souvenirs</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="p9" onchange="saveCheck(this)"><label for="p9" contenteditable="true">Snorkel mask & fin set (or rent locally)</label></li>
-              <li><input type="checkbox" id="p10" onchange="saveCheck(this)"><label for="p10" contenteditable="true">Reef-safe sunscreen (Hawaii compliant)</label></li>
-              <li><input type="checkbox" id="p11" onchange="saveCheck(this)"><label for="p11" contenteditable="true">Polarized sunglasses & UV rashguard</label></li>
-              <li><input type="checkbox" id="p12" onchange="saveCheck(this)"><label for="p12" contenteditable="true">Insect repellent wipes/spray</label></li>
-              <li><input type="checkbox" id="p14" onchange="saveCheck(this)"><label for="p14" contenteditable="true">Credit cards & Government IDs</label></li>
-              <li><input type="checkbox" id="p15" onchange="saveCheck(this)"><label for="p15" contenteditable="true">Car phone mount (essential for Hāna navigation)</label></li>
-              <li><input type="checkbox" id="p16" onchange="saveCheck(this)"><label for="p16" contenteditable="true">Portable power bank & charging cables</label></li>
-              <li><input type="checkbox" id="p17" onchange="saveCheck(this)"><label for="p17" contenteditable="true">Foldable tote / carry-on space (for boxed Maui Gold pineapple & chocolates)</label></li>
-            </ul>
-          </div>
-        </div>
       </div>
 
+      <!-- Action Items -->
       <div class="card">
-        <h2>Day-Trip Backpack Essentials <span class="badge">Daily Bags</span></h2>
-        <div class="checklist-grid">
-          <div class="checklist-section">
-            <h3>Farm Tour & Coast Bag (Days 4 & 7)</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="df1" onchange="saveCheck(this)"><label for="df1" contenteditable="true">Farm reservation vouchers (Dragon Fruit / Pineapple Tour)</label></li>
-              <li><input type="checkbox" id="df2" onchange="saveCheck(this)"><label for="df2" contenteditable="true">Wide-brim hat & sunglasses for sunny fields</label></li>
-              <li><input type="checkbox" id="df3" onchange="saveCheck(this)"><label for="df3" contenteditable="true">Wet wipes / hand sanitizer (after petting animals / fruit tastings)</label></li>
-              <li><input type="checkbox" id="df4" onchange="saveCheck(this)"><label for="df4" contenteditable="true">Refillable water bottle & tote bag</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>Road to Hāna Day Pack (Day 3)</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="d1" onchange="saveCheck(this)"><label for="d1" contenteditable="true">Offline Google Maps downloaded on phone</label></li>
-              <li><input type="checkbox" id="d2" onchange="saveCheck(this)"><label for="d2" contenteditable="true">Cash ($20–$40 in small bills for fruit & banana bread stands)</label></li>
-              <li><input type="checkbox" id="d3" onchange="saveCheck(this)"><label for="d3" contenteditable="true"><a href="https://www.google.com/maps/search/?api=1&query=Waianapanapa+State+Park+Maui" target="_blank" class="map-link">Waiʻānapanapa State Park</a> reservation QR code</label></li>
-              <li><input type="checkbox" id="d4" onchange="saveCheck(this)"><label for="d4" contenteditable="true">National park pass / receipt for Kīpahulu gate</label></li>
-              <li><input type="checkbox" id="d5" onchange="saveCheck(this)"><label for="d5" contenteditable="true">Rain jacket / compact umbrella & bug spray</label></li>
-              <li><input type="checkbox" id="d6" onchange="saveCheck(this)"><label for="d6" contenteditable="true">Insulated cooler bag with prepped egg salad wraps & 2 frozen water bottles</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>Snorkel & Beach Bag (Days 1, 5 & 6)</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="d7" onchange="saveCheck(this)"><label for="d7" contenteditable="true">Snorkel mask, snorkel & fins</label></li>
-              <li><input type="checkbox" id="d8" onchange="saveCheck(this)"><label for="d8" contenteditable="true">Quick-dry beach towels from condo</label></li>
-              <li><input type="checkbox" id="d9" onchange="saveCheck(this)"><label for="d9" contenteditable="true">Waterproof phone pouch for reef photos</label></li>
-              <li><input type="checkbox" id="d10" onchange="saveCheck(this)"><label for="d10" contenteditable="true">Reef-safe sunscreen & dry change of clothes</label></li>
-            </ul>
-          </div>
-
-          <div class="checklist-section">
-            <h3>Haleakalā Sunrise Bag (Day 2)</h3>
-            <ul class="checklist">
-              <li><input type="checkbox" id="d11" onchange="saveCheck(this)"><label for="d11" contenteditable="true">Recreation.gov QR code & Driver's License</label></li>
-              <li><input type="checkbox" id="d12" onchange="saveCheck(this)"><label for="d12" contenteditable="true">Condo blanket or oversized beach towels for wind barrier</label></li>
-              <li><input type="checkbox" id="d13" onchange="saveCheck(this)"><label for="d13" contenteditable="true">Hot coffee thermos or warm beverage</label></li>
-              <li><input type="checkbox" id="d14" onchange="saveCheck(this)"><label for="d14" contenteditable="true">Headlamp or phone flashlight</label></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 7: PRE-TRIP REMINDERS -->
-    <div id="reminders" class="tab-content">
-      <div class="card">
-        <h2>Critical Reservation Deadlines <span class="badge">Action Items</span></h2>
+        <h2>📌 Critical Permits & Action Items</h2>
         <ul class="checklist">
           <li>
-            <input type="checkbox" id="chk_rem_xplorie_all" onchange="saveCheck(this)">
-            <label for="chk_rem_xplorie_all" contenteditable="true"><strong>Redeem 5 Xplorie Free Passes:</strong> Book Pineapple Tour (Sat), <a href="https://www.google.com/maps/search/?api=1&query=Drums+of+the+Pacific+Luau+Hyatt+Regency+Maui" target="_blank" class="map-link">Drums of the Pacific Luʻau</a> (Fri), Calypso Molokini Cruise (Thu), Dragon Fruit Farm Alpaca Tour (Wed), and E-Bike Rental via <a href="https://bookactivities.com/mylink" target="_blank">bookactivities.com/mylink</a> or (850) 517-9291.</label>
+            <div class="check-box"></div>
+            <div>
+              <strong>Modify Māʻalaea Condo:</strong> Call <em>My Perfect Stays</em> <code>(800) 295-3855</code> to adjust reservation #162705 to 4 nights (Check-out Oct 29) before Sept 25.
+            </div>
           </li>
           <li>
-            <input type="checkbox" id="chk_rem1" onchange="saveCheck(this)">
-            <label for="chk_rem1" contenteditable="true"><strong>Aug 27, 2026 (10:00 AM PDT):</strong> Book Haleakalā Sunrise Permit on Recreation.gov ($1 fee; releases 60 days in advance at 7:00 AM HST).</label>
+            <div class="check-box"></div>
+            <div>
+              <strong>Haleakalā Sunrise Permit:</strong> Monday, Oct 26 confirmed. Receipt covers Haleakalā NP Kīpahulu District entry for Friday.
+            </div>
           </li>
           <li>
-            <input type="checkbox" id="chk_rem_cancel" onchange="saveCheck(this)">
-            <label for="chk_rem_cancel" contenteditable="true"><strong>Sep 25, 2026:</strong> 100% Full Refund Cancellation Deadline for <a href="https://www.google.com/maps/search/?api=1&query=Maalaea+Banyans+Maui" target="_blank" class="map-link">Māʻalaea Banyans #314</a> (Reservation #162705).</label>
+            <div class="check-box"></div>
+            <div>
+              <strong>Waiʻānapanapa State Park:</strong> Mark calendar for <strong>Sept 29, 2026 @ 3:00 AM PDT</strong> to book Thursday afternoon slot (12:30–3:00 PM or 3:00–6:00 PM).
+            </div>
           </li>
           <li>
-            <input type="checkbox" id="chk_rem2" onchange="saveCheck(this)">
-            <label for="chk_rem2" contenteditable="true"><strong>Sep 27, 2026:</strong> Book <a href="https://www.google.com/maps/search/?api=1&query=Waianapanapa+State+Park+Maui" target="_blank" class="map-link">Waiʻānapanapa State Park</a> (Road to Hāna black sand beach) morning parking/entry voucher on gowaianapanapa.com — reservations open ~30 days ahead of the Oct 27 visit.</label>
-          </li>
-          <li>
-            <input type="checkbox" id="chk_rem3" onchange="saveCheck(this)">
-            <label for="chk_rem3" contenteditable="true"><strong>Sep 30, 2026:</strong> Book <a href="https://www.google.com/maps/search/?api=1&query=Iao+Valley+State+Monument+Maui" target="_blank" class="map-link">ʻĪao Valley State Monument</a> entry/parking slot on gostateparks.hawaii.gov.</label>
-          </li>
-          <li>
-            <input type="checkbox" id="chk_rem_portal" onchange="saveCheck(this)">
-            <label for="chk_rem_portal" contenteditable="true"><strong>Guest Portal Access:</strong> Log in to <a href="https://happystays.streamlinevrs.com/login" target="_blank">HappyStays Guest Portal</a> using Access Code: <strong>1u1i8l</strong> to view stay details, house rules, and direct host messaging.</label>
-          </li>
-          <li>
-            <input type="checkbox" id="chk_rem_arr_code" onchange="saveCheck(this)">
-            <label for="chk_rem_arr_code" contenteditable="true"><strong>Oct 22, 2026 (3 days prior):</strong> Check HappyStays Portal / Email for arrival instructions, door lockbox code, and parking details.</label>
-          </li>
-          <li>
-            <input type="checkbox" id="chk_rem5" onchange="saveCheck(this)">
-            <label for="chk_rem5" contenteditable="true"><strong>Rental Car Confirmed:</strong> Sixt Rent A Car (OGG CONRAC facility) pickup Sun, Oct 25 at 1:45 PM / drop-off Sun, Nov 1 at 2:00 PM.</label>
+            <div class="check-box"></div>
+            <div>
+              <strong>Birthday Dinner & Lūʻau:</strong> Reserve Friday birthday dinner at <em>Kaʻana Kitchen</em> / <em>Morimoto Maui</em> and Saturday tickets for <em>Te Au Moana Lūʻau</em>.
+            </div>
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- TAB 8: LOGISTICS & CONTACTS -->
-    <div id="logistics" class="tab-content">
-      <div class="card">
-        <h2>🏝️ Condo & Property Details <span class="badge">Confirmed</span></h2>
-        <p style="font-size: 13px; margin-bottom: 12px; color: var(--text-muted);">Click any value to edit. Fill these in from your My Perfect Stays confirmation email.</p>
-        <table class="custom-table">
-          <tbody>
-            <tr><th style="width: 38%;">Property & Unit</th><td contenteditable="true"><a href="https://www.google.com/maps/search/?api=1&query=Maalaea+Banyans+Maui" target="_blank" class="map-link">Māʻalaea Banyans #314</a> (1 Bedroom Oceanfront)</td></tr>
-            <tr><th>Reservation #</th><td contenteditable="true">#162705 (My Perfect Stays)</td></tr>
-            <tr><th>Street Address</th><td contenteditable="true">190 Hauoli St. #314, Wailuku, HI 96793</td></tr>
-            <tr><th>Total Booking Cost</th><td contenteditable="true">$1,685.38 (Folio includes rent, clean, tax & damage waiver)</td></tr>
-            <tr><th>Check-in / Check-out</th><td contenteditable="true">Check-in: Sun, Oct 25, 2026 @ 4:00 PM / Check-out: Sun, Nov 1, 2026 @ 10:00 AM</td></tr>
-            <tr><th>Guest Portal Login</th><td contenteditable="true"><a href="https://happystays.streamlinevrs.com/login" target="_blank" class="map-link">happystays.streamlinevrs.com/login</a> · Access Code: <strong>1u1i8l</strong></td></tr>
-            <tr><th>Access & Door Code</th><td contenteditable="true">Lockbox / keyless entry digital door code will appear in HappyStays portal 3 days prior to arrival</td></tr>
-            <tr><th>WiFi Network / Password</th><td contenteditable="true">— available in unit / arrival email —</td></tr>
-            <tr><th>Parking</th><td contenteditable="true">Free unassigned on-site parking at Māʻalaea Banyans</td></tr>
-            <tr><th>Property Host / Emergency</th><td contenteditable="true">My Perfect Stays: (800) 295-3855 · reservations@myperfectstays.com</td></tr>
-            <tr><th>Xplorie Activity Desk</th><td contenteditable="true">(850) 517-9291 · MyLink@xplorie.com · bookactivities.com/mylink</td></tr>
-            <tr><th>Cancellation Deadlines</th><td contenteditable="true">100% refund by Sep 25, 2026 (30 days prior) · 50% refund by Oct 11, 2026 (14 days prior)</td></tr>
-            <tr><th>Key Protection & Rules</th><td contenteditable="true">100% Non-Smoking (lanai/unit) · Waiver covers $1,500 accidental damage · Avoid lost keys ($150 hard / $50 card)</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card">
-        <h2>✈️ Flights & Rental Car <span class="badge">Confirmed Nonstop</span></h2>
-        <table class="custom-table">
-          <tbody>
-            <tr><th style="width: 38%;">Outbound Flight (Sun Oct 25)</th><td contenteditable="true">Alaska Airlines Nonstop · 10:00 AM &rarr; 1:19 PM OGG (6h 19m)</td></tr>
-            <tr><th>Return Flight (Sun Nov 1)</th><td contenteditable="true">Alaska Airlines Nonstop · 4:12 PM &rarr; 11:59 PM SEA (5h 47m)</td></tr>
-            <tr><th>Rental Car</th><td contenteditable="true">Sixt Rent A Car (OGG CONRAC) — Pickup Sun Oct 25, ~1:45 PM / Drop-off Sun Nov 1, ~2:00 PM</td></tr>
-            <tr><th>TSA PreCheck / KTN</th><td contenteditable="true">— add if applicable —</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card">
-        <h2>🆘 Emergency & Quick Reference <span class="badge">Keep Handy</span></h2>
-        <table class="custom-table">
-          <tbody>
-            <tr><th style="width: 38%;">Emergency</th><td>911</td></tr>
-            <tr><th>Hospital</th><td contenteditable="true">Maui Memorial Medical Center, 221 Mahalani St, Wailuku · (808) 244-9056</td></tr>
-            <tr><th>Non-Emergency Police (Maui PD)</th><td contenteditable="true">(808) 244-6400</td></tr>
-            <tr><th>Nearest Urgent Care</th><td contenteditable="true">Kaiser Permanente Maui Lani or Kihei Wailea Medical Center</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- Pass Savings Breakdown -->
+    <div class="card">
+      <h2>🎟️ Activity & Pass Value Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Day / Date</th>
+            <th>Activity</th>
+            <th>Provider / Type</th>
+            <th>Benefit Applied</th>
+            <th>Out-of-Pocket (2 Adults)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mon, Oct 26</strong></td>
+            <td>Maui Pineapple Farm Tour (11:45 AM)</td>
+            <td>Maui Pineapple Tours (Hāliʻimaile)</td>
+            <td><strong style="color: var(--success);">Xplorie 1st Free</strong></td>
+            <td>$95.00 <em>(Saved $95)</em></td>
+          </tr>
+          <tr>
+            <td><strong>Tue, Oct 27</strong></td>
+            <td>Maui Dragon Fruit Alpaca Tour (10:00 AM)</td>
+            <td>Paradise Eco Adventures (Lahaina)</td>
+            <td><strong style="color: var(--success);">Xplorie 1st Free</strong></td>
+            <td>$55.00 <em>(Saved $55)</em></td>
+          </tr>
+          <tr>
+            <td><strong>Wed, Oct 28</strong></td>
+            <td>Atlantis Submarine Dive (11:00 AM)</td>
+            <td>Atlantis Adventures (Lahaina Harbor)</td>
+            <td>Direct Booking (Non-swimmer safe)</td>
+            <td>~$296.00 <em>(2 Tickets)</em></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
+    <!-- Day by Day Schedule -->
+    <h2 style="margin-bottom: 16px; color: var(--primary-dark);">📅 Detailed Day-by-Day Master Plan</h2>
+
+    <!-- Day 1 -->
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-title">Day 1: Sunday, Oct 25 — Arrival & Basecamp Setup</span>
+        <span class="day-tag">Māʻalaea Banyans</span>
+      </div>
+      <ul class="timeline">
+        <li><span class="time-stamp">1:19 PM:</span> Arrive at Kahului Airport (OGG). Pick up rental vehicle.</li>
+        <li><span class="time-stamp">2:30 PM:</span> Costco & Safeway Kahului grocery run for breakfast supplies and snacks.</li>
+        <li><span class="time-stamp">4:00 PM:</span> Check into Māʻalaea Banyans. Unpack for a comfortable 4-night stay.</li>
+        <li><span class="time-stamp">5:45 PM:</span> Sunset stroll along Sugar Beach; dinner at Monsoon India or local coastal dining.</li>
+      </ul>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-title">Day 2: Monday, Oct 26 — Haleakalā Sunrise & Upcountry Pineapple Tour</span>
+        <span class="day-tag xplorie">Xplorie Pass: Pineapple Tour</span>
+      </div>
+      <ul class="timeline">
+        <li><span class="time-stamp">3:30 AM:</span> Depart Māʻalaea for Haleakalā Summit (dress warmly in layers).</li>
+        <li><span class="time-stamp">5:30 AM – 7:00 AM:</span> Watch the sunrise above the clouds at 10,023 feet.</li>
+        <li><span class="time-stamp">8:30 AM:</span> Grab hot malasadas and cream puffs at T. Komoda Store & Bakery in historic Makawao.</li>
+        <li><span class="time-stamp">11:45 AM – 1:15 PM:</span> <strong>Maui Pineapple Farm Tour</strong> in Hāliʻimaile (includes airport-ready boxed pineapple!).</li>
+        <li><span class="time-stamp">1:45 PM:</span> Return to Māʻalaea condo for an afternoon nap and pool lounging.</li>
+        <li><span class="time-stamp">5:30 PM:</span> Relaxed oceanfront sunset BBQ on the condo lawn grills.</li>
+      </ul>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-title">Day 3: Tuesday, Oct 27 — West Maui Alpacas, Whalers Village & Sunset Cliff Dive</span>
+        <span class="day-tag xplorie">Xplorie Pass: Alpaca Tour</span>
+      </div>
+      <ul class="timeline">
+        <li><span class="time-stamp">8:30 AM:</span> Sleep in and enjoy breakfast on the condo lanai.</li>
+        <li><span class="time-stamp">10:00 AM – 11:00 AM:</span> <strong>Maui Dragon Fruit Farm Alpaca Tour</strong> in Lahaina (feed alpacas & sample tropical fruit).</li>
+        <li><span class="time-stamp">11:30 AM – 3:30 PM:</span> <strong>Whalers Village & Kaʻanapali Boardwalk:</strong> Lunch at Monkeypod Kitchen / Hula Grill, explore beachfront shops, and stroll the paved coastal promenade.</li>
+        <li><span class="time-stamp">5:00 PM – 5:45 PM:</span> Witness the torch-lighting and Cliff Diving Ceremony at <strong>Black Rock (Puʻu Kekaʻa)</strong>.</li>
+        <li><span class="time-stamp">6:30 PM:</span> Oceanfront dinner at Mala Ocean Tavern or Star Noodle before a 25-min drive back to Māʻalaea.</li>
+      </ul>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-title">Day 4: Wednesday, Oct 28 — Atlantis Submarine & Pre-Hāna Afternoon Recharge</span>
+        <span class="day-tag">Undersea Tour + Rest</span>
+      </div>
+      <ul class="timeline">
+        <li><span class="time-stamp">10:00 AM:</span> Easy 25-minute drive to Lahaina Harbor.</li>
+        <li><span class="time-stamp">10:30 AM – 12:45 PM:</span> <strong>Atlantis Submarine Dive (11:00 AM):</strong> Descend 100+ feet beneath the Pacific to explore the Carthaginian shipwreck, sea turtles, and reefs (100% non-swimmer friendly).</li>
+        <li><span class="time-stamp">1:00 PM – 1:45 PM:</span> Casual lunch in Lahaina.</li>
+        <li><span class="time-stamp">2:00 PM:</span> Return to Māʻalaea Banyans — <em>done with all driving for the day!</em></li>
+        <li><span class="time-stamp">2:00 PM – 5:30 PM:</span> <strong>Complete Rest & Downtime:</strong> Lounge by the pool/hot tub, stroll Sugar Beach, and relax.</li>
+        <li><span class="time-stamp">6:00 PM:</span> Casual dinner on the lawn grills or walk to Māʻalaea Harbor restaurants. Pack overnight duffel bag for Hāna.</li>
+      </ul>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-title">Day 5: Thursday, Oct 29 — Road to Hāna & Waiʻānapanapa Black Sand Beach</span>
+        <span class="day-tag">Hāna-Maui Resort (25k pts)</span>
+      </div>
+      <ul class="timeline">
+        <li><span class="time-stamp">8:30 AM:</span> Check out of Māʻalaea Banyans; drive toward Pāʻia to begin the scenic Road to Hāna.</li>
+        <li><span class="time-stamp">9:30 AM – 1:30 PM:</span> Scenic stops: Twin Falls, Keʻanae Peninsula (Aunt Sandy’s warm banana bread), and waterfall lookouts.</li>
+        <li><span class="time-stamp">2:00 PM – 4:00 PM:</span> <strong>Waiʻānapanapa State Park:</strong> Black Sand Beach, lava tube sea cave, blowhole, and coastal trails.</li>
+        <li><span class="time-stamp">4:30 PM:</span> Check into <strong>Hāna-Maui Resort</strong> (King Partial Ocean View).</li>
+        <li><span class="time-stamp">6:00 PM:</span> Rainforest open-air dinner at The Restaurant at Hāna-Maui followed by tranquil stargazing.</li>
+      </ul>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-card special">
+      <div class="day-header">
+        <span class="day-title">Day 6: Friday, Oct 30 — Birthday Bamboo Forest Hike & Andaz Luxury Check-In</span>
+        <span class="day-tag birthday">🎂 Wife's Birthday Celebration</span>
+      </div>
+      <ul class="timeline">
+        <li><span class="time-stamp">7:30 AM – 10:00 AM:</span> Hike <strong>Pīpīwai Trail</strong> (Giant Banyan, Bamboo Forest, 400-ft Waimoku Falls) before day-tripper crowds arrive.</li>
+        <li><span class="time-stamp">10:30 AM:</span> Return to resort, hot shower, and 11:00 AM checkout.</li>
+        <li><span class="time-stamp">11:30 AM – 2:30 PM:</span> Scenic daylight drive back along Hāna Highway; stop in Pāʻia town for lunch and coffee.</li>
+        <li><span class="time-stamp">3:30 PM:</span> Check into <strong>Andaz Maui at Wailea Resort</strong> (1 King Bed — 80k pts). Welcome champagne toast.</li>
+        <li><span class="time-stamp">5:30 PM:</span> Sunset viewing over the 4 tiered oceanfront infinity pools.</li>
+        <li><span class="time-stamp">7:00 PM:</span> <strong>Intimate Birthday Dinner:</strong> Reserved oceanfront table at <strong>Kaʻana Kitchen</strong> or <strong>Morimoto Maui</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-title">Day 7: Saturday, Oct 31 — Resort Relaxation & Oceanfront Lūʻau</span>
+        <span class="day-tag">Wailea Beach Promenade</span>
+      </div>
+      <ul class="timeline">
+        <li><span class="time-stamp">9:00 AM – 3:30 PM:</span> Full day of relaxation at Andaz tiered infinity pools and golden Mōkapu Beach.</li>
+        <li><span class="time-stamp">4:45 PM:</span> Romantic 5-minute stroll along the paved oceanfront path to Wailea Beach Resort.</li>
+        <li><span class="time-stamp">5:00 PM – 8:00 PM:</span> <strong>Te Au Moana Lūʻau:</strong> Ocean bluff seating, buffet feast, premium open bar, and 3-performer Samoan fire-knife finale.</li>
+        <li><span class="time-stamp">8:15 PM:</span> Moonlit walk back to Andaz for evening drinks.</li>
+      </ul>
+    </div>
+
+    <!-- Day 8 -->
+    <div class="day-card">
+      <div class="day-header">
+        <span class="day-title">Day 8: Sunday, Nov 1 — Final Island Morning & Flight Home</span>
+        <span class="day-tag">Departure Day</span>
+      </div>
+      <ul class="timeline">
+        <li><span class="time-stamp">8:30 AM:</span> Breakfast at Kaʻana Kitchen; final walk along Mōkapu Beach.</li>
+        <li><span class="time-stamp">11:00 AM:</span> Check out of Andaz Maui.</li>
+        <li><span class="time-stamp">11:45 AM:</span> Visit <strong>Maui Tropical Plantation & Kumu Farms</strong> (Waikapū) for fresh coffee, tropical fruits, and souvenirs.</li>
+        <li><span class="time-stamp">1:45 PM:</span> Refuel at Costco Kahului; return rental vehicle.</li>
+        <li><span class="time-stamp">2:15 PM:</span> Arrive at OGG Airport with TSA PreCheck.</li>
+        <li><span class="time-stamp">4:12 PM:</span> Nonstop flight departure to Seattle (SEA).</li>
+      </ul>
+    </div>
+
+    <div class="footer-note">
+      Maui 2026 Birthday Celebration • Master Itinerary
+    </div>
   </div>
-
-  <script>
-    function switchTab(tabId, btn) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      if (btn) btn.classList.add('active');
-      localStorage.setItem('maui_active_tab', tabId);
-    }
-
-    function restoreActiveTab() {
-      const tabId = localStorage.getItem('maui_active_tab');
-      if (!tabId || !document.getElementById(tabId)) return;
-      let target = null;
-      document.querySelectorAll('.tab-btn').forEach(b => {
-        const oc = b.getAttribute('onclick') || '';
-        if (oc.indexOf("'" + tabId + "'") !== -1) target = b;
-      });
-      switchTab(tabId, target);
-    }
-
-    const contentElements = document.querySelectorAll('[contenteditable="true"]');
-    const saveIndicator = document.getElementById('saveIndicator');
-
-    function loadContent() {
-      contentElements.forEach((el, index) => {
-        const saved = localStorage.getItem('maui_full_content_v15_' + index);
-        if (saved !== null) el.innerHTML = saved;
-        el.addEventListener('input', () => {
-          localStorage.setItem('maui_full_content_v15_' + index, el.innerHTML);
-          saveIndicator.innerText = '✅ Edits saved automatically';
-          setTimeout(() => { saveIndicator.innerText = '💡 Click any text to edit directly'; }, 2000);
-        });
-      });
-
-      document.querySelectorAll('input[type="checkbox"]').forEach(chk => {
-        const checked = localStorage.getItem('maui_chk_v15_' + chk.id);
-        if (checked === 'true') chk.checked = true;
-      });
-    }
-
-    function saveCheck(chk) {
-      localStorage.setItem('maui_chk_v15_' + chk.id, chk.checked);
-    }
-
-    function resetDefaults() {
-      if (confirm("Reset all custom edits and checklist items back to defaults?")) {
-        localStorage.clear();
-        location.reload();
-      }
-    }
-
-    const SHARE_URL = "https://github.com/dogipd/maui-trip-2026";
-
-    function shareTrip() {
-      const isLocal = window.location.protocol === 'file:';
-      const url = isLocal ? SHARE_URL : window.location.href;
-      navigator.clipboard.writeText(url).then(() => {
-        alert(isLocal
-          ? "This is a local copy, so its file path isn't shareable.\\nCopied the GitHub repo link instead:\\n" + url
-          : "Page link copied to clipboard!");
-      });
-    }
-
-    window.onload = function() {
-      loadContent();
-      restoreActiveTab();
-    };
-  </script>
 </body>
 </html>
