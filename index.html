@@ -20,6 +20,10 @@
       --warning: #eab308;
       --tag-blue-bg: #e0f2fe;
       --tag-blue-text: #0369a1;
+      --tag-purple-bg: #f3e8ff;
+      --tag-purple-text: #7e22ce;
+      --tag-green-bg: #dcfce7;
+      --tag-green-text: #15803d;
     }
 
     * {
@@ -41,7 +45,6 @@
       margin: 0 auto;
     }
 
-    /* Header Banner */
     header {
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
@@ -88,7 +91,6 @@
       background: #10b981;
     }
 
-    /* Tab Navigation */
     .tab-nav {
       display: flex;
       flex-wrap: wrap;
@@ -129,7 +131,6 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
-    /* Tab Content Panes */
     .tab-pane {
       display: none;
       animation: fadeIn 0.25s ease-in-out;
@@ -144,7 +145,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Layout Grids & Cards */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -197,7 +197,6 @@
       margin: 12px 0 6px 0;
     }
 
-    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -217,7 +216,6 @@
       color: var(--text-muted);
     }
 
-    /* Day Cards */
     .day-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -257,6 +255,11 @@
       font-weight: 600;
     }
 
+    .day-tag.lavender {
+      background: var(--tag-purple-bg);
+      color: var(--tag-purple-text);
+    }
+
     .day-tag.birthday {
       background: #fee2e2;
       color: #b91c1c;
@@ -267,7 +270,11 @@
       color: var(--success);
     }
 
-    /* Timelines */
+    .day-tag.rainforest {
+      background: var(--tag-green-bg);
+      color: var(--tag-green-text);
+    }
+
     .timeline {
       list-style: none;
       padding-left: 0;
@@ -297,7 +304,6 @@
       margin-right: 6px;
     }
 
-    /* Checklists */
     .checklist {
       list-style: none;
       padding: 0;
@@ -336,7 +342,6 @@
       top: -2px;
     }
 
-    /* Outfits Grid */
     .outfit-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -369,7 +374,6 @@
       margin-bottom: 4px;
     }
 
-    /* Dining Badges */
     .restaurant-badge {
       display: inline-block;
       font-size: 0.75rem;
@@ -429,45 +433,49 @@
       <!-- Day 1 -->
       <div class="day-card">
         <div class="day-header">
-          <span class="day-title">Day 1: Sunday, Oct 25 — Arrival, Basecamp Check-In & South Maui Food Trucks</span>
+          <span class="day-title">Day 1: Sunday, Oct 25 — Arrival, Basecamp Check-In, Food Trucks & Ululani's</span>
           <span class="day-tag confirmed">✓ Māʻalaea Banyans</span>
         </div>
         <ul class="timeline">
           <li><span class="time-stamp">1:19 PM:</span> Touch down at Kahului Airport (OGG). Collect rental vehicle.</li>
-          <li><span class="time-stamp">2:30 PM:</span> Costco & Safeway Kahului grocery stop for breakfast essentials, tropical fruits, snacks, and water.</li>
-          <li><span class="time-stamp">4:00 PM:</span> Check into Māʻalaea Banyans oceanfront condo (#162705). Unpack once for the next 4 nights.</li>
-          <li><span class="time-stamp">5:30 PM – 7:30 PM:</span> 🚚 <strong>South Maui Gardens (Kihei Food Truck Oasis):</strong> Easy 12-minute drive to Kihei's premier open-air botanical garden food truck park (35 Auhana Rd). Explore 10+ artisan food trucks under fairy lights with live acoustic music—featuring wood-fired pizzas, authentic Thai noodles, falafel/gyro platters, smash burgers, fresh poke, and Hawaiian shave ice. Perfect split for vegetarian & meat options!</li>
-          <li><span class="time-stamp">7:45 PM:</span> Relaxing evening walk along Sugar Beach back at Māʻalaea.</li>
+          <li><span class="time-stamp">2:15 PM:</span> Costco & Safeway Kahului grocery stop for breakfast provisions, fresh fruit, bottled water, and trail snacks.</li>
+          <li><span class="time-stamp">3:45 PM:</span> Check into Māʻalaea Banyans oceanfront condo (#162705). Settle in and unpack once for the next 4 nights.</li>
+          <li><span class="time-stamp">5:15 PM – 7:00 PM:</span> 🚚 <strong>South Maui Gardens (Kihei Food Trucks):</strong> Easy 12-minute drive down to Kihei's botanical garden food truck hub (35 Auhana Rd). Walk beneath fairy lights and enjoy wood-fired pizza, Thai dishes, falafel plates, smash burgers, and poke bowls.</li>
+          <li><span class="time-stamp">7:15 PM:</span> 🍧 <strong>Ululani’s Hawaiian Shave Ice (Sugar Beach / North Kihei):</strong> Stop at 61 S Kihei Rd on your 10-minute drive back to the condo. Enjoy micro-filtered shave ice with pure fruit purées (passionfruit, mango, coconut cream).</li>
+          <li><span class="time-stamp">7:45 PM:</span> Stroll along Sugar Beach right outside your condo before calling it an early night.</li>
         </ul>
       </div>
 
       <!-- Day 2 -->
       <div class="day-card">
         <div class="day-header">
-          <span class="day-title">Day 2: Monday, Oct 26 — Haleakalā Sunrise & Upcountry Pineapple Tour</span>
-          <span class="day-tag confirmed">Xplorie Pass: Pineapple Tour</span>
+          <span class="day-title">Day 2: Monday, Oct 26 — Haleakalā Sunrise, Lavender Farm & Pineapple Tour</span>
+          <span class="day-tag lavender">Upcountry Scenic Loop</span>
         </div>
         <ul class="timeline">
           <li><span class="time-stamp">3:30 AM:</span> Depart Māʻalaea for Haleakalā Summit (bundle up in layered thermal wear).</li>
           <li><span class="time-stamp">5:30 AM – 7:00 AM:</span> Experience sunrise above the cloud sea at 10,023 feet.</li>
-          <li><span class="time-stamp">8:30 AM:</span> Grab hot cream puffs and stick donuts at T. Komoda Bakery in historic Makawao.</li>
-          <li><span class="time-stamp">11:45 AM – 1:15 PM:</span> <strong>Maui Pineapple Farm Tour</strong> in Hāliʻimaile (Xplorie 1st Free — includes boxed Maui Gold pineapples).</li>
-          <li><span class="time-stamp">1:45 PM:</span> Return to Māʻalaea condo for a well-earned nap, pool lounging, and oceanfront lawn BBQ sunset.</li>
+          <li><span class="time-stamp">8:00 AM:</span> Grab hot cream puffs and stick donuts at historic T. Komoda Store & Bakery in Makawao.</li>
+          <li><span class="time-stamp">9:00 AM – 10:30 AM:</span> 🪻 <strong>Aliʻi Kula Lavender Farm:</strong> Stroll through 13.5 peaceful hillside acres at 4,000 ft elevation. Enjoy panoramic valley views, lavender-infused tea, and fresh lavender-macadamia shortbread.</li>
+          <li><span class="time-stamp">11:45 AM – 1:15 PM:</span> 🍍 <strong>Maui Pineapple Farm Tour</strong> in Hāliʻimaile (Xplorie 1st Free — includes boxed Maui Gold pineapples).</li>
+          <li><span class="time-stamp">1:45 PM:</span> Return to condo for an afternoon nap, pool/hot tub lounging, and oceanfront lawn sunset.</li>
         </ul>
       </div>
 
       <!-- Day 3 -->
       <div class="day-card">
         <div class="day-header">
-          <span class="day-title">Day 3: Tuesday, Oct 27 — West Maui Alpacas, Whalers Village & Sunset Cliff Dive</span>
-          <span class="day-tag confirmed">Xplorie Pass: Alpaca Tour</span>
+          <span class="day-title">Day 3: Tuesday, Oct 27 — Olowalu Farmers Market, Alpacas, Chocolate Tasting & Cliff Dive</span>
+          <span class="day-tag confirmed">West Maui Coastal Route</span>
         </div>
         <ul class="timeline">
-          <li><span class="time-stamp">8:30 AM:</span> Sleep in and enjoy breakfast on the oceanfront lanai.</li>
-          <li><span class="time-stamp">10:00 AM – 11:00 AM:</span> <strong>Maui Dragon Fruit Farm Alpaca Tour</strong> in Lahaina (feed alpacas & sample fresh tropical fruits).</li>
-          <li><span class="time-stamp">11:30 AM – 3:30 PM:</span> <strong>Whalers Village & Kaʻanapali Boardwalk:</strong> Oceanfront lunch at Monkeypod Kitchen / Hula Grill, boutique shopping, and paved beach walk.</li>
-          <li><span class="time-stamp">5:00 PM – 5:45 PM:</span> Witness the torch-lighting and sunset Cliff Diving Ceremony at <strong>Black Rock (Puʻu Kekaʻa)</strong>.</li>
-          <li><span class="time-stamp">6:30 PM:</span> Seaside dinner at Mala Ocean Tavern or Star Noodle before a 25-min drive back to Māʻalaea.</li>
+          <li><span class="time-stamp">8:30 AM:</span> Depart Māʻalaea along scenic Route 30 ocean cliffs.</li>
+          <li><span class="time-stamp">9:00 AM – 9:35 AM:</span> 🥥 <strong>Olowalu Farmers Market (Mile Marker 14):</strong> Oceanside fruit stand. Pick up fresh apple bananas, Maui Gold papayas, and chilled, freshly cracked drinking coconuts.</li>
+          <li><span class="time-stamp">10:00 AM – 11:00 AM:</span> 🦙 <strong>Maui Dragon Fruit Farm Alpaca Tour</strong> in Lahaina (feed alpacas & sample fresh dragon fruit; Xplorie 1st Free).</li>
+          <li><span class="time-stamp">11:30 AM – 12:45 PM:</span> 🍫 <strong>Maui Kuʻia Estate Chocolate & Macadamia Tasting:</strong> 9-piece guided chocolate tasting in an open-air rooftop pavilion overlooking the Pacific and Lānaʻi.</li>
+          <li><span class="time-stamp">1:15 PM – 4:00 PM:</span> <strong>Whalers Village & Kaʻanapali Boardwalk:</strong> Oceanfront lunch at Monkeypod Kitchen / Hula Grill, boutique shopping, and beach promenade walk.</li>
+          <li><span class="time-stamp">5:00 PM – 5:45 PM:</span> Torch-lighting and sunset Cliff Diving Ceremony at <strong>Black Rock (Puʻu Kekaʻa)</strong>.</li>
+          <li><span class="time-stamp">6:30 PM:</span> Seaside dinner at Mala Ocean Tavern or Star Noodle before the 25-minute drive back to Māʻalaea.</li>
         </ul>
       </div>
 
@@ -478,42 +486,48 @@
           <span class="day-tag">Undersea Tour + Kihei Taproom</span>
         </div>
         <ul class="timeline">
-          <li><span class="time-stamp">10:00 AM:</span> Easy 25-minute coastal drive to Lahaina Harbor (116 Prison St).</li>
-          <li><span class="time-stamp">10:30 AM – 12:45 PM:</span> <strong>Atlantis Submarine Dive (11:00 AM):</strong> Descend 100+ feet below the Pacific to see the Carthaginian shipwreck, turtles, and coral reefs (100% non-swimmer friendly).</li>
+          <li><span class="time-stamp">10:00 AM:</span> Easy coastal drive to Lahaina Harbor (116 Prison St).</li>
+          <li><span class="time-stamp">10:30 AM – 12:45 PM:</span> <strong>Atlantis Submarine Dive (11:00 AM):</strong> Descend 100+ feet below the Pacific to see the Carthaginian shipwreck, marine life, and coral reefs (100% non-swimmer friendly).</li>
           <li><span class="time-stamp">1:00 PM – 1:45 PM:</span> Casual lunch in Lahaina.</li>
-          <li><span class="time-stamp">2:00 PM – 5:15 PM:</span> Return to Māʻalaea Banyans for an afternoon recharge by the pool, jacuzzi, and beach.</li>
-          <li><span class="time-stamp">5:45 PM:</span> Easy 12-minute drive down to <strong>Maui Brewing Company (Kihei Flagship Brewery & Taproom)</strong>.</li>
-          <li><span class="time-stamp">6:00 PM – 8:00 PM:</span> <strong>Dinner & Lawn Evening:</strong> Enjoy craft brews, artisan house-made sodas, wood-fired pizzas, burgers, and live acoustic music on the open-air lanai. Pack overnight duffel for Hāna upon return.</li>
+          <li><span class="time-stamp">2:00 PM – 5:15 PM:</span> Afternoon recharge at Māʻalaea Banyans: pool, jacuzzi, beach walk, and zero driving.</li>
+          <li><span class="time-stamp">5:45 PM:</span> Easy 12-minute drive to <strong>Maui Brewing Company (Kihei Flagship Brewery & Taproom)</strong>.</li>
+          <li><span class="time-stamp">6:00 PM – 8:00 PM:</span> <strong>Dinner & Lawn Games:</strong> Enjoy craft beers, artisan house sodas, wood-fired pizzas, burgers, and acoustic music on the open-air lanai. Pack overnight duffels upon return.</li>
         </ul>
       </div>
 
       <!-- Day 5 -->
       <div class="day-card special">
         <div class="day-header">
-          <span class="day-title">Day 5: Thursday, Oct 29 — Road to Hāna & 1 King Ocean View Bungalow</span>
-          <span class="day-tag confirmed">✓ Hāna Bungalow Confirmed</span>
+          <span class="day-title">Day 5: Thursday, Oct 29 — Kraken Coffee, Twin Falls, Honomanū Overlook, Banana Bread & Hāna Bungalow</span>
+          <span class="day-tag rainforest">🌿 Road to Hāna Outbound</span>
         </div>
         <ul class="timeline">
-          <li><span class="time-stamp">8:30 AM:</span> Check out of Māʻalaea Banyans; drive toward Pāʻia to begin the scenic Road to Hāna.</li>
-          <li><span class="time-stamp">9:30 AM – 1:30 PM:</span> Scenic stops: Twin Falls, Keʻanae Peninsula (Aunt Sandy’s warm banana bread), and waterfall lookouts.</li>
-          <li><span class="time-stamp">2:00 PM – 4:00 PM:</span> <strong>Waiʻānapanapa State Park:</strong> Black Sand Beach, lava tube sea cave, blowhole, and coastal trails.</li>
-          <li><span class="time-stamp">4:00 PM:</span> Check into <strong>Hāna-Maui Resort — 1 King Bed Ocean View Bungalow (648 sq ft)</strong>. Unwind on your private lanai under vaulted wood-beamed ceilings.</li>
-          <li><span class="time-stamp">6:00 PM:</span> Rainforest open-air dinner at The Restaurant at Hāna-Maui followed by tranquil oceanfront stargazing.</li>
+          <li><span class="time-stamp">8:30 AM:</span> Check out of Māʻalaea Banyans with main luggage locked securely out of sight in trunk.</li>
+          <li><span class="time-stamp">8:50 AM:</span> ☕ <strong>Kraken Coffee (Kahului - Hana Hwy / Hobron Ave):</strong> Drive-thru stop right on your driving route for morning iced macadamia lattes / cold brews. Morning coffee locked in well before your 4:00 PM cutoff!</li>
+          <li><span class="time-stamp">9:45 AM – 10:30 AM:</span> 🌊 <strong>Twin Falls (Mile Marker 2):</strong> First stop on Hāna Highway. Easy, flat 15-minute nature walk to the lower falls and farm stand ($10 parking).</li>
+          <li><span class="time-stamp">11:00 AM – 11:15 AM:</span> 📸 <strong>Honomanū Bay Lookout (Mile Marker 14):</strong> Elevated roadside lookout point. Soak in the panoramic vista of the emerald valley cliffs and rugged black sand bay below (skipping the hazardous unpaved beach access track).</li>
+          <li><span class="time-stamp">11:30 AM – 12:15 PM:</span> 🍌 <strong>Aunt Sandy’s Famous Banana Bread (Keʻanae Peninsula - MM 16.8):</strong> Turn down to Keʻanae to watch huge surf crash against black lava rock while enjoying warm, fresh-out-of-the-oven banana bread.</li>
+          <li><span class="time-stamp">1:15 PM – 1:45 PM:</span> 🥥 <strong>Coconut Glen’s Ice Cream (Mile Marker 27.5):</strong> Funky rainforest ice cream shack serving organic, vegan coconut ice cream inside real coconut shells.</li>
+          <li><span class="time-stamp">2:00 PM – 4:00 PM:</span> <strong>Waiʻānapanapa State Park (MM 32):</strong> Explore Paʻiloa Black Sand Beach, natural lava tube cave, coastal blowhole, and sea arches (timed reservation required). <em>Note: Red Sand Beach is excluded due to hazardous cliff trails.</em></li>
+          <li><span class="time-stamp">4:15 PM:</span> Check into <strong>Hāna-Maui Resort — 1 King Ocean View Bungalow (648 sq ft)</strong>. Savor the tranquil breeze and ocean views from your private lanai.</li>
+          <li><span class="time-stamp">6:00 PM:</span> Rainforest open-air dinner at The Restaurant at Hāna-Maui followed by dark-sky stargazing.</li>
         </ul>
       </div>
 
       <!-- Day 6 -->
       <div class="day-card special">
         <div class="day-header">
-          <span class="day-title">Day 6: Friday, Oct 30 — Birthday Bamboo Forest Hike, Sunset Photo Shoot & Andaz Check-In</span>
+          <span class="day-title">Day 6: Friday, Oct 30 — Birthday Bamboo Forest Hike, Garden of Eden, Sunset Shoot & Andaz</span>
           <span class="day-tag birthday">🎂 Wife's Birthday Celebration</span>
         </div>
         <ul class="timeline">
-          <li><span class="time-stamp">7:30 AM – 10:00 AM:</span> Hike <strong>Pīpīwai Trail</strong> (Giant Banyan, Bamboo Forest, 400-ft Waimoku Falls) before day-tripper crowds arrive.</li>
+          <li><span class="time-stamp">7:30 AM – 10:00 AM:</span> Hike <strong>Pīpīwai Trail (Kīpahulu):</strong> Giant banyan tree, towering bamboo forest boardwalk, and 400-foot Waimoku Falls before day-tripper crowds arrive.</li>
           <li><span class="time-stamp">10:30 AM:</span> Return to bungalow, hot shower, and 11:00 AM checkout.</li>
-          <li><span class="time-stamp">11:30 AM – 2:30 PM:</span> Scenic daylight drive back along Hāna Highway; stop in Pāʻia town for lunch and coffee.</li>
-          <li><span class="time-stamp">3:30 PM:</span> Check into <strong>Andaz Maui at Wailea Resort</strong> (1 King Bed — 80k pts). Welcome champagne toast.</li>
-          <li><span class="time-stamp">5:00 PM – 5:45 PM:</span> 📸 <strong>Pacific Dream Photography Session (Option A):</strong> 45-minute golden-hour portrait session across infinity pools and Mōkapu Beach ($50 print credit included).</li>
+          <li><span class="time-stamp">11:15 AM:</span> Begin the daylight scenic return drive along Hāna Highway.</li>
+          <li><span class="time-stamp">12:45 PM – 2:00 PM:</span> 🌺 <strong>Garden of Eden Arboretum (Mile Marker 10.5):</strong> 26 acres of manicured botanical walking trails, cascading waterfalls, roaming peacocks, and the iconic *Jurassic Park* Keopuka Rock ocean overlook ($20/person). The perfect midway stop to break up the return drive!</li>
+          <li><span class="time-stamp">2:30 PM – 3:15 PM:</span> Stop in coastal Pāʻia town for coffee, light lunch, or a snack.</li>
+          <li><span class="time-stamp">3:45 PM:</span> Check into <strong>Andaz Maui at Wailea Resort</strong> (1 King Bed — 80k pts). Welcome champagne toast!</li>
+          <li><span class="time-stamp">5:00 PM – 5:45 PM:</span> 📸 <strong>Pacific Dream Photography Session (Option A):</strong> 45-minute golden-hour portrait session across tiered infinity pools and Mōkapu Beach ($50 print credit included).</li>
           <li><span class="time-stamp">7:00 PM:</span> <strong>Intimate Birthday Dinner:</strong> Reserved oceanfront table at <strong>Kaʻana Kitchen</strong> or <strong>Morimoto Maui</strong>.</li>
         </ul>
       </div>
@@ -525,7 +539,8 @@
           <span class="day-tag">Wailea Beach Promenade</span>
         </div>
         <ul class="timeline">
-          <li><span class="time-stamp">9:00 AM – 3:30 PM:</span> Full day lounging at Andaz cascading infinity pools and golden Mōkapu Beach.</li>
+          <li><span class="time-stamp">8:30 AM:</span> <em>(Optional morning coffee run):</em> Easy 6-minute hop to Kraken Coffee's Kihei truck, or relax with fresh espresso at Andaz.</li>
+          <li><span class="time-stamp">9:30 AM – 3:30 PM:</span> Full day lounging at Andaz cascading infinity pools and golden Mōkapu Beach.</li>
           <li><span class="time-stamp">4:00 PM – 4:45 PM:</span> 📸 <strong>Pacific Dream Photography Session (Option B):</strong> Pre-lūʻau portrait shoot in your aloha/resort evening attire.</li>
           <li><span class="time-stamp">4:45 PM:</span> Romantic 5-minute stroll along the paved oceanfront path to Wailea Beach Resort.</li>
           <li><span class="time-stamp">5:00 PM – 8:00 PM:</span> <strong>Te Au Moana Lūʻau:</strong> Ocean bluff seating, buffet feast, premium open bar, and 3-performer Samoan fire-knife finale.</li>
@@ -540,7 +555,7 @@
           <span class="day-tag">Departure Day</span>
         </div>
         <ul class="timeline">
-          <li><span class="time-stamp">8:30 AM:</span> Breakfast at Kaʻana Kitchen; final walk along Mōkapu Beach.</li>
+          <li><span class="time-stamp">8:30 AM:</span> Breakfast at Kaʻana Kitchen; final morning stroll on Mōkapu Beach.</li>
           <li><span class="time-stamp">11:00 AM:</span> Check out of Andaz Maui (or request 1:00 PM Explorist late checkout).</li>
           <li><span class="time-stamp">11:45 AM:</span> Visit <strong>Maui Tropical Plantation & Kumu Farms</strong> (Waikapū) for fresh coffee, tropical fruits, and souvenirs.</li>
           <li><span class="time-stamp">1:45 PM:</span> Refuel at Costco Kahului; return rental vehicle.</li>
@@ -604,11 +619,23 @@
             </li>
             <li>
               <div class="check-box"></div>
-              <div><strong>Pacific Dream Photo Shoot:</strong> Lock in 45-min sunset slot (Fri Oct 30 @ 5:00 PM or Sat Oct 31 @ 4:00 PM) via Andaz concierge.</div>
+              <div><strong>Aliʻi Kula Lavender Farm:</strong> General admission ($3/person) on Mon, Oct 26 @ 9:00 AM (walk-in).</div>
             </li>
             <li>
               <div class="check-box"></div>
-              <div><strong>Waiʻānapanapa State Park:</strong> Book on <strong>Sept 29 @ 3:00 AM PDT</strong> for Thursday afternoon slot.</div>
+              <div><strong>Maui Kuʻia Chocolate Tasting:</strong> Reserve rooftop 9-piece tasting for Tue, Oct 27 @ 11:30 AM ($35/person).</div>
+            </li>
+            <li>
+              <div class="check-box"></div>
+              <div><strong>Waiʻānapanapa State Park:</strong> Book on <strong>Sept 29 @ 3:00 AM PDT</strong> for Thursday afternoon slot (12:30–3:00 or 3:00–6:00 PM).</div>
+            </li>
+            <li>
+              <div class="check-box"></div>
+              <div><strong>Garden of Eden Arboretum:</strong> Pay at entrance gate on Fri, Oct 30 on drive back ($20/person).</div>
+            </li>
+            <li>
+              <div class="check-box"></div>
+              <div><strong>Pacific Dream Photo Shoot:</strong> Lock in 45-min sunset slot (Fri Oct 30 @ 5:00 PM or Sat Oct 31 @ 4:00 PM) via Andaz concierge.</div>
             </li>
             <li>
               <div class="check-box"></div>
@@ -633,10 +660,24 @@
           <tbody>
             <tr>
               <td><strong>Mon, Oct 26</strong></td>
+              <td>Aliʻi Kula Lavender Farm (9:00 AM)</td>
+              <td>Kula (Upcountry)</td>
+              <td>Direct / Scenic Walk</td>
+              <td>$6.00 ($3/person)</td>
+            </tr>
+            <tr>
+              <td><strong>Mon, Oct 26</strong></td>
               <td>Maui Pineapple Farm Tour (11:45 AM)</td>
               <td>Hāliʻimaile</td>
               <td><strong style="color: var(--success);">Xplorie 1st Free</strong></td>
               <td>$95.00 <em>(Saved $95)</em></td>
+            </tr>
+            <tr>
+              <td><strong>Tue, Oct 27</strong></td>
+              <td>Olowalu Farmers Market (9:00 AM)</td>
+              <td>Hwy 30 (MM 14)</td>
+              <td>Roadside Fruit Stand</td>
+              <td>Free Entry (Pay per fruit)</td>
             </tr>
             <tr>
               <td><strong>Tue, Oct 27</strong></td>
@@ -646,11 +687,39 @@
               <td>$55.00 <em>(Saved $55)</em></td>
             </tr>
             <tr>
+              <td><strong>Tue, Oct 27</strong></td>
+              <td>Maui Kuʻia Chocolate & Macadamia Tasting (11:30 AM)</td>
+              <td>Lahaina</td>
+              <td>Rooftop Pavilion Tasting</td>
+              <td>$70.00 ($35/person)</td>
+            </tr>
+            <tr>
               <td><strong>Wed, Oct 28</strong></td>
               <td>Atlantis Submarine Dive (11:00 AM)</td>
               <td>Lahaina Harbor</td>
               <td>Direct Booking</td>
               <td>~$296.00 <em>(2 Tickets)</em></td>
+            </tr>
+            <tr>
+              <td><strong>Thu, Oct 29</strong></td>
+              <td>Twin Falls Parking</td>
+              <td>Hāna Hwy (MM 2)</td>
+              <td>Waterfall Trailhead</td>
+              <td>$10.00</td>
+            </tr>
+            <tr>
+              <td><strong>Thu, Oct 29</strong></td>
+              <td>Coconut Glen’s Coconut Ice Cream</td>
+              <td>Road to Hāna (MM 27.5)</td>
+              <td>Rainforest Stand</td>
+              <td>Pay per scoop ($8–$10)</td>
+            </tr>
+            <tr>
+              <td><strong>Fri, Oct 30</strong></td>
+              <td>Garden of Eden Arboretum (12:45 PM)</td>
+              <td>Hāna Hwy (MM 10.5)</td>
+              <td>Gate Admission</td>
+              <td>$40.00 ($20/person)</td>
             </tr>
             <tr>
               <td><strong>Fri/Sat (Oct 30/31)</strong></td>
@@ -669,7 +738,7 @@
       <div class="card" style="border-left: 5px solid var(--accent);">
         <h2>🎒 The Two-Bag Luggage Strategy for Hāna</h2>
         <p style="font-size: 0.92rem; margin-bottom: 12px;">
-          On <strong>Thursday, Oct 29</strong>, you transition from Māʻalaea to Hāna. To ensure total peace of mind at roadside stops:
+          On <strong>Thursday, Oct 29</strong>, you transition from Māʻalaea to Hāna. To ensure peace of mind at roadside stops:
         </p>
         <ul style="padding-left: 20px; font-size: 0.9rem;">
           <li><strong>Main Suitcases (Locked in Trunk):</strong> Kept completely out of sight in the locked trunk. Never open your trunk at scenic roadside pullouts.</li>
@@ -679,19 +748,19 @@
 
       <div class="grid-3">
         <div class="card">
-          <h2>🏔️ Haleakalā Cold Gear</h2>
+          <h2>🏔️ Haleakalā & Upcountry</h2>
           <ul class="checklist">
             <li><div class="check-box"></div><div>Warm fleece / lightweight down jacket</div></li>
-            <li><div class="check-box"></div><div>Long pants / thermal layers</div></li>
+            <li><div class="check-box"></div><div>Long pants / thermal layers for summit</div></li>
             <li><div class="check-box"></div><div>Beanie / knit hat & light gloves</div></li>
-            <li><div class="check-box"></div><div>Closed-toe sneakers & warm socks</div></li>
+            <li><div class="check-box"></div><div>Comfortable walking shoes for Lavender Farm</div></li>
           </ul>
         </div>
 
         <div class="card">
           <h2>🥾 Hāna & Rainforest</h2>
           <ul class="checklist">
-            <li><div class="check-box"></div><div>Sturdy sneakers / trail running shoes</div></li>
+            <li><div class="check-box"></div><div>Sturdy sneakers / trail running shoes (Pīpīwai Trail)</div></li>
             <li><div class="check-box"></div><div>Quick-dry hiking shirt & shorts</div></li>
             <li><div class="check-box"></div><div>Lightweight rain jacket / poncho</div></li>
             <li><div class="check-box"></div><div>Mosquito repellent & water shoes</div></li>
@@ -748,19 +817,19 @@
 
           <!-- Day 2 -->
           <div class="outfit-card">
-            <h4>Day 2: Haleakalā & Pineapple <span class="day-tag">Layers</span></h4>
+            <h4>Day 2: Haleakalā, Lavender & Pineapple <span class="day-tag">Layers & Garden Chic</span></h4>
             <ul>
               <li><strong>Dawn (Summit - 40°F):</strong> Thermal layer, hoodie/down jacket, long pants, warm beanie.</li>
-              <li><strong>Afternoon (Upcountry - 75°F):</strong> Strip down to short-sleeve tee, sunglasses, and walking shoes.</li>
+              <li><strong>Mid-Morning (Lavender & Pineapple - 72°F):</strong> Strip down to short-sleeve tee/polo, sunglasses, light jacket, and comfortable garden walking shoes.</li>
             </ul>
           </div>
 
           <!-- Day 3 -->
           <div class="outfit-card">
-            <h4>Day 3: Alpacas & Kaʻanapali <span class="day-tag">Casual</span></h4>
+            <h4>Day 3: Farmers Market, Alpacas, Chocolate & Kaʻanapali <span class="day-tag">Resort Casual</span></h4>
             <ul>
-              <li><strong>Morning:</strong> Casual cotton shorts, polo/tee, closed-toe walking shoes for farm.</li>
-              <li><strong>Evening (Black Rock / Dinner):</strong> Smart resort casual shirt, stylish sundress, sandals.</li>
+              <li><strong>Day:</strong> Breathable polo/linen shirt, cotton shorts, comfortable walking sneakers for market, farm, and chocolate pavilion.</li>
+              <li><strong>Evening (Black Rock / Seaside Dinner):</strong> Smart resort casual shirt, stylish summer sundress, dress sandals.</li>
             </ul>
           </div>
 
@@ -775,18 +844,18 @@
 
           <!-- Day 5 -->
           <div class="outfit-card">
-            <h4>Day 5: Road to Hāna & Bungalow <span class="day-tag">Adventure</span></h4>
+            <h4>Day 5: Road to Hāna & Bungalow <span class="day-tag">Adventure Quick-Dry</span></h4>
             <ul>
-              <li><strong>Day:</strong> Quick-dry athletic shirt, hiking shorts, trail shoes, dark colors for black sand.</li>
+              <li><strong>Day:</strong> Quick-dry athletic shirt, comfortable hiking shorts, sturdy walking sneakers, dark colors for black sand beach.</li>
               <li><strong>Evening (Hāna Bungalow):</strong> Casual breathable linen shirt, relaxed maxi dress for oceanfront lanai lounging.</li>
             </ul>
           </div>
 
           <!-- Day 6 -->
           <div class="outfit-card" style="border: 2px solid var(--accent);">
-            <h4>Day 6: Birthday, Sunset Photos & Andaz <span class="day-tag birthday">🎂 Celebration</span></h4>
+            <h4>Day 6: Birthday, Bamboo Forest, Sunset Shoot & Andaz <span class="day-tag birthday">🎂 Celebration</span></h4>
             <ul>
-              <li><strong>Morning (Pīpīwai Trail):</strong> Moisture-wicking hike gear, trail shoes.</li>
+              <li><strong>Morning (Pīpīwai Trail & Garden of Eden):</strong> Moisture-wicking hike gear, trail shoes, rain layer.</li>
               <li><strong>Sunset Shoot & Birthday Dinner:</strong> Crisp Perry Ellis linen shirt, chinos, loafers; elegant birthday dress & jewelry for photo shoot and dinner.</li>
             </ul>
           </div>
@@ -843,42 +912,87 @@
         </div>
 
         <div class="card">
-          <h2>🌴 Local Flavors, Food Trucks & Casual Eats</h2>
+          <h2>🍨 Shave Ice, Island Sweets & Bakeries</h2>
           <div style="margin-bottom: 14px;">
-            <h3>South Maui Gardens (Kihei Food Truck Oasis)</h3>
-            <span class="restaurant-badge veg">Falafel, Veg Pad Thai, Wood-Fired Pizza</span>
-            <span class="restaurant-badge meat">Smash Burgers, Poke, BBQ</span>
+            <h3>Ululani’s Hawaiian Shave Ice (Sugar Beach / Kihei)</h3>
+            <span class="restaurant-badge veg">Pure Fruit Purées & Coconut Snow Cap</span>
             <p style="font-size: 0.88rem; margin-top: 4px;">
-              Lush botanical nursery in Kihei (35 Auhana Rd) hosting 10+ gourmet food trucks, shaded seating under banyans, and live evening acoustic music. Perfect casual arrival dinner (12 mins from Māʻalaea).
+              Voted #1 shave ice in Hawaii. Ultra-soft micro-filtered ice with all-natural passionfruit, mango, guava, and coconut cream. Located just 3 mins from Māʻalaea Banyans at 61 S Kihei Rd.
             </p>
           </div>
           <div style="margin-bottom: 14px;">
-            <h3>Maui Brewing Company (Kihei Flagship Brewery)</h3>
-            <span class="restaurant-badge veg">Wood-Fired Veg Pizza & Veggie Burgers</span>
-            <span class="restaurant-badge meat">Burgers & Wings</span>
+            <h3>Coconut Glen’s (Road to Hāna - MM 27.5)</h3>
+            <span class="restaurant-badge veg">100% Vegan & Dairy-Free Coconut Ice Cream</span>
             <p style="font-size: 0.88rem; margin-top: 4px;">
-              Massive open-air brewery taproom with lawn games, live music, craft beers, and house-brewed root beer/ginger beer. 12 mins from Māʻalaea.
+              Legendary colorful rainforest stand in Nahiku. Scooped inside real coconut shells—try the salted caramel, passionfruit lilikoi, and dark chocolate coconut cream!
             </p>
           </div>
           <div style="margin-bottom: 14px;">
+            <h3>Aunt Sandy’s Banana Bread (Keʻanae Peninsula)</h3>
+            <span class="restaurant-badge veg">Warm Fresh Banana Bread</span>
+            <p style="font-size: 0.88rem; margin-top: 4px;">
+              Served warm straight out of the oven along the rugged volcanic Keʻanae coastline on the Road to Hāna.
+            </p>
+          </div>
+          <div>
             <h3>T. Komoda Store & Bakery (Makawao)</h3>
             <span class="restaurant-badge">Legendary Upcountry Bakery</span>
             <p style="font-size: 0.88rem; margin-top: 4px;">
               Famous stick donuts, cream puffs, and guava malasadas (ideal post-sunrise stop on Monday).
             </p>
           </div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h2>☕ Coffee, Brews & Farm Markets</h2>
           <div style="margin-bottom: 14px;">
-            <h3>Aunt Sandy’s Banana Bread (Keʻanae Peninsula)</h3>
-            <span class="restaurant-badge">Road to Hāna Must-Stop</span>
+            <h3>Kraken Coffee (Kahului & Kihei)</h3>
+            <span class="restaurant-badge">Morning Artisan Roast</span>
             <p style="font-size: 0.88rem; margin-top: 4px;">
-              Served warm right out of the oven along the rugged volcanic Keʻanae coastline.
+              Beloved local coffee roaster serving nitro cold brews, iced macadamia lattes, and specialty espresso. Enjoyed at 8:50 AM on Day 5 in Kahului right on your way to Hāna, or Day 7 morning in Kihei.
+            </p>
+          </div>
+          <div style="margin-bottom: 14px;">
+            <h3>Olowalu Farmers Market (Hwy 30 MM 14)</h3>
+            <span class="restaurant-badge veg">Fresh Tropical Fruits & Coconuts</span>
+            <p style="font-size: 0.88rem; margin-top: 4px;">
+              Scenic oceanfront roadside market with ripe Maui Gold papayas, sweet apple bananas, local honey, and cold freshly opened drinking coconuts.
             </p>
           </div>
           <div>
-            <h3>Sugar Beach Bake Shop (Kihei / Māʻalaea)</h3>
-            <span class="restaurant-badge">Fresh Morning Malasadas</span>
+            <h3>Maui Brewing Company (Kihei Flagship Brewery)</h3>
+            <span class="restaurant-badge veg">Wood-Fired Veg Pizza</span>
+            <span class="restaurant-badge meat">Burgers & Wings</span>
             <p style="font-size: 0.88rem; margin-top: 4px;">
-              Just 3 minutes from your condo; legendary hot malasadas filled with coconut haupia and lilikoi.
+              Massive open-air brewery taproom with lawn games, live music, craft beers, and house-brewed root beer/ginger beer.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>🍫 Tastings, Gardens & Food Trucks</h2>
+          <div style="margin-bottom: 14px;">
+            <h3>Garden of Eden Arboretum (MM 10.5)</h3>
+            <span class="restaurant-badge veg">Botanical Trails & Jurassic Rock</span>
+            <p style="font-size: 0.88rem; margin-top: 4px;">
+              26 lush acres of tropical arboretum trails, ocean overlooks, cascading waterfalls, and exotic flora. Visited on the Day 6 daylight return drive.
+            </p>
+          </div>
+          <div style="margin-bottom: 14px;">
+            <h3>Maui Kuʻia Estate Chocolate (Lahaina)</h3>
+            <span class="restaurant-badge veg">Single-Origin Cacao & Macadamias</span>
+            <p style="font-size: 0.88rem; margin-top: 4px;">
+              Hawaii's premier solar-powered cacao estate. Enjoy a 9-piece chocolate tasting on their open-air rooftop pavilion overlooking the ocean.
+            </p>
+          </div>
+          <div>
+            <h3>South Maui Gardens (Kihei Food Trucks)</h3>
+            <span class="restaurant-badge veg">Falafel, Veg Pad Thai, Pizza</span>
+            <span class="restaurant-badge meat">Smash Burgers, Poke, BBQ</span>
+            <p style="font-size: 0.88rem; margin-top: 4px;">
+              Botanical nursery in Kihei hosting 10+ gourmet food trucks, shaded seating under banyans, and live acoustic music.
             </p>
           </div>
         </div>
