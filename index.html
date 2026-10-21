@@ -413,7 +413,7 @@
         <ul class="timeline">
           <li><span class="time-stamp">1:19 PM:</span> Touch down at Kahului Airport (OGG). Collect rental vehicle.</li>
           <li><span class="time-stamp">2:15 PM:</span> Costco & Safeway Kahului grocery stop for breakfast provisions, fresh tropical fruit, water, and trail snacks.</li>
-          <li><span class="time-stamp">3:45 PM:</span> Check into Māʻalaea Banyans oceanfront condo (#162705). Settle in and unpack once for the next 4 nights.</li>
+          <li><span class="time-stamp">3:45 PM:</span> Check into Māʻalaea Banyans oceanfront condo (#162705) at <strong>190 Hauoli St. #314, Wailuku, HI 96793</strong> (Door Code: <strong>129022</strong>). Settle in and unpack once for the next 4 nights.</li>
           <li><span class="time-stamp">4:45 PM – 5:15 PM:</span> 🍧 <strong>Ululani’s Hawaiian Shave Ice (Sugar Beach / 61 S Kihei Rd):</strong> Stop on your coastal drive south to Kihei for micro-filtered shave ice with pure fruit purées and coconut cream during confirmed open hours.</li>
           <li><span class="time-stamp">5:30 PM – 7:15 PM:</span> 🚚 <strong>South Maui Gardens (Kihei Food Trucks):</strong> Stroll under fairy lights in Kihei's botanical garden food truck hub (35 Auhana Rd). Enjoy wood-fired pizza, Thai noodles, falafel plates, smash burgers, and fresh poke.</li>
           <li><span class="time-stamp">7:45 PM:</span> Sunset walk along Sugar Beach right outside your condo before calling it an early night.</li>
@@ -563,7 +563,16 @@
               <tr>
                 <td><strong>Māʻalaea Banyans</strong></td>
                 <td>Oct 25 – 29<br>(4 Nights)</td>
-                <td><strong style="color: var(--success);">✓ Confirmed 4 Nights (#162705)</strong><br><strong>$624.95 Refund Processed</strong><br><em>$0 parking / Full kitchen</em></td>
+                <td>
+                  <strong style="color: var(--success);">✓ Confirmed 4 Nights (#162705)</strong><br>
+                  <span style="font-size: 0.85rem; display: block; margin: 4px 0;">
+                    190 Hauoli St. #314<br>
+                    Wailuku, HI 96793<br>
+                    Door Code: <strong>129022</strong>
+                  </span>
+                  <strong>$624.95 Refund Processed</strong><br>
+                  <em>$0 parking / Full kitchen</em>
+                </td>
               </tr>
               <tr>
                 <td><strong>Hāna-Maui Resort</strong></td>
@@ -1058,6 +1067,7 @@
   </div>
 
   <script>
+    // Tab switching logic
     function showTab(tabId) {
       const panes = document.querySelectorAll('.tab-pane');
       panes.forEach(pane => pane.classList.remove('active'));
@@ -1066,11 +1076,20 @@
       buttons.forEach(btn => btn.classList.remove('active'));
 
       document.getElementById(tabId).classList.add('active');
+      
+      // Add active class to corresponding button without relying on inline event object
       const activeBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(tabId));
       if (activeBtn) {
         activeBtn.classList.add('active');
       }
     }
+
+    // Checkbox toggling logic
+    document.querySelectorAll('.check-box').forEach(box => {
+      box.addEventListener('click', function() {
+        this.classList.toggle('done');
+      });
+    });
   </script>
 </body>
 </html>
